@@ -26,5 +26,5 @@ const productSchema = new schema({
 
 });
 
-export const productModel = mongoose.model("usuario",productSchema);
+export const productModel = mongoose.model("producto",productSchema);
 
