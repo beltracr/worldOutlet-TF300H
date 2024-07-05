@@ -1,11 +1,12 @@
 import express from "express";
 import dotenv from "dotenv";
-
+import connectionMongo from "./config/db.js";
 
 const app = express();
 dotenv.config();
 const port = process.env.PORT;
 
+connectionMongo();
 
 
 
