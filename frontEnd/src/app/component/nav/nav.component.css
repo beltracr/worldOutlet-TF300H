@@ -1,26 +1,36 @@
 
+
+/* tipografia inter para titulos y subtitulos */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Roboto+Slab:wght@100..900&display=swap');
+/* tipografia poppins para textos */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
+
+
+@import url('https://fonts.googleapis.com/css2?family=Orbitron&display=swap');
+
+
+:root {
+
+    /* Paleta de colores */
+    --color-text: #ffffff;
+    --text-hoover: #DC5F00;
+    --color-fondo: #D9D9D9;
+    --fondo-red: #A80000;
+    --fondo-2: #000000;
+
+
+    /* fuentes - tipografia */
+
+    --T-subtitulos: "Inter", sans-serif;
+    --textos: "Poppins", sans-serif;
+    --textoAnuncios: "Anton", sans-serif;
+}
+
+
+
 .abrir-menu {
     display: none;
-}
-
-/* inicio de mi header */
-
-header {
-    background-image: url(/assets/img-header.jpg);
-    width: 100%;
-    height: 100vh;
-    background-size: cover;
-    background-position: center;
-}
-
-.nav {
-    position: fixed;
-    width: 100%;
-    height: 12vh;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    transition: all 0.6s ease;
 }
 
 .nav.active{
@@ -30,45 +40,65 @@ header {
 .menu {
     display: flex;
     gap: 45px;
-}
+} 
 
-.menu li{
-    list-style: none;
-    padding-right: 40px;
-    padding-top: 3%;
-}
+/* inicio de mi header */
+/* 
+.header {
+    width: 100%;
+    height: 100vh;
+    background-size: cover;
+    background-position: center;
+} */
 
-.menu li a{
-    font-size: 25px;
-}
+/* .img-banner{
+    background-size: cover;
+    background-position: center;
+    width: 100%;
+    height: 100vh;
+} */
 
-.menu li :hover{
-    font-size: 26px;
-    transition: .8s, color .10s;
-}
-
-.Logo-world {
-    height: 9vh;
-    margin-left: 2%;
-}
-
-.Logo-world img {
+.img-logo{
     max-width: 9rem;
-    border-radius: 5px;
 }
 
-
-
-
-
-.nav ul {
-    flex-direction: row;
+.nav {
+    width: 100%;
+    position: fixed;
+    z-index: 1000;
+    background-color: black;
+    height: 12vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0% 2%;
 }
+
+.nav-list{
+    display: flex;
+    gap: 50px;
+    list-style: none;
+}
+
+.nav-list a{ 
+    text-decoration: none;
+    color: aliceblue;
+    font-size: 18px;
+    transition: all 0.3s ease;
+    margin-top: 3%;
+}
+
+.nav-list a:hover{
+    color: var(--text-hoover);
+    font-size: 19px;
+}
+
+/* -----Barra de Busqueda ------- */
 
 .Buscar-container {
-    padding-left: 15%;
-    width: 50%;
-    height: 40px;
+    margin-left: 25%;
+    width: 25%;
+    height: 30px;
     display: flex;
     justify-content: end;
 }
@@ -77,75 +107,22 @@ input {
     width: 100%;
     height: 100%;
     display: block;
-    border-radius: 15px;
+    border-radius: 8px;
     border: none;
+    padding-left: 3%;
 }
 
 .icon-buscar {
     border: none;
     position: absolute;
-    margin-left: 11%;
     background: none;
     display: block;
     color: #000000;
     font-size: 15px;
+    margin-right: 1%;
 }
 
 .icon-buscar:hover {
-    color: var(--color-fondo);
-    background: var(--color-text);
-}
-
-/* ----MODAL DE INICIO DE SESION ------- */
-
-.iniciar-sesion {
-    padding: 0;
-    margin: 0;
-    color: var(--color-text);
-    font-size: 25px;
-}
-
-.iniciar-sesion:hover {
     color: var(--text-hoover);
 }
 
-.bot-ini-cre-cuet {
-    display: flex;
-    flex-direction: column;
-}
-
-.btn-ini-ses {
-    background: black;
-    color: var(--color-text);
-    padding: 10px 150px 10px 150px;
-    font-size: 20px;
-} 
-
-.btn-ini-ses:hover {
-    background: var(--text-hoover);
-}
-
-.btn-crea-cta {
-    background: black;
-    padding: 10px 150px 10px 150px;
-    font-size: 18px;
-}
-
-.btn-crea-cta a {
-    list-style: none;
-    text-decoration: none;
-    color: var(--color-text);
-}
-
-.btn-crea-cta:hover {
-    background: var(--text-hoover);
-}
-
-.p-regis {
-    color: rgb(13, 191, 0);
-    text-decoration: underline;
-}
-
-.scrol{
-    height: 100px;
-}
