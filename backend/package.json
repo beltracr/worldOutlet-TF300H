@@ -1,0 +1,34 @@
+{
+  "name": "backend",
+  "version": "1.0.0",
+  "description": "Esta es la implementacion de conocimientos adquiridos de express en nuestra idea de negocio la cual es una tienda de ropa virtual que se llama World Outlet.",
+  "main": "app.js",
+  "type": "module",
+  "scripts": {
+    "start": "node app.js",
+    "dev": "nodemon app.js"
+  },
+  "keywords": [
+    "World",
+    "Outlet",
+    "moda",
+    "deportiva",
+    "ropa",
+    "hombre",
+    "ropa",
+    "mujer",
+    "express",
+    "nodejs",
+    "proyecto",
+    "MEAN",
+    "stack"
+  ],
+  "author": "Angello Gonzalez, Cristian Beltran",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "mongoose": "^8.4.4",
+    "nodemon": "^3.1.4"
+  }
+}
