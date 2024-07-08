@@ -10,6 +10,7 @@ export const routes: Routes = [
     {path: 'hombre', component: HombreComponent},
     {path: 'mujer', component: MujerComponent},
     {path: 'registro', component: RegistroComponent},
-    {path: 'noEncontrado', component: NoEncontradoComponent},
-    {path: '**', redirectTo: '/inicio', pathMatch: 'full'}
+    {path: '', redirectTo: '/inicio', pathMatch: 'full'},
+    {path: '**', component: NoEncontradoComponent, title:'404'}
+
 ];
