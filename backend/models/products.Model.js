@@ -22,6 +22,11 @@ const productSchema = new schema({
     precio:{
         type:Number,
         require: true
+    },
+    
+    talla:{
+        type:Number,
+        require: true
     }
 
 });
