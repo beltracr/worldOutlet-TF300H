@@ -1,0 +1,37 @@
+
+footer {    
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    background-color: #000000;
+    color: var(--color-text);
+    padding-top: 2%;
+}
+
+.subtitulo-footer {
+    font-family: var(--T-subtitulos);
+    font-size: 20px;
+    padding-bottom: 15%;
+}
+
+
+ul li {
+    list-style-type: none;
+    font-family: var(--textos);
+}
+
+ul li a:hover {
+    color: var(--text-hoover);
+    text-decoration: underline;
+}
+
+ul li a {
+    color: var(--color-text);
+    text-decoration: none;
+    font-family: var(--textos);
+    font-size: 14px;
+}
+
+.redes {
+    font-size: 20px;
+}

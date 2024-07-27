@@ -1,0 +1,127 @@
+<app-nav></app-nav>
+
+<main>
+  <img class="img-banner" src="/assets/img-header.jpg" alt="" />
+  <!-- EN ESTA PAGINA REALIZAREMOS 3 SECTION, 1 PARA NUEVAS PROMOCIONES, 1 PARA TENDENCIA MUJER, 1 PARA TENDENCIA HOMBRE -->
+
+  <!-- inicio de section de mis promociones -->
+
+  <section class="promociones-sport-shopping">
+    <!-- nuevas promociones y boton de activar scroll horizontal -->
+    <div class="nueva-prom">
+      <h2 class="h2promos">Nuevas Promociones</h2>
+      <div class="scrol-producto b1" id="btn-prom-new">
+        <button>
+          <i class="bi bi-chevron-left" id="btn-prom-left"></i>
+        </button>
+        <button>
+          <i class="bi bi-chevron-right" id="btn-prom-right"></i>
+        </button>
+      </div>
+    </div>
+
+    <!-- Contenedor de productos nuevas promociones -->
+
+    <div class="Contenedor-nuevasPromociones">
+      <div class="nuevasPromos p1">
+        <img
+          src="/assets/page-hombre/NikeMilerFlash/NikeMilerFlash.jpg"
+          alt="nike-mile-flash"
+        />
+        <h4>Nike Miler Flash</h4>
+        <p class="descripcion-promo">
+          Camiseta Miler Flash <br />
+          5 colores disponibles
+        </p>
+        <div class="comprar-promo">
+          <p class="precio-promos">$ 200.000</p>
+          <p class="precio-descuentos">$ 150.000</p>
+          <button class="boton-comprar">COMPRAR</button>
+        </div>
+      </div>
+
+      <div class="nuevasPromos p2">
+        <img
+          src="/assets/page-mujer/AdiColorClassicSport/AdiColorClassicSport.jpg"
+          alt="Adi-color-sport-femenino"
+        />
+        <h4>Nike Adi Color Sport</h4>
+        <p class="descripcion-promo">
+          Training run mujer <br />
+          20 unidades disponibles
+        </p>
+        <div class="comprar-promo">
+          <p class="precio-promos">$ 200.000</p>
+          <p class="precio-descuentos">$ 150.000</p>
+          <button class="boton-comprar">COMPRAR</button>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+
+  <!-- inicio de la section de tendencia mujer-->
+
+  <section>
+    <div class="container-tenden-h-m">
+        <!-- inicio de las tendencias de mujer-->
+        <div class="cont-new">
+            <h2 class="sub-tend">Tendencia Mujer</h2>
+            <div class="boton-scrol-producto b2">
+                <button>
+                    <i class="bi bi-chevron-left" id="btn-left-mujer"></i>
+                </button>
+                <button>
+                    <i class="bi bi-chevron-right" id="btn-right-mujer"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- tendencias mujer -->
+
+        <div class="tendenciaMujer">
+            <div class="nuevo">
+                <button class="boton-verMas">Ver mas</button>
+                <img src="/assets/page-mujer/CahquetaTerrexMulticierreFrontal/CahquetaTerrexMulticierreFrontal.jpg"
+                    alt="Cahqueta-Terrex-Multi-cierre-Frontal">
+            </div>
+            <div class="nuevo">
+                <button class="boton-verMas">Ver mas</button>
+                <img src="/assets/page-mujer/MarathonGraphicTee/MarathonGraphicTee.jpg"
+                    alt="Marathon-Graphic-Tee">
+            </div>
+          </div>
+
+            <!-- inicio de tendencia de hombre - section -->
+
+            <div class="cont-new">
+              <h2 class="sub-tend">Tendencia Hombre</h2>
+              <div class="boton-scrol-producto b2">
+                  <button>
+                      <i class="bi bi-chevron-left tH" id="left-hombre"></i>
+                  </button>
+                  <button>
+                      <i class="bi bi-chevron-right tH" id="right-hombre"></i>
+                  </button>
+              </div>
+          </div>
+          <!-- article de tendencias hombre -->
+
+          <div class="tendenciaHombre">
+              <div class="nuevo">
+                  <button class="boton-verMas">Ver mas</button>
+                  <img src="/assets/page-hombre/Galaxy7W/Galaxy7W.jpg" alt="Galax-y-7W-hombre">
+              </div>
+              <div class="nuevo">
+                  <button class="boton-verMas">Ver mas</button>
+                  <img src="/assets/page-hombre/ResponseRunerU/ResponseRunerU.jpg"
+                      alt="ResponseRunerU-Mens-hombre">
+              </div>
+            </div>
+
+        </div>
+  </section>
+
+</main>
+
+<app-footer></app-footer>
