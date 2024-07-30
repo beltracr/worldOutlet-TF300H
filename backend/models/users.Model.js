@@ -6,17 +6,27 @@ const usuariosSchema = new schema({
 
     nombre:{
         type: String,
-        require: true
+        required: true
     },
 
     correo:{
-        type: String
+        type: String,
+        required: true,
+        unique: true
+
+    },
+
+    contrasena:{
+        type: String,
+        required: true
+      
+
     },
 
     direccion:{
 
         type: String,
-        require: true
+        required: true
     }
 
 });
