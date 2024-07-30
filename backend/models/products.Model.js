@@ -6,7 +6,7 @@ const productSchema = new schema({
 
     nombre:{
         type: String,
-        require: true
+        required: true
     },
 
     imagen:{
@@ -16,12 +16,17 @@ const productSchema = new schema({
     descripcion:{
 
         type: String,
-        require: true
+        required: true
     },
 
     precio:{
         type:Number,
         require: true
+    },
+    
+    talla:{
+        type:[String],
+        required: true
     }
 
 });

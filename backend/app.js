@@ -9,6 +9,8 @@ const port = process.env.PORT;
 
 connectionMongo();
 
+app.use(express.json())
+
 app.use("/",productsRouter)
 
 
