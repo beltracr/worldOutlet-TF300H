@@ -1,0 +1,128 @@
+
+
+/* tipografia inter para titulos y subtitulos */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Roboto+Slab:wght@100..900&display=swap');
+/* tipografia poppins para textos */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
+
+
+@import url('https://fonts.googleapis.com/css2?family=Orbitron&display=swap');
+
+
+:root {
+
+    /* Paleta de colores */
+    --color-text: #ffffff;
+    --text-hoover: #DC5F00;
+    --color-fondo: #D9D9D9;
+    --fondo-red: #A80000;
+    --fondo-2: #000000;
+
+
+    /* fuentes - tipografia */
+
+    --T-subtitulos: "Inter", sans-serif;
+    --textos: "Poppins", sans-serif;
+    --textoAnuncios: "Anton", sans-serif;
+}
+
+
+
+.abrir-menu {
+    display: none;
+}
+
+.nav.active{
+    background: var(--fondo-2);
+}
+
+.menu {
+    display: flex;
+    gap: 45px;
+} 
+
+/* inicio de mi header */
+/* 
+.header {
+    width: 100%;
+    height: 100vh;
+    background-size: cover;
+    background-position: center;
+} */
+
+/* .img-banner{
+    background-size: cover;
+    background-position: center;
+    width: 100%;
+    height: 100vh;
+} */
+
+.img-logo{
+    max-width: 9rem;
+}
+
+.nav {
+    width: 100%;
+    position: fixed;
+    z-index: 1000;
+    background-color: black;
+    height: 12vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0% 2%;
+}
+
+.nav-list{
+    display: flex;
+    gap: 50px;
+    list-style: none;
+}
+
+.nav-list a{ 
+    text-decoration: none;
+    color: aliceblue;
+    font-size: 18px;
+    transition: all 0.3s ease;
+    margin-top: 3%;
+}
+
+.nav-list a:hover{
+    color: var(--text-hoover);
+    font-size: 19px;
+}
+
+/* -----Barra de Busqueda ------- */
+
+.Buscar-container {
+    margin-left: 25%;
+    width: 25%;
+    height: 30px;
+    display: flex;
+    justify-content: end;
+}
+
+input {
+    width: 100%;
+    height: 100%;
+    display: block;
+    border-radius: 8px;
+    border: none;
+    padding-left: 3%;
+}
+
+.icon-buscar {
+    border: none;
+    position: absolute;
+    background: none;
+    display: block;
+    color: #000000;
+    font-size: 15px;
+    margin-right: 1%;
+}
+
+.icon-buscar:hover {
+    color: var(--text-hoover);
+}
+

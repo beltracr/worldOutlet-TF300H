@@ -1,0 +1,17 @@
+
+main{
+    width: 100%;
+    overflow: hidden;
+}
+
+.container-error{
+    height: 90vh;
+    position: relative;
+}
+
+.atras-btn{
+    position: absolute;
+    margin-top: 39%;
+    margin-left: 12%;
+    font-size: 28px;
+}
