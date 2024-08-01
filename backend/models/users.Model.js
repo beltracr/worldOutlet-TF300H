@@ -23,6 +23,10 @@ const usuariosSchema = new schema({
 
     },
 
+    numeroTelefono:{
+        type: Number,
+    },
+
     direccion:{
 
         type: String,
