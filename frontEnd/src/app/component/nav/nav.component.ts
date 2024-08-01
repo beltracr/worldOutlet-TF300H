@@ -10,5 +10,4 @@ import { ModalIniSesionComponent } from '../modal-ini-sesion/modal-ini-sesion.co
   styleUrl: './nav.component.css'
 })
 export class NavComponent {
- 
 }

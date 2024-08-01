@@ -18,8 +18,6 @@ const adminSchema = new schema({
     contrasena:{
         type: String,
         required: true
-      
-
     },
 
     CategoriaAdmin:{
