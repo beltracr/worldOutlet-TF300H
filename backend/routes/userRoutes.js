@@ -1,18 +1,18 @@
-import express from "express"
-
-//import {getProducts, postProduct, putProductById, deleteProductById } from "../controllers/products.Controller.js"
-import {getUsers} from "../controllers/user.controllers.js";
-
-export const userRouter = express.Router();
+import express from "express";
+import { getUsuarios, postUsuarios, getUsuarioById, deleteUsuarioById, putUsuarioById } from "../controllers/user.controllers.js";
 
 
-userRouter.get('/usuarios',getUsers);
-/*
-productsRouter.post('/registrarProducto',postProduct);
+const usuariosRouter = express.Router();
 
-productsRouter.delete('/eliminarProducto/:_id',deleteProductById);
+// ruta para mostrar usuario por id
+usuariosRouter.get('/obtenerUsuario:_id', getUsuarioById);
+// ruta para mostrar todos los usuarios
+usuariosRouter.get('/obtenerUsuarios', getUsuarios);
+// ruta para crear usuarios
+usuariosRouter.post('/registrarUsuarios', postUsuarios);
+// ruta para actualizar usuario por id
+usuariosRouter.put('/actualizarUsuario:_id',  putUsuarioById);
+// ruta para eleiminar usuario por Id
+usuariosRouter.delete('/eliminarUsuario:_id',  deleteUsuarioById);
 
-productsRouter.put('/actualizarProducto/:_id',putProductById);
-*/
-
-export default userRouter;
+export default usuariosRouter
