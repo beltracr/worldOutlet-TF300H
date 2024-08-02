@@ -8,11 +8,11 @@ export const userRouter = express.Router();
 
 userRouter.get('/usuarios',getUsers);
 /*
-productsRouter.post('/registrarProducto',postProduct);
+userRouter.post('/registraruser',postuser);
 
-productsRouter.delete('/eliminarProducto/:_id',deleteProductById);
+userRouter.delete('/eliminaruser/:_id',deleteuserById);
 
-productsRouter.put('/actualizarProducto/:_id',putProductById);
+userRouter.put('/actualizaruser/:_id',putuserById);
 */
 
 export default userRouter;
