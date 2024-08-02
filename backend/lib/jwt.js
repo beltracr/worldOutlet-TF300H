@@ -1,5 +1,5 @@
 import  jwt, { decode }  from "jsonwebtoken";
-import dotenv from "dontev";
+import dotenv from "dotenv";
 
 dotenv.config();
 
