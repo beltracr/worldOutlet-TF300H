@@ -19,7 +19,6 @@ const usuariosSchema = new schema({
     contrasena:{
         type: String,
         required: true
-      
 
     },
 
@@ -28,7 +27,6 @@ const usuariosSchema = new schema({
     },
 
     direccion:{
-
         type: String,
         required: true
     }

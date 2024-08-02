@@ -9,9 +9,7 @@ productsRouter.get('/obtenerProductos',getProducts);
 
 productsRouter.post('/registrarProducto',postProduct);
 
-
 productsRouter.delete('/eliminarProducto/:_id',deleteProductById);
-
 
 productsRouter.put('/actualizarProducto/:_id',putProductById);
 
