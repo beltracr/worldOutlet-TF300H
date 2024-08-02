@@ -1,29 +1,17 @@
 import { productModel } from "../models/products.Model.js";
 
 
-<<<<<<< HEAD
 //para visualizar los productos en la base de
 
 export const getProducts = async (req, res) => {  
    
    try {        
         let products = await productModel.find();        
-=======
-   try {
-
-        let products = await productModel.find();
-
-        
->>>>>>> angeloGonzalez
         if (products.length === 0) {
            
             return res.status(404).json({ message: 'no se encontraron productos' });
         }
-<<<<<<< HEAD
        
-=======
-
->>>>>>> angeloGonzalez
         return res.status(200).send(products);
 
     } catch (error) {
@@ -34,19 +22,12 @@ export const getProducts = async (req, res) => {
 
 export const postProduct = async (req, res) => {
     
-<<<<<<< HEAD
     
     const { nombre, imagen, descripcion, precio,  talla, color } = req.body;
 
     
     if (!nombre || !imagen  || !descripcion || !precio || !talla || !color) {
         return res.status(400).json({ message: 'Debe ingresar todos los campos requeridos, nombre, imagen, descripcion, precio, talla y color' });
-=======
-    const { nombre, imagen, precio, descripcion, talla } = req.body;
-
-    if (!nombre || !imagen || !precio || !descripcion || !talla) {
-        return res.status(400).json({ message: 'Debe ingresar todos los campos requeridos, nombre, imagen y precio' });
->>>>>>> angeloGonzalez
     }
 
     try {
