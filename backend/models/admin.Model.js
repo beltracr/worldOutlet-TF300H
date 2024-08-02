@@ -8,12 +8,10 @@ const adminSchema = new schema({
         type: String,
         required: true
     },
-
     correo:{
         type: String,
         required: true,
         unique: true
-    
     },
     contrasena:{
         type: String,
@@ -25,8 +23,6 @@ const adminSchema = new schema({
         type: Boolean,
         default: true
     }
-
-    
 
 });
 
