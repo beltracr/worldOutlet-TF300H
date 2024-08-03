@@ -13,14 +13,11 @@ const usuariosSchema = new schema({
         type: String,
         required: true,
         unique: true
-
     },
 
     contrasena:{
         type: String,
         required: true
-      
-
     },
 
     numeroTelefono:{
@@ -28,7 +25,6 @@ const usuariosSchema = new schema({
     },
 
     direccion:{
-
         type: String,
         required: true
     }
