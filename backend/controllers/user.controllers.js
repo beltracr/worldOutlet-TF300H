@@ -55,7 +55,7 @@ export const getUsuarios =async (req, res)=> {
         return res.status(400).json({
             estado:"400",
             mensaje:"error",
-            datos:error
+            datos:error.message
 
         })
     }
