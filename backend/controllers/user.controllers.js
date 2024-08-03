@@ -102,7 +102,7 @@ export const getUsuarioById = async (req,res) =>{
 
 // actualizar usuario
 
-export const putUsuarioById = async (request, response) => {
+export const putUsuarioById = async (req, res) => {
     try {
         let idForPut = req.params.id
         const dataForUpdate = req.body
