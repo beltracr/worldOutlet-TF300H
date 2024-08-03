@@ -5,6 +5,7 @@ import {getProducts, postProduct, putProductById, deleteProductById } from "../c
 export const productsRouter = Router();
 
 
+
 productsRouter.get('/',getProducts);
 
 productsRouter.post('/',postProduct);
@@ -12,6 +13,7 @@ productsRouter.post('/',postProduct);
 productsRouter.delete('/:id',deleteProductById);
 
 productsRouter.put('/:id',putProductById);
+
 
 
 export default productsRouter;
