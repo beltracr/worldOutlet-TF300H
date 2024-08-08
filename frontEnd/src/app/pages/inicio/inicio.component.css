@@ -33,35 +33,33 @@
     background-size: cover;
     background-position: center;
     width: 100%;
-    max-height: 40rem;
+    max-height: 43rem;
 }
 
 
 /* inicio del article de nuevas promociones */
 
 .nueva-prom {
-    background-color: #ff000060;
-    /* width: 70%; */
     display: flex;
     position: relative;
-    /* margin-left: 30%; */
+    justify-content: space-between;
 }
 
 .h2promos {
-    text-align: center;
-    font-size: 60px;
+    font-size: 50px;
     font-weight: bold;
     margin-top: 3%;
+    margin-left: 30%;
 }
 
 .b1 {
-    margin-top: 7%;
-    margin-left: 32%;
+    margin-top: 4%;
     bottom: -10px;
 }
 
 .b1 button:hover {
     color: var(--text-hoover);
+    transition: 0.4s ease-in-out;
 }
 
 /* Boton para cambiar imagen */
@@ -75,7 +73,7 @@
     color: var(--color-fondo);
     text-decoration: none;
     font-weight: bold;
-    font-size: 60px;
+    font-size: 50px;
     background: none;
     border: 0;
     color: inherit;
@@ -91,6 +89,7 @@
     border: 0;
     color: inherit;
     color: var(--color-fondo);
+    transition: 0.4s ease-in-out;
 }
 
 .boton-scrol-producto button:hover {
@@ -158,22 +157,32 @@ h4 {
     font-weight: bold;
     padding: 5px 15px;
     font-family: var(--T-subtitulos);
-    transition: .5s, color .10s;
+    transition: .4s, color .9s;
     margin-bottom: 5%;
 }
 
 .boton-comprar:hover {
     background-color: var(--text-hoover);
-    font-size: 13px;
+    font-size: 12px;
     border: none;
+    box-shadow: 0 4px 3px -1px rgba(0, 0, 0, 0.5);
 }
 
-/* TENDENCIA MUJER ---- INICIO ---- */
+/* TENDENCIA ---- INICIO ---- */
 
 .sub-tend {
-    font-size: 50px;
-    margin-left: 1%;
+    font-size: 40px;
+    width: 70%;
     margin-top: 1%;
+}
+
+.tend-new{
+    display: flex;
+    justify-content: space-between; 
+}
+
+.bts{
+    margin-top: 0;
 }
 
 /* SCROLS DE LAS TENDENCIAS */
@@ -240,13 +249,98 @@ h4 {
     font-family: var(--T-subtitulos);
     transition: .5s, color .10s;
     position: absolute;
-    margin-left: 17%;
-    margin-top: 14%;
+    margin-left: 18%;
+    margin-top: 15%;
 
 }
 
 .boton-verMas:hover {
     background-color: var(--text-hoover);
-    font-size: 14px;
+    font-size: 13px;
     border: none;
+    margin-top: 14.5%;
+    box-shadow: 0 5px 3px -2px rgba(0, 0, 0, 0.5);
+}
+
+.anun-reg{
+    display: flex;
+    justify-content: space-around;
+    background: rgb(255,255,94);
+background: linear-gradient(90deg, rgba(237,255,94,1) 23%, rgba(142,255,0,1) 77%, rgb(165, 248, 31) 100%);
+/* background: rgb(237,255,94);
+background: linear-gradient(90deg, rgba(237,255,94,1) 23%, rgba(220,178,0,1) 67%, rgba(220,137,0,0.9831582291119573) 100%); */
+    padding: 4% 3%;
+    align-items: center;
+
+}
+
+.anun-reg h3{
+    font-size: 35px;
+    text-transform:uppercase;
+    font-weight: bold;
+}
+
+.reg-gra{
+    background-color: #000000;
+    color: #ffffff;
+    padding: 1% 2%;
+    text-transform:uppercase;
+    font-family: var(--textos);
+    font-weight: bold
+}
+
+.reg-gra:hover{
+    color: #DC5F00;
+    transition: 0.3s ease-in-out;
+}
+
+.his-wo{
+    margin-top: 5%;
+    background-color: #000000;
+    color: aliceblue;
+    text-align: justify;
+    padding: 4% 24%;
+    font-family: var(--textos);
+    font-size: 17px;
+}
+
+.na-world{
+    margin-bottom: 6%;
+    font-size: 40px;
+    font-family: var(--T-subtitulos);
+    margin-left: 20%;
+}
+
+.logo-historia{
+    max-width: 10rem;
+    margin-left: 40%;
+    padding-top: 2%;
+}
+
+.container-aliados{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 4%;
+    flex-direction: column;
+
+}
+
+.h3Aliados{
+    margin: 2% 0%;
+    font-size: 35px;
+    padding-bottom: 5%;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.aliados img{
+    max-width: 7rem;
+    margin-inline: 50px;
+
+}
+
+.logo-ali{
+    margin: 0% 25%;
+    margin-top: 5%;
 }
