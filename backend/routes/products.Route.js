@@ -6,13 +6,13 @@ export const productsRouter = express.Router();
 
 
 
-productsRouter.get('/get',getProducts);
+productsRouter.get('/',getProducts);
 
-productsRouter.post('/crear',postProduct);
+productsRouter.post('/',postProduct);
 
-productsRouter.delete('/eliminarProducto/:_id',deleteProductById);
+productsRouter.delete('/:_id',deleteProductById);
 
-productsRouter.put('/:id',putProductById);
+productsRouter.put('/:_id',putProductById);
 
 
 

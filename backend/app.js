@@ -13,7 +13,7 @@ const port = process.env.PORT;
 connectionMongo();
 
 app.use(express.json())
-app.use("/",productsRouter)
+app.use("/products",productsRouter)
 app.use('/admin', adminRouter);
 app.use('/user', usuariosRouter);
 
