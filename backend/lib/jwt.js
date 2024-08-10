@@ -1,11 +1,14 @@
-import  jwt, { decode }  from "jsonwebtoken";
+
+import  jwt from "jsonwebtoken";
 import dotenv from "dotenv";
 
 dotenv.config();
 
 
 
-const claveSecreta = process.env.JWT_SECRET;
+const claveSecreta =  process.env.JWT_SECRET;
+
+
 
 
 export function generarToken(payload){
@@ -13,7 +16,7 @@ export function generarToken(payload){
     return new Promise ((resolve,reject)=>{
         jwt.sign(payload,claveSecreta,{expiresIn:"1h"},(error,token)=>{
             if(error){
-                reject(new Error("Error al generar token"+ error.message));
+                reject(new Error("Error al generar token" + error.message));
             } else{
                 resolve(token)
             }
