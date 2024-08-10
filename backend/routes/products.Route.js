@@ -10,9 +10,9 @@ productsRouter.get('/',getProducts);
 
 productsRouter.post('/',postProduct);
 
-productsRouter.delete('/:_id',deleteProductById);
+productsRouter.delete('/:id',deleteProductById);
 
-productsRouter.put('/:_id',putProductById);
+productsRouter.put('/:id',putProductById);
 
 
 
