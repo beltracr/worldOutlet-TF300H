@@ -1,11 +1,15 @@
 import { adminModel } from "../models/admin.Model.js";
-
+import bcrypt from "bcryptjs";
 // crear, mostrar todos, eliminar admin
 
 // Petición POST para crear los administradores
-export const postAdmin = async(request, response) =>{
+export const postAdmin = async(req, response) =>{
+    const {nombre, correo, contrasena,categoriaAdmin} = req.body;
+    const codedPasswordAdmin = await bcrypt.hash(contrasena,10)
+
     try{
-        const newAdmin = await adminModel.create(request.body)
+       
+        const newAdmin = await adminModel.create({nombre,correo,contrasena:codedPasswordAdmin,categoriaAdmin})
         // solicitud de retorno
         return response.status(201).json({
             estado: '201',
@@ -48,86 +52,27 @@ export const getAdmin = async (request, response) =>{
 }
 
 
-// Petición GET para mostrar administrador por ID
-
-export const getAdminById = async (request, response) =>{
-    try{
-
-        let idForGet = req.params._id;
-        let adminGet = await adminModel.findByIdUpdate(idForGet, req.body);
-    if (!adminGet){
-        return response.status(404).json({
-            estado: '404',
-            mensaje: 'Uff ! No se encontro administrador',
-            datos: adminGet 
-        })
-    }
-        return response.status(200).json({
-            estado: '200',
-            mensaje: 'El administrador que buscas es: ',
-            datos: adminGet
-        })
-
-    }catch(error){
-        return response.status(400).json({
-            estado: '400',
-            mensaje: 'Ocurrio un error al buscar el administrador',
-            datos: error
-        })
-    }
-}
-
-// Petición PUT para actualizar administrador por ID
-
-export const putAdminById = async (request, response) =>{
-    try{
-        let idForUpdate = req.params.id;
-        let adminUpdate = await adminModel.findByIdUpdate(idForUpdate, req.body);
-    if (!adminUpdate){
-        return response.status(404).json({
-        estado: '404',
-        mensaje: 'Uff ! No se encontro administrador para actualizar',
-        datos: adminUpdate
-         })
-        
-    }
-        return response.status(200).json({
-        estado: '200',
-        mensaje: '¡Administrador actualizado con Exito!',
-        datos: adminUpdate
-    })
-    }catch(e){
-        return response.status(400).json({
-            estado: '400',
-            mensaje: 'Ocurrio un error al actualizar administrador',
-            datos: error
-        })
-    }
-}
-
 // Petición DELETE para eliminar administrador por ID
 
-export const deleteAdminById = async (request, response)=>{
-    try{
-        let idForDelete = req.params.id;
-        let adminDelete = await adminModel.findByIdDelete(idForDelete, req.body);
-        if (!adminDelete){
-            return response.status(404).json({
-                estado: '404',
-                mensaje: 'Uff ! No se ha encontrado el administrador para eliminar',
-                datos: adminDelete
-           })
-        }
-        return response.status(200).json({
-            estado: '200',
-            mensaje: 'Se ha eliminado el Administrador con Exito',
-            datos: adminDelete
+export const deleteAdminById = async (req, res)=>{
+    try {
+        let idForDelete = req.params.id
+        const adminDeleted = await adminModel.findByIdAndDelete(idForDelete);
+       if(!idForDelete){
+           return res.status(404).json({message: "no se encontro administrador"})
+   
+       }
+    
+        return res.status(200).json({
+            estado:'200',
+            mensaje: 'administrador eliminado Correctamente',
+            datos: adminDeleted
         })
-    }catch(error){
-        return response.status(400).json({
+       } catch (error) {
+        return res.status(400).json({
             estado: '400',
-            mensaje: 'Ocurrio un error al eliminar administrador',
-            datos: error
+            mensaje: 'Ocurrió un problema al eliminar usuario',
+            datos: error,
         })
-    }
+       }
 }

@@ -7,9 +7,15 @@ const auth = () =>{
         if(!token){
             return res.status(401).json({mensaje: "no se encontro token"})
         }
+        
         next()
     }
 }
+
+
+
+
+
 
 //         token = token.split(" ")[1];
 

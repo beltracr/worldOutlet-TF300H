@@ -1,20 +1,20 @@
-import { usuariosModel } from "../models/users.Model.js";
+import { adminModel } from "../models/admin.Model.js";
 import bcrypt from "bcryptjs";
 import { generarToken } from "../lib/jwt.js";
 
 const loginService = async (req,res) => {
     try{
         const {correo,contrasena} = req.body;
-        const usuarioEncontrado = await usuariosModel.findOne({
+        const adminEncontrado = await adminModel.findOne({
             correo:correo
         });
 
-        if(!usuarioEncontrado){
+        if(!adminEncontrado){
             return res.status(404).json({
                 mensaje:"correo no registrado"
             })
         }
-        const validacionContrasena = await bcrypt.compare(contrasena,usuarioEncontrado.contrasena)
+        const validacionContrasena = await bcrypt.compare(contrasena,adminEncontrado.contrasena)
 
         if (!validacionContrasena){
             return res.status(400).json({
@@ -26,8 +26,8 @@ const loginService = async (req,res) => {
         //autenticacion
 
         const payload ={
-            id: usuarioEncontrado.id,
-            name: usuarioEncontrado.nombre
+            id: adminEncontrado.id,
+            name: adminEncontrado.nombre
         }
 
         const token = await generarToken(payload)
