@@ -14,7 +14,7 @@ const claveSecreta =  process.env.JWT_SECRET;
 export function generarToken(payload){
 
     return new Promise ((resolve,reject)=>{
-        jwt.sign(payload,claveSecreta,{expiresIn:"98ms"},(error,token)=>{
+        jwt.sign(payload,claveSecreta,{expiresIn:"10m"},(error,token)=>{
             if(error){
                 reject(new Error("Error al generar token" + error.message));
             } else{

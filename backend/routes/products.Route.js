@@ -8,7 +8,7 @@ export const productsRouter = express.Router();
 
 
 
-productsRouter.get('/', auth(), getProducts);
+productsRouter.get('/',  getProducts);
 
 productsRouter.post('/', auth(), postProduct);
 
