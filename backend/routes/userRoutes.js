@@ -1,15 +1,16 @@
 import {Router} from "express";
 import { getUsuarios, postUsuarios, deleteUsuarioById} from "../controllers/user.controllers.js";
+import auth from "../middlewares/auth.js";
 
 
 const usuariosRouter = Router();
 
 
 // ruta para mostrar todos los usuarios
-usuariosRouter.get('/', getUsuarios);
+usuariosRouter.get('/',auth(), getUsuarios);
 // ruta para crear usuarios
-usuariosRouter.post('/', postUsuarios);
+usuariosRouter.post('/',auth(), postUsuarios);
 // ruta para eleiminar usuario por Id
-usuariosRouter.delete('/:id',  deleteUsuarioById);
+usuariosRouter.delete('/:id', auth(),  deleteUsuarioById);
 
 export default usuariosRouter

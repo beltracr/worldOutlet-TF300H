@@ -81,7 +81,7 @@ export const getAdminById = async (request, response) =>{
 
 export const putAdminById = async (request, response) =>{
     try{
-        let idForUpdate = req.params._id;
+        let idForUpdate = req.params.id;
         let adminUpdate = await adminModel.findByIdUpdate(idForUpdate, req.body);
     if (!adminUpdate){
         return response.status(404).json({
@@ -109,7 +109,7 @@ export const putAdminById = async (request, response) =>{
 
 export const deleteAdminById = async (request, response)=>{
     try{
-        let idForDelete = req.params._id;
+        let idForDelete = req.params.id;
         let adminDelete = await adminModel.findByIdDelete(idForDelete, req.body);
         if (!adminDelete){
             return response.status(404).json({

@@ -6,7 +6,7 @@ const adminRouter = Router();
 adminRouter.get('/',getAdmin);
 adminRouter.post('/', postAdmin);
 adminRouter.delete('/:id', deleteAdminById);
-adminRouter.delete('/:id', putAdminById);
-adminRouter.delete('/:id', getAdminById)
+adminRouter.put('/:id', putAdminById);
+adminRouter.get('/:id', getAdminById)
 
 export default adminRouter;

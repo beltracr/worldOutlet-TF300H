@@ -27,7 +27,7 @@ export function generarToken(payload){
 export function verificarToken(token) {
     return new Promise((resolve,reject)=>
 {
-    jwt.verify(token,claveSecreta,(error, decoded)=>{
+    jwt.verify(token,claveSecreta,(error, decode)=>{
         if(error){
             reject (new Error ("error al decodificar token" + error.message));
         } else{
