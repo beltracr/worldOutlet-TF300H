@@ -5,13 +5,15 @@ import {getProducts, postProduct, putProductById, deleteProductById } from "../c
 export const productsRouter = express.Router();
 
 
-productsRouter.get('/obtenerProductos',getProducts);
 
-productsRouter.post('/registrarProducto',postProduct);
+productsRouter.get('/get',getProducts);
+
+productsRouter.post('/crear',postProduct);
 
 productsRouter.delete('/eliminarProducto/:_id',deleteProductById);
 
-productsRouter.put('/actualizarProducto/:_id',putProductById);
+productsRouter.put('/:id',putProductById);
+
 
 
 export default productsRouter;
