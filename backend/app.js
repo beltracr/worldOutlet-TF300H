@@ -2,6 +2,10 @@ import express from "express";
 import dotenv from "dotenv";
 import connectionMongo from "./config/db.js";
 import productsRouter from "./routes/products.Route.js";
+import adminRouter from "./routes/admin.routes.js";
+import usuariosRouter from "./routes/userRoutes.js"
+import loginRouter from "./routes/login.routes.js";
+
 
 const app = express();
 dotenv.config();
@@ -10,9 +14,10 @@ const port = process.env.PORT;
 connectionMongo();
 
 app.use(express.json())
-
-app.use("/",productsRouter)
-
+app.use("/products",productsRouter)
+app.use('/admin', adminRouter);
+app.use('/user', usuariosRouter);
+app.use('/login',loginRouter )
 
 
 app.listen(port, ()=> {
