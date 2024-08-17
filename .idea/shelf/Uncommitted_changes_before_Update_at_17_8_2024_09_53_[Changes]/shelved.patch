@@ -1,0 +1,98 @@
+Index: frontEnd/src/app/pages/no-encontrado/no-encontrado.component.ts
+===================================================================
+diff --git a/frontEnd/src/app/pages/no-encontrado/no-encontrado.component.ts b/frontEnd/src/app/pages/no-encontrado/no-encontrado.component.ts
+deleted file mode 100644
+--- a/frontEnd/src/app/pages/no-encontrado/no-encontrado.component.ts	(revision 10608eb91962c20d85d13588e6d5300fe9d6bc74)
++++ /dev/null	(revision 10608eb91962c20d85d13588e6d5300fe9d6bc74)
+@@ -1,17 +0,0 @@
+-import { Component } from '@angular/core';
+-import { NavComponent } from '../../component/nav/nav.component';
+-import { FooterComponent } from '../../component/footer/footer.component';
+-import { InicioComponent } from '../inicio/inicio.component';
+-import { routes } from '../../app.routes';
+-import { RouterLink } from '@angular/router';
+-
+-@Component({
+-  selector: 'app-no-encontrado',
+-  standalone: true,
+-  imports: [NavComponent, FooterComponent, InicioComponent, RouterLink],
+-  templateUrl: './no-encontrado.component.html',
+-  styleUrl: './no-encontrado.component.css'
+-})
+-export class NoEncontradoComponent {
+-
+-}
+Index: frontEnd/src/app/pages/no-encontrado/no-encontrado.component.html
+===================================================================
+diff --git a/frontEnd/src/app/pages/no-encontrado/no-encontrado.component.html b/frontEnd/src/app/pages/no-encontrado/no-encontrado.component.html
+deleted file mode 100644
+--- a/frontEnd/src/app/pages/no-encontrado/no-encontrado.component.html	(revision 10608eb91962c20d85d13588e6d5300fe9d6bc74)
++++ /dev/null	(revision 10608eb91962c20d85d13588e6d5300fe9d6bc74)
+@@ -1,11 +0,0 @@
+-<app-nav></app-nav>
+-<main>
+-    <section>
+-        <div class="container-error">
+-            <a routerLink="/inicio"><button type="button" class="btn btn-outline-light atras-btn">Volver al Inicio</button> </a>
+-            <img src="https://hummingweb.com.au/wp-content/uploads/2023/03/404-page-not-found.jpg" alt="ERROR-404">
+-        </div>
+-    </section>
+-</main>
+-
+-<app-footer></app-footer>
+\ No newline at end of file
+Index: frontEnd/src/app/pages/no-encontrado/no-encontrado.component.spec.ts
+===================================================================
+diff --git a/frontEnd/src/app/pages/no-encontrado/no-encontrado.component.spec.ts b/frontEnd/src/app/pages/no-encontrado/no-encontrado.component.spec.ts
+deleted file mode 100644
+--- a/frontEnd/src/app/pages/no-encontrado/no-encontrado.component.spec.ts	(revision 10608eb91962c20d85d13588e6d5300fe9d6bc74)
++++ /dev/null	(revision 10608eb91962c20d85d13588e6d5300fe9d6bc74)
+@@ -1,23 +0,0 @@
+-import { ComponentFixture, TestBed } from '@angular/core/testing';
+-
+-import { NoEncontradoComponent } from './no-encontrado.component';
+-
+-describe('NoEncontradoComponent', () => {
+-  let component: NoEncontradoComponent;
+-  let fixture: ComponentFixture<NoEncontradoComponent>;
+-
+-  beforeEach(async () => {
+-    await TestBed.configureTestingModule({
+-      imports: [NoEncontradoComponent]
+-    })
+-    .compileComponents();
+-
+-    fixture = TestBed.createComponent(NoEncontradoComponent);
+-    component = fixture.componentInstance;
+-    fixture.detectChanges();
+-  });
+-
+-  it('should create', () => {
+-    expect(component).toBeTruthy();
+-  });
+-});
+Index: frontEnd/src/app/pages/no-encontrado/no-encontrado.component.css
+===================================================================
+diff --git a/frontEnd/src/app/pages/no-encontrado/no-encontrado.component.css b/frontEnd/src/app/pages/no-encontrado/no-encontrado.component.css
+deleted file mode 100644
+--- a/frontEnd/src/app/pages/no-encontrado/no-encontrado.component.css	(revision 10608eb91962c20d85d13588e6d5300fe9d6bc74)
++++ /dev/null	(revision 10608eb91962c20d85d13588e6d5300fe9d6bc74)
+@@ -1,17 +0,0 @@
+-
+-main{
+-    width: 100%;
+-    overflow: hidden;
+-}
+-
+-.container-error{
+-    height: 90vh;
+-    position: relative;
+-}
+-
+-.atras-btn{
+-    position: absolute;
+-    margin-top: 39%;
+-    margin-left: 12%;
+-    font-size: 28px;
+-}
+\ No newline at end of file

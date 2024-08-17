@@ -44,7 +44,7 @@ export const postProduct = async (req, res) => {
 export const deleteProductById = async (req, res) => {
 
     try {
-        let idForDelete = req.params._id;
+        let idForDelete = req.params.id;
         let productDeleted = await productModel.findByIdAndDelete(idForDelete);
         
         if (!productDeleted) {
@@ -62,7 +62,7 @@ export const putProductById = async (req, res) => {
 
     try {
         
-        let idForUpdate = req.params._id;
+        let idForUpdate = req.params.id;
        
       
         let productUpdated = await productModel.findByIdAndUpdate(idForUpdate, req.body);

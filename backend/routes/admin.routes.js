@@ -1,12 +1,12 @@
 import { Router } from "express";
-import { getAdmin, postAdmin, putAdminById, deleteAdminById, getAdminById } from "../controllers/admin.controllers.js";
+import { getAdmin, postAdmin, deleteAdminById } from "../controllers/admin.controllers.js";
+import auth from "../middlewares/auth.js";
 
 const adminRouter = Router();
 
-adminRouter.get('/',getAdmin);
-adminRouter.post('/', postAdmin);
-adminRouter.delete('/:id', deleteAdminById);
-adminRouter.delete('/:id', putAdminById);
-adminRouter.delete('/:id', getAdminById)
+adminRouter.get('/', auth(), getAdmin);
+adminRouter.post('/', auth(), postAdmin);
+adminRouter.delete('/:id', auth(), deleteAdminById);
+
 
 export default adminRouter;
