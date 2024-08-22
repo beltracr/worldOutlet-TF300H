@@ -66,7 +66,7 @@ export const deleteAdminById = async (req, res)=>{
         return res.status(200).json({
             estado:'200',
             mensaje: 'administrador eliminado Correctamente',
-            datos: adminDeleted
+            datos: null
         })
        } catch (error) {
         return res.status(400).json({

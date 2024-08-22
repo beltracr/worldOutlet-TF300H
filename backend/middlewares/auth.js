@@ -16,9 +16,16 @@ const auth = () =>{
             })
         }
 
+     
+
         try {
             const decoded = await verificarToken(token);
             console.log("token decodificado: ", decoded);
+
+            
+
+
+
 
             req.admin = decoded;
             

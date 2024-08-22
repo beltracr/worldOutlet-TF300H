@@ -5,6 +5,7 @@ import productsRouter from "./routes/products.Route.js";
 import adminRouter from "./routes/admin.routes.js";
 import usuariosRouter from "./routes/userRoutes.js"
 import loginRouter from "./routes/login.routes.js";
+import loginUserRouter from "./routes/loginUser.routes.js"
 
 
 const app = express();
@@ -17,7 +18,8 @@ app.use(express.json())
 app.use("/products",productsRouter)
 app.use('/admin', adminRouter);
 app.use('/user', usuariosRouter);
-app.use('/login',loginRouter )
+app.use('/login',loginRouter );
+app.use("/loginuser",loginUserRouter)
 
 
 app.listen(port, ()=> {

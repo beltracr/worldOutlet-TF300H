@@ -20,9 +20,9 @@
 
 
     {
-        "nombre" : "administrador",
-        "correo" : "admino@gmail.com",
-        "contrasena" : "123654",
+        "nombre" : "pepito perez",
+        "correo" : "cliente@gmail.com",
+        "contrasena" : "1234",
         "numerotelefono": 123456,
         "direccion":"av evergreen 742"
        
