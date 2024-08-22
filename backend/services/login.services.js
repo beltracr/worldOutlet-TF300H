@@ -27,7 +27,8 @@ const loginService = async (req,res) => {
 
         const payload ={
             id: adminEncontrado.id,
-            name: adminEncontrado.nombre
+            name: adminEncontrado.nombre,
+            rol:adminEncontrado.CategoriaAdmin
         }
 
         const token = await generarToken(payload)
