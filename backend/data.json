@@ -1,21 +1,34 @@
 [
 
     {
-        "nombre" : "mercedes",
-        "imagen" : "https://www.mercedes-benz.com.co/mercedes/site/artic/20230725/imag/foto_0000001120230725174029/AMG_BANNERS_640x400.jpg",
-        "precio" : 5.000000,
-        "descripcion": "descpcion de producto"
+        "nombre" : "ejemplo producto",
+        "imagen" : "https://pruebaproducto",
+        "descripcion": "descpcion de producto",
+        "precio" : 12345,
+        "talla": "S,M,L,XL",
+        "color": "azul,verde"
+        
     },
 
     {
-        "nombre" : "Angelo Gonzalez",
-        "correo" : "adminangelo@gmail.com",
-        "contrasena" : "123654",
-        "numeroTelefono" : "313131313",
-        "direccion" : "call1 av 3",
-        "categoriaAdmin": "true"
-    }
-]
+        "nombre" : "administrador",
+        "correo" : "admino@gmail.com",
+        "contrasena" : "aaa123654",
+        "categoriaAdmin" : true
+        
+    },
 
- 
+
+    {
+        "nombre" : "administrador",
+        "correo" : "admino@gmail.com",
+        "contrasena" : "123654",
+        "numerotelefono": 123456,
+        "direccion":"av evergreen 742"
+       
+        
+    }
+
+
+]
    
