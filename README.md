@@ -29,6 +29,10 @@ git clone https://github.com/beltracr/worldOutlet-TF300H.git
 ```shell
 npm install
 ```
+3. Instalacion de Angular
+```shell
+npm install -g @angular/cli
+```
 
 # 🛫 Inicializacion:
 ```shell
