@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1ba5959f-1e75-4756-b213-8e65ef41f62d" name="Changes" comment="Solucion error app.component.css" />
+    <list default="true" id="1ba5959f-1e75-4756-b213-8e65ef41f62d" name="Changes" comment="actualizacion modulo administrador" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -34,7 +34,7 @@
                 <list>
                   <RecentBranch>
                     <option name="branchName" value="desarrollo" />
-                    <option name="lastUsedInstant" value="1724439888" />
+                    <option name="lastUsedInstant" value="1724449979" />
                   </RecentBranch>
                   <RecentBranch>
                     <option name="branchName" value="ramaDavid" />
@@ -166,7 +166,15 @@
       <option name="project" value="LOCAL" />
       <updated>1724440604400</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="actualizacion modulo administrador">
+      <option name="closed" value="true" />
+      <created>1724449965483</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1724449965483</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -188,6 +196,7 @@
     <MESSAGE value="add" />
     <MESSAGE value="cambios al readme" />
     <MESSAGE value="Solucion error app.component.css" />
-    <option name="LAST_COMMIT_MESSAGE" value="Solucion error app.component.css" />
+    <MESSAGE value="actualizacion modulo administrador" />
+    <option name="LAST_COMMIT_MESSAGE" value="actualizacion modulo administrador" />
   </component>
 </project>
