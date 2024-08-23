@@ -12,5 +12,4 @@ export const routes: Routes = [
     {path: 'registro', component: RegistroComponent},
     {path: '', redirectTo: '/inicio', pathMatch: 'full'},
     {path: '**', component: NoEncontradoComponent, title:'404'}
-
 ];
