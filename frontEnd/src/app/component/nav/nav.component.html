@@ -17,12 +17,46 @@
       </button>
     </div>
     <ul class="nav-list">
-        <a routerLink="/inicio"><li>Inicio</li></a>
-        <a routerLink="/hombre"><li>Hombre</li></a>
-        <a routerLink="/mujer"><li>Mujer</li></a>
-        <a routerLink="/registro"><li><i class="bi bi-person-fill"></i></li></a>
-        <a href="#"><li><i class="bi bi-cart3"></i></li></a>
+          <li><a routerLink="/inicio">Inicio</a></li>
+          <li><a routerLink="/hombre">Hombre</a></li>
+          <li><a routerLink="/mujer">Mujer</a></li>
+          <li><a ><i class="bi bi-person-fill" data-bs-toggle="modal" data-bs-target="#exampleModal"></i></a></li>
+          <li><a href="#"><i class="bi bi-cart3"></i></a></li>
     </ul>
+
+ <!-- Modal inicio de sesion / component-->
+ <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+ aria-hidden="true">
+ <div class="modal-dialog">
+     <div class="modal-content">
+         <div class="modal-header inicio-sesion">
+             <h1 class="modal-title fs-5" id="exampleModalLabel">Inicia sesión</h1>
+             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+         </div>
+         <div class="modal-body">
+             <div class="form-floating mb-3">
+                 <input type="email" class="form-control" id="floatingInput"
+                     placeholder="name@example.com">
+                 <label for="floatingInput">Correo electrónico</label>
+             </div>
+             <div class="form-floating">
+                 <input type="password" class="form-control" id="floatingPassword"
+                     placeholder="Password">
+                 <label for="floatingPassword">Contraseña</label>
+             </div>
+         </div>
+         <div class="modal-footer bot-ini-cre-cuet">
+             <button type="button" class="btn btn-ini-ses">Iniciar sesión</button>
+             <a class="p-regis" href="#">¿ Aún no estas registrado ?</a>
+             <button type="button" class="btn btn-crea-cta" data-bs-dismiss="modal"> <a
+                     href="./pages/registro.html">Crear Cuenta</a></button>
+         </div>
+     </div>
+ </div>
+</div>
+
+
+
   </nav>
   <!-- <img class="img-banner" src="/assets/img-header.jpg" alt=""> -->
 </div>

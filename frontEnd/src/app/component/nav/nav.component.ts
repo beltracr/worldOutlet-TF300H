@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { ModalIniSesionComponent } from '../modal-ini-sesion/modal-ini-sesion.component';
 
@@ -10,4 +10,5 @@ import { ModalIniSesionComponent } from '../modal-ini-sesion/modal-ini-sesion.co
   styleUrl: './nav.component.css'
 })
 export class NavComponent {
+
 }
