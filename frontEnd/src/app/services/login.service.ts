@@ -39,7 +39,7 @@ export class LoginService {
 
   redirect() {
     if (this.isAdmin()) {
-      window.location.href = '/private';
+      window.location.href = '/admin';
     } else {
       window.location.href = '/';
     }
