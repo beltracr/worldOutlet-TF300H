@@ -25,67 +25,221 @@
   --textoAnuncios: "Anton", sans-serif;
 }
 
-.body {
-    font-family: var(--textos);
-    margin : 0;
-    padding-top: 8%;
-    box-sizing: border-box;
+main{
+    width: 100%;
+    height: auto;
+    overflow-x: hidden;
 }
 
-.category-links {
+.container-ref{
+    gap: 60px;
+    width: 100%;
+    font-family: var(--T-subtitulos);
+    color: #000000;
+    background-color: rgb(224, 224, 224);
+    padding-top: 1%;
+}
+
+.pH{
+    font-size: 20px;
+}
+
+.ref-p{
     display: flex;
-    justify-content: space-around;
-    padding: 20px;
-    text-align: center;
+    font-style: italic;
+    text-decoration: underline;
+    white-space: nowrap;
+    animation: moverTexto 12s linear infinite;
+
 }
 
-img {
-    box-shadow: 3px 3px 6px 0px rgba(0, 0, 0, 0.2);
+@keyframes moverTexto {
+    0% {
+        transform: translateX(100%);
+    }
+    100% {
+        transform: translateX(-60%);
+    }
 }
 
-.category a :hover{
-    box-shadow: 6px 6px 12px 2px var(--fondo-2);
-}
-
-p :hover{
-    box-shadow:none;
-}
-
-.category img {
-    width: 100px;
-    height: 100px;
-    object-fit: cover;
-}
-
-a {
+.container-ref a{
     text-decoration: none;
-    color: inherit;
-}
-
-.video-promocional {
+    color: #000000;
     text-align: center;
-    padding: 7rem;
 }
 
-.featured {
+.banner{
+    padding-top: 5%;
     display: flex;
-    justify-content: space-around;
-    padding: 20px;
+    text-align: center; 
+    width: 100%;
 }
 
-.featured-item img {
-    width: 300px;
-    height: 300px;
-    object-fit: cover;
-    filter: drop-shadow(1px 1px 20px var(--text-hoover));
+.banner img{
+    overflow-x:auto;
+    max-width: 100%;
+
 }
 
-.featured-item a :hover{
-    box-shadow: 6px 6px 12px 2px rgba(0, 0, 0, 1);
-    transition: 0.5s ease-in-out;
-    border-radius: 50%;
+h1{
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 60px;
+    font-family: var(--textoAnuncios);
+    padding-top: 1%;
+    color: #000000;
 }
 
-.featured-item{
-    text-align: center;
+.des-nac{
+    font-size: 17px;
+    font-family: var(--textos);
+    width: 55%;
+    margin-left: 23%;
 }
+
+.reg-gra{
+    background-color: #000000;
+    color: #ffffff;
+    padding: 6px 6px;
+    font-family: var(--textos);
+    transition: .5s, color .10s;
+    animation-name: pulse;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+}
+
+.reg-gra:hover{
+    color: #DC5F00;
+    transition: 0.15s ease-in-out;
+    box-shadow: 4px 6px 4px -2px rgba(0, 0, 0, 0.5);
+}
+  
+  @keyframes pulse {
+    0% {transform: scale(1);}
+    50% {transform: scale(1.1);}
+    100% {transform: scale(1);}
+  }
+
+/* Estilos section hora de correr */
+
+.sec-time-running{
+    width: 95%;
+    margin-left: 3%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-bottom: 2%;
+}
+
+.time-runnig{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Boton de scrol */
+
+.boton-scrol-producto {
+    display: flex;
+    justify-content: end;
+}
+
+.scrol-producto button {
+    color: var(--color-fondo);
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 50px;
+    background: none;
+    border: 0;
+    color: inherit;
+    color: var(--color-fondo);
+}
+
+.boton-scrol-producto button {
+    color: var(--color-fondo);
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 60px;
+    background: none;
+    border: 0;
+    color: inherit;
+    color: var(--color-fondo);
+    transition: 0.4s ease-in-out;
+}
+
+.boton-scrol-producto button:hover {
+    color: var(--text-hoover);
+}
+
+.b1 {
+    margin-top: 4%;
+    bottom: -10px;
+}
+
+.b1 button:hover {
+    color: var(--text-hoover);
+    transition: 0.4s ease-in-out;
+}
+
+.time-runnig{
+    display: flex;
+}
+
+.container-runnig{
+    display: flex;
+    flex-direction: column;
+    flex: 0 0 auto;
+    width: 25%;
+    height: 30%;
+    border: solid 1px rgb(227, 219, 219);
+    border-radius: 5px;
+    padding: 0 1% 0 1%;
+    /* box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.1); */
+}
+
+.container-runnig:hover{
+    transition: 0.15s ease-in-out;
+    box-shadow: 2px 1px 2px 1px rgba(0, 0, 0, 0.475);
+}
+
+.container-runnig img{
+    width: 100%;
+    height: 80%;
+}
+
+.container-runnig h4{
+    font-family: var(--textos);
+}
+
+.shopRunnig{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.boton-comprar {
+    background: var(--color-fondo);
+    border: none;
+    font-size: 12PX;
+    border-radius: 8px;
+    font-weight: bold;
+    padding: 5px 15px;
+    font-family: var(--T-subtitulos);
+    transition: .4s, color .9s;
+    margin-bottom: 5%;
+}
+
+.boton-comprar:hover {
+    background-color: var(--text-hoover);
+    font-size: 12px;
+    border: none;
+    box-shadow: 0 4px 3px -1px rgba(0, 0, 0, 0.5);
+}
+
+.precios{
+    color: gray;
+    font-weight: bold;
+    font-family: var(--T-subtitulos);
+}
+
+
