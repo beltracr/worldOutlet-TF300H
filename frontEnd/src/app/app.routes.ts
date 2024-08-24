@@ -5,9 +5,9 @@ import { MujerComponent } from './pages/mujer/mujer.component';
 import { RegistroComponent } from './pages/registro/registro.component';
 import { NoEncontradoComponent } from './pages/no-encontrado/no-encontrado.component';
 import {AdminVistaComponent} from "./pages/admin-vista/admin-vista.component";
-import {UsuariosComponent} from "./administrador/usuarios/usuarios.component";
-import {UsuariosAdminComponent} from "./administrador/usuarios-admin/usuarios-admin.component";
-import {ProductosComponent} from "./administrador/productos/productos.component";
+import {UsuariosComponent} from "./administrador/pages/usuarios/usuarios.component";
+import {UsuariosAdminComponent} from "./administrador/pages/usuarios-admin/usuarios-admin.component";
+import {ProductosComponent} from "./administrador/pages/productos/productos.component";
 
 export const routes: Routes = [
     {path: 'inicio', component: InicioComponent},
