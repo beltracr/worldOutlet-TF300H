@@ -20,17 +20,15 @@ export class LoginService {
     return this.httpClient.post(this.API_URL, credenciales)
   }
 
+
+
   getToken() {
-
     return localStorage.getItem('token');
-
-
   }
 
   isAdmin() {
     const token = this.getToken();
     if (token) {
-
       const decoded: any = jwtDecode(token);
       return decoded.isAdmin || false;
     } else {
@@ -41,25 +39,20 @@ export class LoginService {
 
   redirect() {
     if (this.isAdmin()) {
-      window.location.href = '/private';
-
+      window.location.href = '/admin';
     } else {
       window.location.href = '/';
-
     }
   }
-  isLogged() {
 
+  isLogged() {
     return this.getToken() ? true : false;
   }
 
 
   logout() {
-
     this.toastrService.info('sesion finalizada con exito');
-
     localStorage.removeItem('token');
-
     this.router.navigate(['/'])
   }
 
