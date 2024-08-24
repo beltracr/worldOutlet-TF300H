@@ -4,6 +4,7 @@ import { HombreComponent } from './pages/hombre/hombre.component';
 import { MujerComponent } from './pages/mujer/mujer.component';
 import { RegistroComponent } from './pages/registro/registro.component';
 import { NoEncontradoComponent } from './pages/no-encontrado/no-encontrado.component';
+import { authGuard } from './guards/auth.guard';
 
 export const routes: Routes = [
     {path: 'inicio', component: InicioComponent},
