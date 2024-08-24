@@ -27,8 +27,6 @@
     --textoAnuncios: "Anton", sans-serif;
 }
 
-
-
 .abrir-menu {
     display: none;
 }
@@ -59,7 +57,7 @@
     position: fixed;
     z-index: 1000;
     background-color: black;
-    height: 11vh;
+    height: 10vh;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -78,13 +76,10 @@
     font-size: 17px;
     transition: all 0.3s ease;
     margin-top: 3%;
-
     position: relative;
-  display: block;
-  padding: 5px;
-
+    display: block;
+    padding: 5px;
 }
-
 
 .nav-list a::before {
     content: '';
@@ -96,16 +91,14 @@
     background: linear-gradient(to right, #DC5F00, #fee0e0, #DC5F00);
     z-index: 1;
     transform: scaleX(0);
-    /* transform-origin: left; */
     transition: transform 0.5s ease-in-out;
-  }
+}
   
   .nav-list a:hover::before {
     transform: scaleX(1);
     transform-origin: center;
-  }
+}
 
-  
 .nav-list a:hover{
     color: var(--text-hoover);
     transition: 0.4s ease-in-out;
@@ -198,4 +191,8 @@ input {
 
 .scrol{
     height: 100px;
+}
+
+.icon-user{
+    color: var(--color-text);
 }

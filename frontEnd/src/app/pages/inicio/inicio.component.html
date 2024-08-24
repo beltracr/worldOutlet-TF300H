@@ -72,23 +72,23 @@
 
   <!-- inicio de section de mis promociones -->
 
-  <section class="promociones-sport-shopping">
+  <section class="promociones-sport-shopping" >
     <!-- nuevas promociones y boton de activar scroll horizontal -->
     <div class="nueva-prom">
       <h2 class="h2promos">Nuevas Promociones</h2>
-      <div class="scrol-producto b1" id="btn-prom-new">
+      <div class="scrol-producto b1">
         <button>
-          <i class="bi bi-chevron-left" id="btn-prom-left"></i>
+          <i class="bi bi-chevron-left" (click)="runLeft()"></i>
         </button>
         <button>
-          <i class="bi bi-chevron-right" id="btn-prom-right"></i>
+          <i class="bi bi-chevron-right" (click)="runRigh()"></i>
         </button>
       </div>
     </div>
 
     <!-- Contenedor de productos nuevas promociones -->
 
-    <div class="Contenedor-nuevasPromociones">
+    <div class="Contenedor-nuevasPromociones" #promContainer>
       <div class="nuevasPromos p1">
         <img
           src="/assets/page-hombre/NikeMilerFlash/NikeMilerFlash.jpg"
@@ -105,7 +105,6 @@
           <button class="boton-comprar">COMPRAR</button>
         </div>
       </div>
-
       <div class="nuevasPromos p2">
         <img
           src="/assets/page-mujer/AdiColorClassicSport/AdiColorClassicSport.jpg"
@@ -128,23 +127,23 @@
   <!-- inicio de la section de tendencia mujer-->
 
   <section>
-    <div class="container-tenden-h-m">
+    <div class="container-tenden-h-m" >
       <!-- inicio de las tendencias de mujer-->
       <div class="tend-new">
         <h3 class="sub-tend">Tendencia Mujer</h3>
-        <div class="scrol-producto b1 bts" id="btn-prom-new">
+        <div class="scrol-producto b1 bts">
           <button>
-            <i class="bi bi-chevron-left" id="btn-prom-left"></i>
+            <i class="bi bi-chevron-left" (click)="runLeftW()"></i>
           </button>
           <button>
-            <i class="bi bi-chevron-right" id="btn-prom-right"></i>
+            <i class="bi bi-chevron-right" (click)="runRighW()"></i>
           </button>
         </div>
       </div>
 
       <!-- tendencias mujer -->
 
-      <div class="tendenciaMujer">
+      <div class="tendenciaMujer" #containerWomen>
         <div class="nuevo">
           <button class="boton-verMas">Ver mas</button>
           <img
@@ -165,19 +164,19 @@
 
       <div class="tend-new">
         <h3 class="sub-tend">Tendencia Hombre</h3>
-        <div class="scrol-producto b1 bts" id="btn-prom-new">
+        <div class="scrol-producto b1 bts" >
           <button>
-            <i class="bi bi-chevron-left" id="btn-prom-left"></i>
+            <i class="bi bi-chevron-left" (click)="runLeftM()"></i>
           </button>
           <button>
-            <i class="bi bi-chevron-right" id="btn-prom-right"></i>
+            <i class="bi bi-chevron-right" (click)="runRighM()"></i>
           </button>
         </div>
       </div>
 
       <!-- article de tendencias hombre -->
 
-      <div class="tendenciaHombre">
+      <div class="tendenciaHombre" #containerMen>
         <div class="nuevo">
           <button class="boton-verMas">Ver mas</button>
           <img
@@ -238,7 +237,7 @@
     <div class="anun-reg">
       <h3>únete a nuestro club y obten grandes descuentos</h3>
       <button class="reg-gra">Regístrate Gratis</button>
-    </div>
+    </div>    
   </section>
 </main>
 
