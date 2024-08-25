@@ -1,0 +1,32 @@
+<div class="sidebar" [ngClass]="{'collapsed': isCollapsed}" (mouseover)="expandSidebar()" (mouseout)="collapseSidebar()">
+  <div class="logo">
+    <img src="/assets/logo/logo-world-outlet.png" alt="E-commerce Logo">
+  </div>
+  <nav>
+    <ul>
+      <li>
+        <a routerLink="inventario">
+          <i class="bi bi-boxes"></i>
+          <span *ngIf="!isCollapsed">Inventario</span>
+        </a>
+      </li>
+      <li>
+        <a routerLink="controlUsuarios">
+          <i class="bi bi-people"></i>
+          <span *ngIf="!isCollapsed">Usuarios</span>
+        </a>
+      </li>
+      <li>
+        <a routerLink="controlUsuariosAdmin">
+          <i class="bi bi-person-rolodex"></i>
+          <span *ngIf="!isCollapsed">Usuarios Administradores</span>
+        </a>
+      </li>
+    </ul>
+  </nav>
+  <div class="user-active">
+    <i class="bi bi-person-badge"></i>
+    <span *ngIf="!isCollapsed">Administrador</span>
+  </div>
+</div>
+<router-outlet />
