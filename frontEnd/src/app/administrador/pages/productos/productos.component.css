@@ -1,0 +1,73 @@
+.inventory-table-container {
+  width: 100%;
+  overflow-x: auto;
+  padding-left: 2rem;
+}
+
+.inventory-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 18px;
+  text-align: center;
+}
+
+.inventory-table th, .inventory-table td {
+  padding: 15px 15px;
+}
+
+.inventory-table th {
+  background-color: black;
+  color: white;
+}
+
+.inventory-table td {
+  vertical-align: middle;
+}
+
+.inventory-table .product-image {
+  width: 50px;
+  height: 50px;
+  object-fit: cover;
+}
+
+.actions {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  width: 100%;
+}
+
+.actions button {
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.actions i {
+  font-size: 30px;
+  color: #333;
+}
+
+.actions i.fa-edit {
+  color: #4CAF50; /* Editar - Verde */
+}
+
+.actions i.fa-trash {
+  color: #F44336; /* Eliminar - Rojo */
+}
+
+/* Responsividad */
+@media (max-width: 768px) {
+  .inventory-table {
+    font-size: 14px;
+  }
+
+  .inventory-table th, .inventory-table td {
+    padding: 8px 10px;
+  }
+
+  .inventory-table .product-image {
+    width: 40px;
+    height: 40px;
+  }
+}

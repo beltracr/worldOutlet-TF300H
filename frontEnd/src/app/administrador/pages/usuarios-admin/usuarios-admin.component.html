@@ -1,1 +1,29 @@
-<p>usuarios-admin works!</p>
+<div class="usuarios-admin-table-container">
+  <table class="usuarios-admin-table">
+    <thead>
+    <tr>
+      <th>Nombre</th>
+      <th>Correo</th>
+      <th>Teléfono</th>
+      <th>Categoria</th>
+      <th>Acciones</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let usuarioAdmin of usuariosAdmin">
+      <td>{{ usuarioAdmin.nombre }}</td>
+      <td>{{ usuarioAdmin.correo }}</td>
+      <td>{{ usuarioAdmin.telefono }}</td>
+      <td>{{ usuarioAdmin.categoria }}</td>
+      <td class="actions">
+        <button>
+          <i class="bi bi-pencil-square"></i>
+        </button>
+        <button>
+          <i class="bi bi-trash"></i>
+        </button>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+</div>

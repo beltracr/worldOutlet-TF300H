@@ -1,1 +1,29 @@
-<p>usuarios works!</p>
+<div class="users-table-container">
+  <table class="users-table">
+    <thead>
+    <tr>
+      <th>Nombre</th>
+      <th>Correo</th>
+      <th>Teléfono</th>
+      <th>Dirección</th>
+      <th>Acciones</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let usuario of usuarios">
+      <td>{{ usuario.nombre }}</td>
+      <td>{{ usuario.correo }}</td>
+      <td>{{ usuario.telefono }}</td>
+      <td>{{ usuario.direccion }}</td>
+      <td class="actions">
+        <button (click)="editarUsuario(usuario.id)">
+          <i class="bi bi-pencil-square"></i>
+        </button>
+        <button (click)="eliminarUsuario(usuario.id)">
+          <i class="bi bi-trash"></i>
+        </button>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+</div>

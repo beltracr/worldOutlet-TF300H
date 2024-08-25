@@ -4,7 +4,22 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1ba5959f-1e75-4756-b213-8e65ef41f62d" name="Changes" comment="actualizacion modulo administrador" />
+    <list default="true" id="1ba5959f-1e75-4756-b213-8e65ef41f62d" name="Changes" comment="actualizacion modulo administrador">
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_17_8_2024_09_53__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_17_8_2024_09_53__Changes_.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontEnd/package-lock.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontEnd/src/app/administrador/pages/productos/productos.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontEnd/src/app/administrador/pages/productos/productos.component.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontEnd/src/app/administrador/pages/productos/productos.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontEnd/src/app/administrador/pages/productos/productos.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontEnd/src/app/administrador/pages/productos/productos.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontEnd/src/app/administrador/pages/productos/productos.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontEnd/src/app/administrador/pages/usuarios-admin/usuarios-admin.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontEnd/src/app/administrador/pages/usuarios-admin/usuarios-admin.component.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontEnd/src/app/administrador/pages/usuarios-admin/usuarios-admin.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontEnd/src/app/administrador/pages/usuarios-admin/usuarios-admin.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontEnd/src/app/administrador/pages/usuarios-admin/usuarios-admin.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontEnd/src/app/administrador/pages/usuarios-admin/usuarios-admin.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontEnd/src/app/administrador/pages/usuarios/usuarios.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontEnd/src/app/administrador/pages/usuarios/usuarios.component.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontEnd/src/app/administrador/pages/usuarios/usuarios.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontEnd/src/app/administrador/pages/usuarios/usuarios.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontEnd/src/app/administrador/pages/usuarios/usuarios.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontEnd/src/app/administrador/pages/usuarios/usuarios.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontEnd/src/app/pages/admin-vista/admin-vista.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontEnd/src/app/pages/admin-vista/admin-vista.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontEnd/src/app/pages/admin-vista/admin-vista.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontEnd/src/app/pages/admin-vista/admin-vista.component.ts" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -13,7 +28,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="ramaDavid" />
+        <entry key="$PROJECT_DIR$" value="desarrollo" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -49,12 +64,12 @@
       </RecentBranches>
     </option>
   </component>
-  <component name="GithubPullRequestsUISettings">{
-  &quot;selectedUrlAndAccountId&quot;: {
-    &quot;url&quot;: &quot;https://github.com/beltracr/worldOutlet-TF300H.git&quot;,
-    &quot;accountId&quot;: &quot;5338c3d4-0022-4f12-87c0-8399a2971983&quot;
+  <component name="GithubPullRequestsUISettings"><![CDATA[{
+  "selectedUrlAndAccountId": {
+    "url": "https://github.com/beltracr/worldOutlet-TF300H.git",
+    "accountId": "2854e903-48df-4ef1-97b6-cfaba42f4c4f"
   }
-}</component>
+}]]></component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 2
 }</component>
@@ -67,7 +82,7 @@
   "keyToString": {
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SONARLINT_PRECOMMIT_ANALYSIS": "true",
-    "git-widget-placeholder": "desarrollo",
+    "git-widget-placeholder": "ramaDavid",
     "ignore.virus.scanning.warn.message": "true",
     "ignore_missing_gitignore": "true",
     "node.js.detected.package.eslint": "true",
@@ -78,12 +93,13 @@
     "npm.ng.executor": "Run",
     "npm.start.executor": "Run",
     "settings.editor.selected.configurable": "preferences.lookFeel",
-    "ts.external.directory.path": "C:\\Users\\Auxi\\Desktop\\DavidBootcamp\\ProyectoFinal\\worldOutlet-TF300H\\frontEnd\\node_modules\\typescript\\lib",
+    "ts.external.directory.path": "C:\\Users\\David Medina\\Desktop\\proyectoFinalModulo2\\worldOutlet-TF300H\\frontEnd\\node_modules\\typescript\\lib",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\David Medina\Desktop\proyectoFinalModulo2\worldOutlet-TF300H\frontEnd\src\app\administrador\components" />
       <recent name="C:\Users\Auxi\Desktop\DavidBootcamp\ProyectoFinal\worldOutlet-TF300H\frontEnd\src\app\pages" />
     </key>
   </component>

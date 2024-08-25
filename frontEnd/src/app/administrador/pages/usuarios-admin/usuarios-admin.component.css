@@ -1,0 +1,62 @@
+.usuarios-admin-table-container {
+  width: 100%;
+  overflow-x: auto;
+  padding-left: 2rem;
+}
+
+.usuarios-admin-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 18px;
+  text-align: center;
+}
+
+.usuarios-admin-table th, .usuarios-admin-table td {
+  padding: 12px 15px;
+  border-bottom: 1px solid #ddd;
+}
+
+.usuarios-admin-table th {
+  background-color: black;
+  color: white;
+}
+
+.usuarios-admin-table td {
+  vertical-align: middle;
+}
+
+.actions {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+}
+
+.actions button {
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.actions i {
+  font-size: 30px;
+  color: #333;
+}
+
+.actions i.fa-edit {
+  color: #4CAF50; /* Editar - Verde */
+}
+
+.actions i.fa-trash {
+  color: #F44336; /* Eliminar - Rojo */
+}
+
+/* Responsividad */
+@media (max-width: 768px) {
+  .usuarios-admin-table {
+    font-size: 14px;
+  }
+
+  .usuarios-admin-table th, .usuarios-admin-table td {
+    padding: 8px 10px;
+  }
+}
