@@ -3,22 +3,31 @@
     <thead>
     <tr>
       <th>ID</th>
-      <th>Categoría</th>
-      <th>Nombre del Producto</th>
-      <th>Cantidad</th>
+      <th>Nombre del producto</th>
       <th>Imagen</th>
+      <th>Descripcion</th>
+      <th>Talla</th>
+      <th>Color</th>
+      <th>Categoria</th>
+      <th>Cantidad</th>
+      <th>Precio</th>
       <th>Acciones</th>
     </tr>
     </thead>
-    <tbody>
-    <tr *ngFor="let producto of productos">
-      <td>{{ producto.id }}</td>
-      <td>{{ producto.categoria }}</td>
+    <tbody id="mitabla" > @for(producto of todosProductos;track $index){
+    <tr>
+      <td>{{ producto._id }}</td>
       <td>{{ producto.nombre }}</td>
-      <td>{{ producto.cantidad }}</td>
       <td>
         <img [src]="producto.imagen" alt="{{ producto.nombre }}" class="product-image">
       </td>
+      <td>{{ producto.descripcion}}</td>
+      <td>{{ producto.talla }}</td>
+      <td>{{ producto.color}}</td>
+      <td>{{ producto.categoria }}</td>
+      <td>{{ producto.cantidad }}</td>
+      <td>{{ producto.precio }}</td>
+      
       <td class="actions">
         <button>
           <i class="bi bi-pencil-square"></i>
@@ -27,7 +36,7 @@
           <i class="bi bi-trash"></i>
         </button>
       </td>
-    </tr>
+    </tr>}
     </tbody>
   </table>
 </div>

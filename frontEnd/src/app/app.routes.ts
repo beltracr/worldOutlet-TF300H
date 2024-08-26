@@ -8,6 +8,7 @@ import {AdminVistaComponent} from "./pages/admin-vista/admin-vista.component";
 import {UsuariosComponent} from "./administrador/pages/usuarios/usuarios.component";
 import {UsuariosAdminComponent} from "./administrador/pages/usuarios-admin/usuarios-admin.component";
 import {ProductosComponent} from "./administrador/pages/productos/productos.component";
+import { authGuard } from './guards/auth.guard';
 
 export const routes: Routes = [
     {path: 'inicio', component: InicioComponent},
