@@ -18,12 +18,7 @@ const productSchema = new schema({
         type: String,
         required: true
     },
-
-    precio:{
-        type:Number,
-        require: true
-    },
-    
+ 
     talla:{
         type:[String],
         required: true
@@ -31,6 +26,19 @@ const productSchema = new schema({
     color:{
         type:[String],
         required: true
+    },
+    categoria:{
+        type:String,
+        required:true
+    },
+
+    cantidad:{
+        type:Number,
+        required:true
+    },
+    precio:{
+        type:Number,
+        require: true
     }
 
 });
