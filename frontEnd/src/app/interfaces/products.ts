@@ -1,5 +1,5 @@
 export interface Products {
-    id:string,
+    
     nombre:string,
     imagen:string,
     descripcion:string,
@@ -7,6 +7,7 @@ export interface Products {
     color: [string],
     categoria: string,
     cantidad:number,
-    precio:number
+    precio:number,
+    
    
 }

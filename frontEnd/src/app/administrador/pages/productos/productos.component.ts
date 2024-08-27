@@ -3,8 +3,11 @@ import { NgForOf } from "@angular/common";
 import { ProductsService } from '../../../services/products.service';
 import { FormsModule } from '@angular/forms';
 import { LoginService } from '../../../services/login.service';
-import { UsersService  } from '../../../services/users.service';
+import { UsersService } from '../../../services/users.service';
 import { HttpHeaders } from '@angular/common/http';
+import { ThisReceiver } from '@angular/compiler';
+import { Products } from '../../../interfaces/products';
+
 
 
 
@@ -29,8 +32,11 @@ import { HttpHeaders } from '@angular/common/http';
 
 export class ProductosComponent {
 
-  producto = inject(ProductsService)
+  producto = inject(ProductsService);
   loginService = inject(LoginService);
+
+
+
 
 
   todosProductos: any[] = []
@@ -47,7 +53,7 @@ export class ProductosComponent {
   editMode: boolean = false;
   editarProductoId: string | null = null;
 
-  
+
 
 
   obtenerProductos() {
@@ -68,26 +74,37 @@ export class ProductosComponent {
 
   crearProductos() {
 
+   
 
 
-    if(!this.nombre || !this.imagen || !this.descripcion|| 
-      !this.talla || !this.color || !this.categoria || 
-      !this.cantidad || !this.precio ){
-        console.log("se debe ingresar todos los campos")
-      }else{
-        console.log(this.nombre, this.imagen, this.descripcion,
-           this.talla, this.color, this.categoria,
-           this.cantidad, this.precio);
 
-           this.producto.postProducts(this).subscribe((res:any)=>{
+    if (!this.nombre || !this.imagen || !this.descripcion ||
+      !this.talla || !this.color || !this.categoria ||
+      !this.cantidad || !this.precio) {
+      console.log("se debe ingresar todos los campos")
+    } else {
+
+    const   nuevoProducto: Products = {
+      nombre: this.nombre,
+      imagen:this.imagen,
+      descripcion: this.descripcion,
+      talla: this.talla,
+      color:this.color,
+      categoria: this.categoria,
+      cantidad: this.cantidad,
+      precio:this.precio
+    }
+
+
+           this.producto.postProducts(nuevoProducto).subscribe((res:any)=>{
             try{
               if(res){
                 console.log("res",res)
               }
-            }catch(error){console.log(error)}
+            }catch(error){alert(error)}
            })
-      }
-   
+    }
+
 
   }
   editarProductos() {
