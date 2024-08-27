@@ -243,3 +243,86 @@ h1{
 }
 
 
+
+.container-aliados{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 4%;
+    flex-direction: column;
+
+}
+
+.h3Aliados{
+    margin: 2% 0%;
+    font-size: 35px;
+    padding-bottom: 5%;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.aliados img{
+    max-width: 7rem;
+    margin-inline: 50px;
+
+}
+
+.logo-ali{
+    margin: 0% 25%;
+    margin-top: 5%;
+}
+
+.anun-reg{
+    display: flex;
+    justify-content: space-around;
+    background: rgb(41,41,41);
+    background: linear-gradient(90deg, rgba(41,41,41,1) 0%, rgba(253,29,29,1) 54%, rgba(252,176,69,1) 100%);
+    padding: 4% 3%;
+    align-items: center;
+
+}
+
+.anun-reg h3{
+    font-size: 35px;
+    text-transform:uppercase;
+    font-weight: bold;
+    color: #D9D9D9;
+}
+
+
+.reg-gra{
+    background-color: #000000;
+    color: #ffffff;
+    padding: 1% 2%;
+    text-transform:uppercase;
+    font-family: var(--textos);
+    font-weight: bold
+}
+
+.reg-gra:hover{
+    color: #DC5F00;
+    transition: 0.3s ease-in-out;
+}
+
+.sec{
+    border: none;
+    padding: 0;
+    margin-top: 2%;
+}
+
+.sec h4{
+    margin-top: 5%;
+    font-weight: bold;
+    margin-left: 1%;
+}
+
+.ContainerDeportes{
+    display: flex;
+    gap: 50px;
+}
+
+.sec img{
+    max-width: 25rem;
+    height: 12rem;
+    object-fit: cover;
+}

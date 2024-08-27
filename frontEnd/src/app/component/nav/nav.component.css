@@ -68,6 +68,8 @@
     display: flex;
     gap: 50px;
     list-style: none;
+    align-items: center;
+    margin-top: 1%;
 }
 
 .nav-list a{
@@ -77,8 +79,7 @@
     transition: all 0.3s ease;
     margin-top: 3%;
     position: relative;
-    display: block;
-    padding: 5px;
+    /* display: block; */
 }
 
 .nav-list a::before {
