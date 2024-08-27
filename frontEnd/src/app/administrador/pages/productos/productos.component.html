@@ -1,43 +1,158 @@
+<div class="caja1">
+  <div class="container">
+    @if(mostrarFormulario){
+    
+
+    <form class="py-5 col-lg-6">
+      
+      <div>
+        <h3>{{ editMode ? "Modificar Producto" : "Crear Producto" }}</h3>
+      </div>
+      <div class="mb-3">
+        <label for="inputName" class="form-label">Nombre</label>
+        <input
+          type="text"
+          class="form-control"
+          name="nombre"
+          [(ngModel)]="nombre"
+        />
+      </div>
+      <div class="mb-3">
+        <label for="inputImagen" class="form-label">Imagen</label>
+        <input
+          type="text"
+          class="form-control"
+          name="imagen"
+          [(ngModel)]="imagen"
+        />
+      </div>
+      <div class="mb-3">
+        <label for="inputDescripcion" class="form-label">Descritpcion</label>
+        <input
+          type="text"
+          class="form-control"
+          name="descripcion"
+          [(ngModel)]="descripcion"
+        />
+      </div>
+      <div class="mb-3">
+        <label for="inputtalla" class="form-label">Talla</label>
+        <input
+          type="[text]"
+          class="form-control"
+          name="talla"
+          [(ngModel)]="talla"
+        />
+      </div>
+      <div class="mb-3">
+        <label for="inputColor" class="form-label">color</label>
+        <input
+          type="[text]"
+          class="form-control"
+          name="color"
+          [(ngModel)]="color"
+        />
+      </div>
+      <div class="mb-3">
+        <label for="inputCategoria" class="form-label">Categoria</label>
+        <input
+          type="text"
+          class="form-control"
+          name="categoria"
+          [(ngModel)]="categoria"
+        />
+      </div>
+      <div class="mb-3">
+        <label for="inputCantidad" class="form-label">Cantidad</label>
+        <input
+          type="number"
+          class="form-control"
+          name="cantidad"
+          [(ngModel)]="cantidad"
+        />
+      </div>
+      <div class="mb-3">
+        <label for="inputPrecio" class="form-label">Precio</label>
+        <input
+          type="number"
+          class="form-control"
+          name="precio"
+          [(ngModel)]="precio"
+        />
+      </div>
+
+      <button
+        (click)="editMode ? editarProductos() : crearProductos()"
+        type="button"
+        class="btn btn-primary bg-my-color col-12"
+      >
+        {{ editMode ? "Modificar Producto" : "Crear Producto" }}
+      </button>
+      <button
+        (click)="toggleDiv()"
+        type="button"
+        class="btn btn-danger bg-my-color col-12 mt-3"
+      >
+        Cerrar
+      </button>
+    </form>}
+    
+  </div>
+</div>
+
 <div class="inventory-table-container">
   <table class="inventory-table">
     <thead>
-    <tr>
-      <th>ID</th>
-      <th>Nombre del producto</th>
-      <th>Imagen</th>
-      <th>Descripcion</th>
-      <th>Talla</th>
-      <th>Color</th>
-      <th>Categoria</th>
-      <th>Cantidad</th>
-      <th>Precio</th>
-      <th>Acciones</th>
-    </tr>
+      <tr>
+        <th>ID</th>
+        <th>Nombre del producto</th>
+        <th>Imagen</th>
+        <th>Descripcion</th>
+        <th>Talla</th>
+        <th>Color</th>
+        <th>Categoria</th>
+        <th>Cantidad</th>
+        <th>Precio</th>
+        <th>Acciones</th>
+      </tr>
     </thead>
-    <tbody id="mitabla" > @for(producto of todosProductos;track $index){
-    <tr>
-      <td>{{ producto._id }}</td>
-      <td>{{ producto.nombre }}</td>
-      <td>
-        <img [src]="producto.imagen" alt="{{ producto.nombre }}" class="product-image">
-      </td>
-      <td>{{ producto.descripcion}}</td>
-      <td>{{ producto.talla }}</td>
-      <td>{{ producto.color}}</td>
-      <td>{{ producto.categoria }}</td>
-      <td>{{ producto.cantidad }}</td>
-      <td>{{ producto.precio }}</td>
-      
-      <td class="actions">
-        <button>
-          <i class="bi bi-pencil-square"></i>
-        </button>
-        <button>
-          <i class="bi bi-trash"></i>
-        </button>
-      </td>
-    </tr>}
+
+    <tbody id="mitabla">
+      @for(producto of todosProductos;track $index){
+      <tr>
+        <td>{{ producto._id }}</td>
+        <td>{{ producto.nombre }}</td>
+        <td>
+          <img
+            [src]="producto.imagen"
+            alt="{{ producto.nombre }}"
+            class="product-image"
+          />
+        </td>
+        <td>{{ producto.descripcion }}</td>
+        <td>{{ producto.talla }}</td>
+        <td>{{ producto.color }}</td>
+        <td>{{ producto.categoria }}</td>
+        <td>{{ producto.cantidad }}</td>
+        <td>{{ producto.precio }}</td>
+
+        <td class="actions">
+          <button (click)="identificarId(producto._id)">
+            <i class="bi bi-pencil-square"></i>
+          </button>
+          <button (click)="borrarProducto(producto._id)">
+            <i class="bi bi-trash"></i>
+          </button>
+        </td>
+      </tr>
+      }
     </tbody>
   </table>
 </div>
 
+<div class="botonAgregar">
+  <button type="button" class="btn btn-outline-success" (click)="toggleDiv()">
+    <i class="bi bi-plus"></i>
+    Agregar producto
+  </button>
+</div>
