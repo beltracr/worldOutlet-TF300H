@@ -1,0 +1,13 @@
+<div class="shopping-cart-backdrop" *ngIf="isCartVisible" (click)="closeCart()"></div>
+<div class="shopping-cart-modal" *ngIf="isCartVisible">
+  <div class="shopping-cart-header">
+    <h2>Tu Carrito</h2>
+    <button (click)="closeCart()">X</button>
+  </div>
+  <div class="shopping-cart-items">
+    <!-- Aquí se listarán los productos del carrito -->
+  </div>
+  <div class="shopping-cart-footer">
+    <button (click)="checkout()">Finalizar Compra</button>
+  </div>
+</div>
