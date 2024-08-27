@@ -68,15 +68,21 @@ export class ProductosComponent {
 
   }
 
+
+
   borrarProducto(id: string) {
+    console.log("producto que se borrara tiene el id =", id);
+    this.producto.deleteProducts(id).subscribe((res: any) => {
+      try {
+        if (res) {
+          console.log("res", res)
+        }
+      } catch (error) { console.log(error) }
+    })
 
   }
 
   crearProductos() {
-
-   
-
-
 
     if (!this.nombre || !this.imagen || !this.descripcion ||
       !this.talla || !this.color || !this.categoria ||
@@ -84,30 +90,28 @@ export class ProductosComponent {
       console.log("se debe ingresar todos los campos")
     } else {
 
-    const   nuevoProducto: Products = {
-      nombre: this.nombre,
-      imagen:this.imagen,
-      descripcion: this.descripcion,
-      talla: this.talla,
-      color:this.color,
-      categoria: this.categoria,
-      cantidad: this.cantidad,
-      precio:this.precio
+      const nuevoProducto: Products = {
+        nombre: this.nombre,
+        imagen: this.imagen,
+        descripcion: this.descripcion,
+        talla: this.talla,
+        color: this.color,
+        categoria: this.categoria,
+        cantidad: this.cantidad,
+        precio: this.precio
+      }
+
+
+      this.producto.postProducts(nuevoProducto).subscribe((res: any) => {
+        try {
+          if (res) {
+            console.log("res", res)
+          }
+        } catch (error) { alert(error) }
+      })
     }
 
 
-           this.producto.postProducts(nuevoProducto).subscribe((res:any)=>{
-            try{
-              if(res){
-                console.log("res",res)
-              }
-            }catch(error){alert(error)}
-           })
-    }
-
-
-  }
-  editarProductos() {
 
   }
 
@@ -117,6 +121,45 @@ export class ProductosComponent {
     this.mostrarFormulario = true;
     console.log(this.editarProductoId);
   }
+
+  editarProductos() {
+
+    if (!this.nombre || !this.imagen || !this.descripcion ||
+      !this.talla || !this.color || !this.categoria ||
+      !this.cantidad || !this.precio) {
+      console.log("se debe ingresar todos los campos")
+    } else {
+      try {
+
+        const productoActualizado: Products = {
+          nombre: this.nombre,
+          imagen: this.imagen,
+          descripcion: this.descripcion,
+          talla: this.talla,
+          color: this.color,
+          categoria: this.categoria,
+          cantidad: this.cantidad,
+          precio: this.precio
+        }
+
+        if (this.editarProductoId) {
+          this.producto.updateProducts(productoActualizado, this.editarProductoId).subscribe((res: any) => {
+            if (res) {
+              console.log("res", res)
+
+            }
+          })
+        }
+      } catch (error) {
+        console.log(error)
+
+      }
+
+    }
+
+  }
+
+
 
 
 
