@@ -2,6 +2,11 @@ import { Component, inject } from '@angular/core';
 import { NgForOf } from "@angular/common";
 import { ProductsService } from '../../../services/products.service';
 import { FormsModule } from '@angular/forms';
+import { LoginService } from '../../../services/login.service';
+import { UsersService  } from '../../../services/users.service';
+import { HttpHeaders } from '@angular/common/http';
+
+
 
 
 
@@ -25,6 +30,7 @@ import { FormsModule } from '@angular/forms';
 export class ProductosComponent {
 
   producto = inject(ProductsService)
+  loginService = inject(LoginService);
 
 
   todosProductos: any[] = []
@@ -40,6 +46,8 @@ export class ProductosComponent {
   precio: number = 0;
   editMode: boolean = false;
   editarProductoId: string | null = null;
+
+  
 
 
   obtenerProductos() {
@@ -59,6 +67,9 @@ export class ProductosComponent {
   }
 
   crearProductos() {
+
+
+
     if(!this.nombre || !this.imagen || !this.descripcion|| 
       !this.talla || !this.color || !this.categoria || 
       !this.cantidad || !this.precio ){
@@ -67,6 +78,7 @@ export class ProductosComponent {
         console.log(this.nombre, this.imagen, this.descripcion,
            this.talla, this.color, this.categoria,
            this.cantidad, this.precio);
+
            this.producto.postProducts(this).subscribe((res:any)=>{
             try{
               if(res){
