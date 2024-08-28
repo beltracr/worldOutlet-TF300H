@@ -13,6 +13,7 @@ import { Products } from '../../../interfaces/products';
 
 
 
+
 @Component({
   selector: 'app-productos',
   standalone: true,
@@ -72,15 +73,19 @@ export class ProductosComponent {
 
   borrarProducto(id: string) {
     console.log("producto que se borrara tiene el id =", id);
-    this.producto.deleteProducts(id).subscribe((res: any) => {
-      try {
-        if (res) {
-          console.log("res", res);
-          alert("se elimino correctamente")
-        }
-      } catch (error) { console.log(error) }
-    })
-
+    let isConfirm: boolean = false 
+    isConfirm = confirm("Esta seguro que quiere eliminar este producto");
+    if (isConfirm){
+      this.producto.deleteProducts(id).subscribe((res: any) => {
+        try {
+          if (res) {
+            console.log("res", res);
+            alert("Se elimino correctamente")
+            this.obtenerProductos()
+          }
+        } catch (error) { console.log(error) }
+      })
+    }
   }
   // Swal.fire({
   //   title: "Are you sure?",
@@ -108,6 +113,10 @@ export class ProductosComponent {
 
 
 
+ 
+
+// logica para crear producto
+
   crearProductos() {
 
     if (!this.nombre || !this.imagen || !this.descripcion ||
@@ -126,8 +135,6 @@ export class ProductosComponent {
         cantidad: this.cantidad,
         precio: this.precio
       }
-
-
       this.producto.postProducts(nuevoProducto).subscribe((res: any) => {
         try {
           if (res) {
@@ -136,9 +143,6 @@ export class ProductosComponent {
         } catch (error) { alert(error) }
       })
     }
-
-
-
   }
 
   identificarId(id: string) {
