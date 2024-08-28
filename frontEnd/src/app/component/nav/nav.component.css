@@ -54,7 +54,6 @@
 
 .nav {
     width: 100%;
-    position: fixed;
     z-index: 1000;
     background-color: black;
     height: 10vh;
@@ -196,4 +195,73 @@ input {
 
 .icon-user{
     color: var(--color-text);
+}
+
+
+/* RESPONSIVE PARA IPHONE 12 PRO */
+
+@media (max-width: 575.98px)and (orientation:portrait) {
+
+    main{
+        position: relative;
+    }
+
+    .nav{
+        width: 100%;
+    }
+
+    .img-logo{
+        max-width: 5rem;
+    }
+
+    .nav-list{
+        display: none;
+    }
+
+    .Buscar-container{
+        display: none;
+    }
+
+    .abrir-menu{
+        display: block;
+        background-color: var(--fondo-2);
+        color: gray;
+        border: none;
+        font-size: 38px;
+    }
+
+    .abrir-menu:hover{
+        color: var(--color-text);
+    }
+}   
+
+
+/* RESPONSIVE PARA IPAD PRO */
+
+@media (min-width: 576px) and (max-width: 991.98px) and (orientation:portrait)  {
+
+    .img-logo{
+        max-width: 10rem;
+    }
+
+    .nav{
+        width: 100%;
+    }
+
+    .nav-list{
+        display: block;
+        display: flex;
+    }
+
+    .nav-list a{
+        font-size: 25px;
+    }
+
+    .Buscar-container{
+        display: none;
+    }
+
+    .abrir-menu{
+        display: none;
+    }   
 }

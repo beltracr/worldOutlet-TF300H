@@ -326,3 +326,65 @@ h1{
     height: 12rem;
     object-fit: cover;
 }
+
+
+/* RESPONSIVE PARA IPHONE 12 PRO */
+
+@media ( width >= 300px){
+    
+    main{
+        width: 150%;
+    }
+    
+    .ref-hombre{
+        width: 100%;
+    
+    }
+
+    .banner{
+        width: 154vw;
+    }
+
+    .ref-p{
+        width: 100%;
+    }
+
+    h1{
+        font-size: 40px;
+    }
+
+    .des-nac{
+        width: 100%;
+        margin: 3% 0;
+    }
+
+    .container-runnig{
+        width: 50%;
+    }
+
+    .container-aliados{
+        width: 100%;
+        text-align: center;
+    }
+
+    .logo-ali{
+        width: 100%;
+        margin: 0;
+    }
+
+    .anun-reg h3{
+        font-size: 20px;
+    }
+
+    .reg-gra{
+        font-size: 14px;
+    }
+}
+
+/* RESPONSIVE PARA IPAD PRO */
+
+@media ( width < 1400px) {
+    .banner{
+        padding-top: 0;
+    }
+}
