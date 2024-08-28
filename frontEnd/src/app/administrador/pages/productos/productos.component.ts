@@ -7,6 +7,12 @@ import { UsersService } from '../../../services/users.service';
 import { HttpHeaders } from '@angular/common/http';
 import { ThisReceiver } from '@angular/compiler';
 import { Products } from '../../../interfaces/products';
+import Swal from 'sweetalert2';
+
+
+
+
+
 
 
 
@@ -18,7 +24,7 @@ import { Products } from '../../../interfaces/products';
   selector: 'app-productos',
   standalone: true,
   imports: [
-    NgForOf, FormsModule
+    NgForOf, FormsModule, 
   ],
   templateUrl: './productos.component.html',
   styleUrl: './productos.component.css'
@@ -73,9 +79,9 @@ export class ProductosComponent {
 
   borrarProducto(id: string) {
     console.log("producto que se borrara tiene el id =", id);
-    let isConfirm: boolean = false 
-    isConfirm = confirm("Esta seguro que quiere eliminar este producto");
-    if (isConfirm){
+    let isConfirm: boolean = false
+    isConfirm = confirm("¿Esta seguro que quiere eliminar este producto?");
+    if (isConfirm) {
       this.producto.deleteProducts(id).subscribe((res: any) => {
         try {
           if (res) {
@@ -113,9 +119,9 @@ export class ProductosComponent {
 
 
 
- 
 
-// logica para crear producto
+
+  // logica para crear producto
 
   crearProductos() {
 
@@ -173,13 +179,18 @@ export class ProductosComponent {
         }
 
         if (this.editarProductoId) {
-          this.producto.updateProducts(productoActualizado, this.editarProductoId).subscribe((res: any) => {
-            if (res) {
-              console.log("res", res)
+          let isConfirm: boolean = false
+          isConfirm = confirm("¿Esta seguro que quiere editar este producto?");
+          if (isConfirm){
+            this.producto.updateProducts(productoActualizado, this.editarProductoId).subscribe((res: any) => {
+              if (res) {
+                console.log("res", res);
+                alert("se elimino correctamente")
+                this.obtenerProductos()
 
-            }
-          })
-        }
+              }
+            })
+        }}
       } catch (error) {
         console.log(error)
 
