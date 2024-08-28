@@ -2,6 +2,14 @@ import { Component, inject } from '@angular/core';
 import { NgForOf } from "@angular/common";
 import { ProductsService } from '../../../services/products.service';
 import { FormsModule } from '@angular/forms';
+import { LoginService } from '../../../services/login.service';
+import { UsersService } from '../../../services/users.service';
+import { HttpHeaders } from '@angular/common/http';
+import { ThisReceiver } from '@angular/compiler';
+import { Products } from '../../../interfaces/products';
+
+
+
 
 
 
@@ -24,7 +32,11 @@ import { FormsModule } from '@angular/forms';
 
 export class ProductosComponent {
 
-  producto = inject(ProductsService)
+  producto = inject(ProductsService);
+  loginService = inject(LoginService);
+
+
+
 
 
   todosProductos: any[] = []
@@ -42,6 +54,8 @@ export class ProductosComponent {
   editarProductoId: string | null = null;
 
 
+
+
   obtenerProductos() {
     this.producto.getProducts().subscribe((res: any) => {
       try {
@@ -54,31 +68,50 @@ export class ProductosComponent {
 
   }
 
+
+
   borrarProducto(id: string) {
+    console.log("producto que se borrara tiene el id =", id);
+    this.producto.deleteProducts(id).subscribe((res: any) => {
+      try {
+        if (res) {
+          console.log("res", res)
+        }
+      } catch (error) { console.log(error) }
+    })
 
   }
 
   crearProductos() {
-    if(!this.nombre || !this.imagen || !this.descripcion|| 
-      !this.talla || !this.color || !this.categoria || 
-      !this.cantidad || !this.precio ){
-        console.log("se debe ingresar todos los campos")
-      }else{
-        console.log(this.nombre, this.imagen, this.descripcion,
-           this.talla, this.color, this.categoria,
-           this.cantidad, this.precio);
-           this.producto.postProducts(this).subscribe((res:any)=>{
-            try{
-              if(res){
-                console.log("res",res)
-              }
-            }catch(error){console.log(error)}
-           })
-      }
-   
 
-  }
-  editarProductos() {
+    if (!this.nombre || !this.imagen || !this.descripcion ||
+      !this.talla || !this.color || !this.categoria ||
+      !this.cantidad || !this.precio) {
+      console.log("se debe ingresar todos los campos")
+    } else {
+
+      const nuevoProducto: Products = {
+        nombre: this.nombre,
+        imagen: this.imagen,
+        descripcion: this.descripcion,
+        talla: this.talla,
+        color: this.color,
+        categoria: this.categoria,
+        cantidad: this.cantidad,
+        precio: this.precio
+      }
+
+
+      this.producto.postProducts(nuevoProducto).subscribe((res: any) => {
+        try {
+          if (res) {
+            console.log("res", res)
+          }
+        } catch (error) { alert(error) }
+      })
+    }
+
+
 
   }
 
@@ -88,6 +121,45 @@ export class ProductosComponent {
     this.mostrarFormulario = true;
     console.log(this.editarProductoId);
   }
+
+  editarProductos() {
+
+    if (!this.nombre || !this.imagen || !this.descripcion ||
+      !this.talla || !this.color || !this.categoria ||
+      !this.cantidad || !this.precio) {
+      console.log("se debe ingresar todos los campos")
+    } else {
+      try {
+
+        const productoActualizado: Products = {
+          nombre: this.nombre,
+          imagen: this.imagen,
+          descripcion: this.descripcion,
+          talla: this.talla,
+          color: this.color,
+          categoria: this.categoria,
+          cantidad: this.cantidad,
+          precio: this.precio
+        }
+
+        if (this.editarProductoId) {
+          this.producto.updateProducts(productoActualizado, this.editarProductoId).subscribe((res: any) => {
+            if (res) {
+              console.log("res", res)
+
+            }
+          })
+        }
+      } catch (error) {
+        console.log(error)
+
+      }
+
+    }
+
+  }
+
+
 
 
 

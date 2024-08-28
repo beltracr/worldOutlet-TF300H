@@ -8,6 +8,7 @@ import {AdminVistaComponent} from "./pages/admin-vista/admin-vista.component";
 import {UsuariosComponent} from "./administrador/pages/usuarios/usuarios.component";
 import {UsuariosAdminComponent} from "./administrador/pages/usuarios-admin/usuarios-admin.component";
 import {ProductosComponent} from "./administrador/pages/productos/productos.component";
+import { LoginComponent } from './pages/login/login.component';
 import { authGuard } from './guards/auth.guard';
 
 export const routes: Routes = [
@@ -20,6 +21,7 @@ export const routes: Routes = [
         {path: 'controlUsuariosAdmin', component: UsuariosAdminComponent},
         {path: 'inventario', component: ProductosComponent}
       ]},
+      {path:"login", component:LoginComponent},
     {path: '', redirectTo: '/inicio', pathMatch: 'full'},
     {path: '**', component: NoEncontradoComponent, title:'404'}
 ];
