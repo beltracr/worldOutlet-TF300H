@@ -6,7 +6,7 @@ import adminRouter from "./routes/admin.routes.js";
 import usuariosRouter from "./routes/userRoutes.js"
 import loginRouter from "./routes/login.routes.js";
 import loginUserRouter from "./routes/loginUser.routes.js"
-
+import cors from "cors"
 
 const app = express();
 dotenv.config();
@@ -14,12 +14,13 @@ const port = process.env.PORT;
 
 connectionMongo();
 
-app.use(express.json())
-app.use("/products",productsRouter)
+app.use(express.json());
+app.use(cors());
+app.use("/products",productsRouter);
 app.use('/admin', adminRouter);
 app.use('/user', usuariosRouter);
 app.use('/login',loginRouter );
-app.use("/loginuser",loginUserRouter)
+app.use("/loginuser",loginUserRouter);
 
 
 app.listen(port, ()=> {
