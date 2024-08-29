@@ -82,7 +82,7 @@
       </div>
 
       <button
-        (click)="editMode ? editarProductos() : crearProductos()"
+        (click)="editMode ? botonEditar() : crearProductos()"
         type="button"
         class="btn btn-primary bg-my-color col-12"
       >
@@ -114,6 +114,14 @@
         <th>Cantidad</th>
         <th>Precio</th>
         <th>Acciones</th>
+        <th>
+          <div class="botonAgregar">
+            <button type="button" class="btn btn-outline-success" (click)="toggleDiv()">
+              <i class="bi bi-plus"></i>
+              Agregar producto
+            </button>
+          </div>
+        </th>
       </tr>
     </thead>
 
@@ -140,7 +148,7 @@
           <button (click)="identificarId(producto._id)">
             <i class="bi bi-pencil-square"></i>
           </button>
-          <button (click)="borrarProducto(producto._id)">
+          <button (click)="botonBorrar(producto._id)">
             <i class="bi bi-trash"></i>
           </button>
         </td>
@@ -150,9 +158,3 @@
   </table>
 </div>
 
-<div class="botonAgregar">
-  <button type="button" class="btn btn-outline-success" (click)="toggleDiv()">
-    <i class="bi bi-plus"></i>
-    Agregar producto
-  </button>
-</div>

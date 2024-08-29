@@ -1,5 +1,17 @@
-import { Component } from '@angular/core';
-import {NgForOf} from "@angular/common";
+import { Component, inject } from '@angular/core';
+import { NgForOf } from "@angular/common";
+import { ProductsService } from '../../../services/products.service';
+import { FormsModule } from '@angular/forms';
+import { LoginService } from '../../../services/login.service';
+import { UsersService } from '../../../services/users.service';
+import { HttpHeaders } from '@angular/common/http';
+import { ThisReceiver } from '@angular/compiler';
+import { Products } from '../../../interfaces/products';
+import {AdminService} from '../../../services/admin.service';
+
+
+
+
 
 @Component({
   selector: 'app-usuarios-admin',

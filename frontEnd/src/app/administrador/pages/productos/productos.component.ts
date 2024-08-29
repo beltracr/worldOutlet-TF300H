@@ -7,6 +7,14 @@ import { UsersService } from '../../../services/users.service';
 import { HttpHeaders } from '@angular/common/http';
 import { ThisReceiver } from '@angular/compiler';
 import { Products } from '../../../interfaces/products';
+import Swal from 'sweetalert2';
+import { RouterLink } from '@angular/router';
+
+
+
+
+
+
 
 
 
@@ -18,7 +26,7 @@ import { Products } from '../../../interfaces/products';
   selector: 'app-productos',
   standalone: true,
   imports: [
-    NgForOf, FormsModule
+    NgForOf, FormsModule,
   ],
   templateUrl: './productos.component.html',
   styleUrl: './productos.component.css'
@@ -55,6 +63,15 @@ export class ProductosComponent {
   editarProductoId: string | null = null;
 
 
+ todosLosCampos(){
+  Swal.fire({
+    icon: "error",
+    title: "Oops...",
+    text: "se debe ingresar todos los campos",
+    footer: '<a href="/admin/inventario">¿Quieres ir atras?</a>'
+  });
+ }
+
 
 
   obtenerProductos() {
@@ -68,54 +85,75 @@ export class ProductosComponent {
     })
 
   }
+// 
+// 
+// 
+// 
+// borrar
+
+botonBorrar(id:string){
+  const swalWithBootstrapButtons = Swal.mixin({
+    customClass: {
+      confirmButton: "btn btn-success",
+      cancelButton: "btn btn-danger"
+    },
+    buttonsStyling: false
+  });
+  swalWithBootstrapButtons.fire({
+    title: "¿Estas seguro de eliminar el producto seleccionado?",
+    text: "¡No podras revertirlo!",
+    icon: "warning",
+    showCancelButton: true,
+    confirmButtonText: "Si, eliminar",
+    cancelButtonText: "No, cancelar!",
+    reverseButtons: true
+  }).then((result) => {
+    if (result.isConfirmed) {
+
+      
+      this.borrarProducto(id)
+      swalWithBootstrapButtons.fire({
+        title: "Enhorabuena",
+        text: "El producto ha sido editado",
+        icon: "success"
+      });
+    } else if (
+      /* Read more about handling dismissals below */
+      result.dismiss === Swal.DismissReason.cancel
+    ) {
+      swalWithBootstrapButtons.fire({
+        title: "cancelado",
+        text: "Tu producto no se elimino",
+        icon: "error"
+      });
+    }
+  });
+
+}
+
 
 
 
   borrarProducto(id: string) {
-    console.log("producto que se borrara tiene el id =", id);
-    let isConfirm: boolean = false 
-    isConfirm = confirm("Esta seguro que quiere eliminar este producto");
-    if (isConfirm){
+
       this.producto.deleteProducts(id).subscribe((res: any) => {
         try {
           if (res) {
             console.log("res", res);
-            alert("Se elimino correctamente")
+            console.log("Se elimino correctamente")
             this.obtenerProductos()
           }
         } catch (error) { console.log(error) }
       })
     }
-  }
-  // Swal.fire({
-  //   title: "Are you sure?",
-  //   text: "You won't be able to revert this!",
-  //   icon: "warning",
-  //   showCancelButton: true,
-  //   confirmButtonColor: "#3085d6",
-  //   cancelButtonColor: "#d33",
-  //   confirmButtonText: "Yes, delete it!"
-  // }).then((result) => {
-  //   if (result.isConfirmed) {
-  //     Swal.fire({
-  //       title: "Deleted!",
-  //       text: "Your file has been deleted.",
-  //       icon: "success"
-  //     });
-  //   }
-  // });
-
-
-
-
-
-
-
-
-
- 
-
-// logica para crear producto
+  
+// 
+// 
+// 
+// 
+// 
+// 
+//   Crear 
 
   crearProductos() {
 
@@ -123,6 +161,8 @@ export class ProductosComponent {
       !this.talla || !this.color || !this.categoria ||
       !this.cantidad || !this.precio) {
       console.log("se debe ingresar todos los campos")
+      this.errorCrear()
+      
     } else {
 
       const nuevoProducto: Products = {
@@ -139,11 +179,51 @@ export class ProductosComponent {
         try {
           if (res) {
             console.log("res", res)
+            this.obtenerProductos()
+            this.notificacionCrear()
           }
         } catch (error) { alert(error) }
       })
     }
   }
+
+notificacionCrear(){
+  
+  Swal.fire({
+    position: "top-end",
+    icon: "success",
+    title: "Your work has been saved",
+    showConfirmButton: false,
+    timer: 1500
+  });
+}
+
+errorCrear(){
+  Swal.fire({
+    icon: "error",
+    title: "Oops...",
+    text: "Debes ingresar todos los valores",
+    footer: '<a href="/admin">¿quieres volver atras?</a>'
+  });
+}
+
+
+
+
+// 
+// 
+// 
+// 
+// 
+// 
+// 
+// 
+// 
+// 
+//editar:
+
+
+
 
   identificarId(id: string) {
     this.editarProductoId = id;
@@ -152,12 +232,60 @@ export class ProductosComponent {
     console.log(this.editarProductoId);
   }
 
-  editarProductos() {
+  botonEditar() {
 
     if (!this.nombre || !this.imagen || !this.descripcion ||
       !this.talla || !this.color || !this.categoria ||
       !this.cantidad || !this.precio) {
       console.log("se debe ingresar todos los campos")
+      this.todosLosCampos()
+      
+    } else {
+
+    const swalWithBootstrapButtons = Swal.mixin({
+      customClass: {
+        confirmButton: "btn btn-success",
+        cancelButton: "btn btn-danger"
+      },
+      buttonsStyling: false
+    });
+    swalWithBootstrapButtons.fire({
+      title: "¿Estas seguro de editar el producto seleccionado?",
+      text: "¡No podras revertirlo!",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonText: "Si, editar",
+      cancelButtonText: "No, cancelar!",
+      reverseButtons: true
+    }).then((result) => {
+      if (result.isConfirmed) {
+        this.editarProductos()
+        swalWithBootstrapButtons.fire({
+          title: "Enhorabuena",
+          text: "El producto ha sido editado",
+          icon: "success"
+        });
+      } else if (
+        /* Read more about handling dismissals below */
+        result.dismiss === Swal.DismissReason.cancel
+      ) {
+        swalWithBootstrapButtons.fire({
+          title: "cancelado",
+          text: "Tu producto sigue igual",
+          icon: "error"
+        });
+      }
+    });
+  }}
+
+  editarProductos() {
+
+
+    if (!this.nombre || !this.imagen || !this.descripcion ||
+      !this.talla || !this.color || !this.categoria ||
+      !this.cantidad || !this.precio) {
+      alert("se debe ingresar todos los campos")
+      
     } else {
       try {
 
@@ -171,26 +299,29 @@ export class ProductosComponent {
           cantidad: this.cantidad,
           precio: this.precio
         }
-
         if (this.editarProductoId) {
           this.producto.updateProducts(productoActualizado, this.editarProductoId).subscribe((res: any) => {
             if (res) {
-              console.log("res", res)
+              console.log("res", res);
+              console.log("se elimino correctamente")
+              this.obtenerProductos()
 
             }
           })
         }
       } catch (error) {
         console.log(error)
-
       }
 
     }
 
   }
-
-
-
+// 
+// 
+// 
+// 
+// 
+// 
 
 
   ngOnInit() {
