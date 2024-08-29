@@ -16,14 +16,19 @@
       <li><a routerLink="/mujer">Mujer</a></li>
       <li>
         <a type="button" class="btn icon-user" data-bs-toggle="modal" data-bs-target="#exampleModal">
-          <i class="bi bi-person-fill">
-          </i>
+          <i class="bi bi-person-fill"></i>
         </a>
       </li>
       <li>
-        <a href="#"><i class="bi bi-cart3" ></i></a>
+        <a type="button" (click)="onToggleCart()" class="btn icon-user" data-bs-toggle="modal" data-bs-target="#exampleModal">
+          <i class="bi bi-cart3"></i>
+          <div class="cart" [ngClass]="{show: viewCart}">
+            <app-cart></app-cart>
+          </div>
+        </a>
       </li>
     </ul>
+
 
     <!-- Modal inicio de sesion / component-->
     <!-- <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">

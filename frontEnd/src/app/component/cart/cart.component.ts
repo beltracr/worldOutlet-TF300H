@@ -1,12 +1,11 @@
 import { Component } from '@angular/core';
 import {NgIf} from "@angular/common";
+import {RouterLink, RouterOutlet} from "@angular/router";
 
 @Component({
   selector: 'app-cart',
   standalone: true,
-  imports: [
-    NgIf
-  ],
+  imports: [RouterOutlet, RouterLink, NgIf],
   templateUrl: './cart.component.html',
   styleUrl: './cart.component.css'
 })
