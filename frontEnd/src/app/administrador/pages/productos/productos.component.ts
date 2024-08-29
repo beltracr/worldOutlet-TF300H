@@ -114,7 +114,7 @@ botonBorrar(id:string){
       this.borrarProducto(id)
       swalWithBootstrapButtons.fire({
         title: "Enhorabuena",
-        text: "El producto ha sido editado",
+        text: "El producto ha sido eliminado",
         icon: "success"
       });
     } else if (
@@ -192,7 +192,7 @@ notificacionCrear(){
   Swal.fire({
     position: "top-end",
     icon: "success",
-    title: "Your work has been saved",
+    title: "Producto creado con exito",
     showConfirmButton: false,
     timer: 1500
   });
