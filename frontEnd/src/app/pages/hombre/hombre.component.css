@@ -69,7 +69,6 @@ main{
 }
 
 .banner{
-    padding-top: 5%;
     display: flex;
     text-align: center; 
     width: 100%;
@@ -328,42 +327,79 @@ h1{
 }
 
 
-/* RESPONSIVE PARA IPHONE 12 PRO */
+/* -------------- RESPONSIVE PARA IPHONE 12 PRO ------------------- */
 
-@media ( width >= 300px){
+@media screen and (max-width: 600px){
     
     main{
-        width: 150%;
+        width: 100%;
     }
     
     .ref-hombre{
         width: 100%;
-    
+        
     }
 
     .banner{
-        width: 154vw;
+        width: 100%;
     }
 
     .ref-p{
         width: 100%;
     }
 
+    .ref-p p{
+        font-size: 12px;
+    }
+
     h1{
-        font-size: 40px;
+        font-size: 30px;
     }
 
     .des-nac{
         width: 100%;
         margin: 3% 0;
+        font-size: 15px;
+    }
+
+    .sec-time-running{
+       width: 100%;
+    }
+
+    .runnig-go{
+        overflow-x: scroll;
+    }
+
+    .ContainerDeportes{
+        overflow-x: scroll;
+    }
+
+    .time-runnig{
+        width: 95%;
+    }
+
+    .hR{
+        margin: 8% 0;
+    }
+
+    .scrol-producto{
+        display: none;
     }
 
     .container-runnig{
-        width: 50%;
+        width: 60%;
     }
 
+    
     .container-aliados{
         width: 100%;
+    }
+
+    .aliados{
+        width: 100%;
+    }
+
+    .h3Aliados{
         text-align: center;
     }
 
@@ -372,18 +408,28 @@ h1{
         margin: 0;
     }
 
+    .aliados img{
+        width: 70px;
+    }
+
+    .anun-reg{
+        width: 100%;
+    }
+
     .anun-reg h3{
-        font-size: 20px;
+        font-size: 14px;
     }
 
     .reg-gra{
-        font-size: 14px;
+        font-size: 12px;
+        font-weight: normal;
     }
+
 }
 
 /* RESPONSIVE PARA IPAD PRO */
 
-@media ( width < 1400px) {
+@media screen and (min-width: 601px) and (max-width: 768px)  {
     .banner{
         padding-top: 0;
     }

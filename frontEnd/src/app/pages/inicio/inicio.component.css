@@ -345,7 +345,7 @@ h4 {
 
 /* RESPONSIVE PARA IPHONE 12 PRO */
 
-@media (max-width: 575.98px)and (orientation:portrait) {
+@media screen and (max-width: 600px) {
 
     main{
         width: 100%;
@@ -364,7 +364,7 @@ h4 {
 
     .h2promos{
         font-size: 25px;
-        text-align: center;
+        margin: 5% 17%;
     }
     
     .scrol-producto{
@@ -378,47 +378,39 @@ h4 {
     }
 
     .Contenedor-nuevasPromociones{
-        border:  solid green;
         margin: 0;
         padding: 0;
         width: 100%;
     }
 
     .nuevasPromos{
-        width: 80%;
+        width: 70%;
     }
 
     h4{
-        font-size: 18px;
+        font-size: 19px;
     }
 
     .descripcion-promo{
-        font-size: 13px;
+        font-size: 14px;
     }
 
     .comprar-promo{
+        align-items: center;
         width: 100%;
         display: flex;
-        flex-direction: column;
-        align-items: start;
-        line-height: 5px;
-        position: relative;
+        justify-content: space-between;
+        line-height: 8px;
     }
     
     .comprar-promo{
         font-size: 12px;
     }
 
-    .precio-descuentos{
-        position: absolute;
-        margin-left: 55%;
-    }
-
     .boton-comprar{
         font-size: 11px;
-        padding: 5% 4% ;
+        padding: 3% 2% ;
         border-radius: 5px;
-
     }
 
     /* section tendencias */
@@ -439,30 +431,34 @@ h4 {
     }
 
     .nuevo{
-        width: 150vw;
-        height: 100%;
-        border: solid red;
+        width: 60%;
         position: relative;
     }
 
     .boton-verMas{
         position: absolute;
-        margin-top: 100%;
-        padding: 1%;
+        margin-top: 110%;
+        margin-left: 70%;
+        padding: 2%;
     }
 
     .his-wo{
-        width: 155%;
-        text-align: center;
+        width: 100%;
+        padding: 5%;
+    }
+
+    .his-wo p{
+        width: 100%;
     }
 
     .na-world{
-        margin-left: 0;
-        margin-top: 10%;
+        margin: 8% 0% 6% 0%;
+        width: 100%;
+        text-align: center;
     }
 
     .his-wo img{
-        margin: 5% 0% 3% 0%;
+        margin: 5% 0% 3% 25%;
     }
 
     .container-aliados{
@@ -471,7 +467,10 @@ h4 {
 
     .aliados{
         width: 100%;
-        margin: 0;
+    }
+
+    .h3Aliados{
+        text-align: center;
     }
 
     .logo-ali{
@@ -479,45 +478,67 @@ h4 {
         margin: 0;
     }
 
+    .aliados img{
+        width: 70px;
+    }
+
     .anun-reg{
         width: 100%;
     }
 
     .anun-reg h3{
-        font-size: 10px;
+        font-size: 14px;
     }
 
     .reg-gra{
         font-size: 12px;
+        font-weight: normal;
     }
 }
 
+/* ---------------- RESPONSIVE PARA IPAD PRO ----------------------- */
 
-/* RESPONSIVE PARA IPAD PRO */
-
-@media ( width < 1400px) {
+@media screen and (min-width: 601px) and (max-width: 1025px) {
+    
     .slide{
         width: 100%;
     }
 
     .nueva-prom{
-        width: 64%;
+        width: 100%;
         align-items: center;
         text-align: center;
-        padding-left: 2%;
     }
 
     .promociones-sport-shopping{
         width: 100%;
+        padding: 0 1%;
+    }
+
+    .h2promos{
+        margin: 5% 2%;
     }
 
     .Contenedor-nuevasPromociones{
-        width: 68%;
+        width: 100%;
     }
+
+    .nuevasPromos{
+        width: 50%;
+    }
+
+
+/* ----------------- TENDENCIAS ------------------ */
+
 
     .container-tenden-h-m{
         width: 100%;
-        
+        padding: 0% 1%;
+    }
+
+    .tend-new{
+        padding-left: 2%;
+        margin-top: 3%;
     }
 
     .boton-verMas{
@@ -537,6 +558,7 @@ h4 {
 
     .his-wo{
         width: 100%;
+        padding: 5%;
     }
 
     .container-aliados{
