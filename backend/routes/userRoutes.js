@@ -7,10 +7,10 @@ const usuariosRouter = Router();
 
 
 // ruta para mostrar todos los usuarios
-usuariosRouter.get('/',auth("admin"), getUsuarios);
+usuariosRouter.get('/', getUsuarios);
 // ruta para crear usuarios
 usuariosRouter.post('/', postUsuarios);
 // ruta para eleiminar usuario por Id
-usuariosRouter.delete('/:id', auth(),  deleteUsuarioById);
+usuariosRouter.delete('/:id',   deleteUsuarioById);
 
 export default usuariosRouter

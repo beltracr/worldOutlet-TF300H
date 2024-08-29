@@ -3,22 +3,8 @@ import { NgForOf } from "@angular/common";
 import { ProductsService } from '../../../services/products.service';
 import { FormsModule } from '@angular/forms';
 import { LoginService } from '../../../services/login.service';
-import { UsersService } from '../../../services/users.service';
-import { HttpHeaders } from '@angular/common/http';
-import { ThisReceiver } from '@angular/compiler';
 import { Products } from '../../../interfaces/products';
 import Swal from 'sweetalert2';
-import { RouterLink } from '@angular/router';
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -31,13 +17,8 @@ import { RouterLink } from '@angular/router';
   templateUrl: './productos.component.html',
   styleUrl: './productos.component.css'
 })
-//export class ProductosComponent {
-// productos = [
-// { id: 1, categoria: 'Hombre', nombre: 'Nike AirForze', cantidad: 50, imagen: "assets/images/logo.png" },
-//{ id: 2, categoria: 'Mujer', nombre: 'Blusa Nike', cantidad: 30, imagen: "assets/images/logo.png" },
-// Más productos...
-//];
-//}
+
+
 
 export class ProductosComponent {
 
@@ -181,6 +162,7 @@ botonBorrar(id:string){
             console.log("res", res)
             this.obtenerProductos()
             this.notificacionCrear()
+            this.toggleDiv()
           }
         } catch (error) { alert(error) }
       })
@@ -260,11 +242,12 @@ errorCrear(){
     }).then((result) => {
       if (result.isConfirmed) {
         this.editarProductos()
+        
         swalWithBootstrapButtons.fire({
           title: "Enhorabuena",
           text: "El producto ha sido editado",
           icon: "success"
-        });
+        }); this.toggleDiv()
       } else if (
         /* Read more about handling dismissals below */
         result.dismiss === Swal.DismissReason.cancel

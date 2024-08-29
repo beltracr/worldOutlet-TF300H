@@ -5,15 +5,15 @@ import bcrypt from "bcryptjs";
 export const postUsuarios = async (req,res) =>{
 
     try{
-        const {nombre, correo, contrasena,numerotelefono,direccion} = req.body;
+        const {nombre, correo, contrasena,numeroTelefono,direccion} = req.body;
         const codedPasswordUser = await bcrypt.hash(contrasena,10)
         
     
 
-    if (!nombre || !correo || !contrasena || !numerotelefono || !direccion) {
+    if (!nombre || !correo || !contrasena || !numeroTelefono || !direccion) {
         return res.status(400).json({message:"debe diligenciar todos los campos"})
     }
-    const newUser = await usuariosModel.create({nombre,correo,contrasena:codedPasswordUser,numerotelefono, direccion})
+    const newUser = await usuariosModel.create({nombre,correo,numeroTelefono, direccion,contrasena:codedPasswordUser})
     return res.status(201).json({
         estado: "201",
         mensaje: "usuario creado correctamente",

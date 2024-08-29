@@ -1,29 +1,116 @@
+<div class="caja1">
+  <div class="container">
+    @if(mostrarFormulario){
+
+    <form class="py-5 col-lg-6">
+      <div>
+        <h3>Crear usuario</h3>
+      </div>
+      <div class="mb-3">
+        <label for="inputName" class="form-label">Nombre</label>
+        <input
+          type="text"
+          class="form-control"
+          name="nombre"
+          [(ngModel)]="nombre"
+        />
+      </div>
+      <div class="mb-3">
+        <label for="inputcorreo" class="form-label">Correo</label>
+        <input
+          type="email"
+          class="form-control"
+          name="imagen"
+          [(ngModel)]="correo"
+        />
+      </div>
+      <div class="mb-3">
+        <label for="inputContrasena" class="form-label">Contraseña</label>
+        <input
+          type="password"
+          class="form-control"
+          name="descripcion"
+          [(ngModel)]="contrasena"
+        />
+      </div>
+      <div class="mb-3">
+        <label for="inputnumerotelefonico" class="form-label"
+          >Numero de telefono</label
+        >
+        <input
+          type="number"
+          class="form-control"
+          name="talla"
+          [(ngModel)]="numeroTelefono"
+        />
+      </div>
+      <div class="mb-3">
+        <label for="inputDireccion" class="form-label">Direccion</label>
+        <input
+          type="text"
+          class="form-control"
+          name="color"
+          [(ngModel)]="direccion"
+        />
+      </div>
+
+      <button
+        (click)="crearUsuarios()"
+        type="button"
+        class="btn btn-primary bg-my-color col-12"
+      >
+        Crear Usuario
+      </button>
+      <button
+        (click)="toggleDiv()"
+        type="button"
+        class="btn btn-danger bg-my-color col-12 mt-3"
+      >
+        Cerrar
+      </button>
+    </form>
+    }
+
+  </div>
+</div>
 <div class="users-table-container">
   <table class="users-table">
     <thead>
-    <tr>
-      <th>Nombre</th>
-      <th>Correo</th>
-      <th>Teléfono</th>
-      <th>Dirección</th>
-      <th>Acciones</th>
-    </tr>
+      <tr>
+        <th>id</th>
+        <th>Nombre</th>
+        <th>Correo</th>
+        <th>Contrasena</th>
+        <th>Teléfono</th>
+        <th>Dirección</th>
+        <th>Acciones</th>
+        <th>
+          <div class="botonAgregar">
+            <button type="button" class="btn btn-outline-success" (click)="toggleDiv()">
+              <i class="bi bi-plus"></i>
+              Agregar producto
+            </button>
+          </div>
+        </th>
+      </tr>
     </thead>
-    <tbody>
-    <tr *ngFor="let usuario of usuarios">
-      <td>{{ usuario.nombre }}</td>
-      <td>{{ usuario.correo }}</td>
-      <td>{{ usuario.telefono }}</td>
-      <td>{{ usuario.direccion }}</td>
-      <td class="actions">
-        <button (click)="editarUsuario(usuario.id)">
-          <i class="bi bi-pencil-square"></i>
-        </button>
-        <button (click)="eliminarUsuario(usuario.id)">
-          <i class="bi bi-trash"></i>
-        </button>
-      </td>
-    </tr>
+    
+      <tbody id="mitabla">
+        @for (usuarios of todosUsuarios; track $index) {
+      <tr> 
+        <td> {{usuarios._id}} </td> 
+        <td> {{usuarios.nombre}} </td>
+        <td> {{usuarios.correo}} </td>
+        <td> {{usuarios.contrasena}} </td>
+        <td> {{usuarios.numeroTelefono}} </td>
+        <td> {{usuarios.direccion}} </td>
+        <td class="actions">
+          
+          <button (click)="botonBorrar(usuarios._id)">
+            <i class="bi bi-trash"></i>
+          </button>
+        </td>
+      </tr>}
     </tbody>
   </table>
 </div>
