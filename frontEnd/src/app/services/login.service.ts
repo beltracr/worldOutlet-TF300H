@@ -4,6 +4,9 @@ import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 import { jwtDecode } from 'jwt-decode';
 import { Credentials } from '../interfaces/credentials';
+import { AdminService } from './admin.service';
+
+
 
 
 @Injectable({
@@ -41,7 +44,7 @@ export class LoginService {
     if (this.isAdmin()) {
       window.location.href = '/admin';
     } else {
-      window.location.href = '/';
+      console.log( "no es admin")
     }
   }
 

@@ -11,7 +11,7 @@ const loginService = async (req,res) => {
 
         if(!adminEncontrado){
             return res.status(404).json({
-                mensaje:"correo no registrado"
+                mensaje:"correo  incorrecto"
             })
         }
         const validacionContrasena = await bcrypt.compare(contrasena,adminEncontrado.contrasena)
@@ -28,7 +28,9 @@ const loginService = async (req,res) => {
         const payload ={
             id: adminEncontrado.id,
             name: adminEncontrado.nombre,
-            rol:adminEncontrado.CategoriaAdmin
+        }
+        if (adminEncontrado.categoriaAdmin) {
+            payload.isAdmin = true;
         }
 
         const token = await generarToken(payload)

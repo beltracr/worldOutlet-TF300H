@@ -1,4 +1,4 @@
-import { decode } from "jsonwebtoken";
+
 import { verificarToken } from "../lib/jwt.js";
 
 const auth = (requiredrol) => {
