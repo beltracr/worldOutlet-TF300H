@@ -29,10 +29,12 @@
     <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
       <div class="modal-dialog">
         <div class="modal-content z-3 border border-danger">
+          <form [formGroup]="credentialForm" (ngSubmit)="handleSubmint()">
           <div class="modal-header inicio-sesion">
             <h1 class="modal-title fs-5" id="exampleModalLabel">
               Inicia sesión
             </h1>
+
             <button
               type="button"
               class="btn-close"
@@ -46,7 +48,9 @@
                 type="email"
                 class="form-control"
                 id="floatingInput"
+                formControlName="correo"
                 placeholder="name@example.com"
+                required
               />
               <label for="floatingInput">Correo electrónico</label>
             </div>
@@ -55,13 +59,16 @@
                 type="password"
                 class="form-control"
                 id="floatingPassword"
+                formControlName="contrasena"
                 placeholder="Password"
+                required
               />
               <label for="floatingPassword">Contraseña</label>
             </div>
           </div>
+          
           <div class="modal-footer bot-ini-cre-cuet">
-            <button type="button" class="btn btn-ini-ses">
+            <button type="submit" class="btn btn-ini-ses">
               Iniciar sesión
             </button>
             <a class="p-regis" href="/login">¿ Eres administrador inicia aqui ?</a>
@@ -72,7 +79,7 @@
             >
               <a a routerLink="/registro">Crear Cuenta</a>
             </button>
-          </div>
+          </div> </form>
         </div>
       </div>
     </div>
