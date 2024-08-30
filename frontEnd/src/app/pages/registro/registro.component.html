@@ -7,11 +7,12 @@
         <h1>Crear Cuenta</h1>
         <div class="container-crea-cuenta">
             <form class="form-crear-cuenta container-datos">
+               
                 <div class="mb-3">
                     <label for="formGroupExampleInput" class="form-label styles-form">Nombre<span
                             class="sp-obli">*</span></label>
                     <input type="text" class="form-control caja-form" id="formGroupExampleInput"
-                        placeholder="Nombres Completos">
+                        placeholder="Nombres Completos" [(ngModel)]="nombre" [ngModelOptions]="{standalone: true}"/>
                 </div>
                 <!-- <div class="mb-3">
                     <label for="formGroupExampleInput2" class="form-label styles-form">Apellidos Completos <span
@@ -23,7 +24,7 @@
                     <label for="exampleInputEmail1" class="form-label styles-form">Correo<span
                             class="sp-obli">*</span></label>
                     <input type="email" class="form-control caja-form" id="exampleInputEmail1"
-                        placeholder="Correo Electrónico" aria-describedby="emailHelp">
+                        placeholder="Correo Electrónico" aria-describedby="emailHelp" [(ngModel)]="correo" [ngModelOptions]="{standalone: true}">
                     <div id="emailHelp" class="form-text anuncio-correo">Nunca compartiremos tu correo electrónico
                         con nadie más.
                     </div>
@@ -32,7 +33,7 @@
                     <label for="exampleInputPassword1" class="form-label styles-form">Contraseña <span
                             class="sp-obli">*</span></label>
                     <input type="password" class="form-control caja-form" id="exampleInputPassword1"
-                        placeholder="Contraseña">
+                        placeholder="Contraseña" [(ngModel)]="contrasena" [ngModelOptions]="{standalone: true}">
                 </div>
                 <!-- <div class="mb-3">
                     <label for="exampleInputPassword1" class="form-label styles-form">Confirmar Contraseña <span
@@ -46,12 +47,12 @@
                 <div class="col-12">
                     <label for="inputAddress" class="form-label styles-form">Dirección <span
                             class="sp-obli">*</span></label>
-                    <input type="text" class="form-control caja-form" id="inputAddress" placeholder="Dirección">
+                    <input type="text" class="form-control caja-form" id="inputAddress" placeholder="Dirección"  [(ngModel)]="direccion"[ngModelOptions]="{standalone: true}"/>
                 </div>
                 <div class="col-12">
                     <label for="inputAddress" class="form-label styles-form">Número Teléfono<span
                             class="sp-obli">*</span></label>
-                    <input type="text" class="form-control caja-form" id="inputAddress" placeholder="Dirección">
+                    <input type="text" class="form-control caja-form" id="inputnumerotelefono" placeholder="Dirección" [(ngModel)]="numeroTelefono" [ngModelOptions]="{standalone: true}"/>
                 </div>
                 <!-- <div class="col-md-6">
                     <label for="inputState" class="form-label styles-form ">Ciudad <span
@@ -133,7 +134,7 @@
                     </select>
                 </div> -->
                 <div class="col-12">
-                    <button type="submit" class="btn btn-crea-cta2">Crear Cuenta</button>
+                    <button type="submit" class="btn btn-crea-cta2" (click)="crearUsuarios()">Crear Cuenta</button>
                 </div>
             </form>
         </div>

@@ -80,7 +80,7 @@ notificacionCrear(){
   Swal.fire({
     position: "top-end",
     icon: "success",
-    title: "Producto creado con exito",
+    title: "Usuario creado con exito",
     showConfirmButton: false,
     timer: 1500
   });

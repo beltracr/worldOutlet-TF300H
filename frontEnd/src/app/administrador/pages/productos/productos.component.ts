@@ -44,14 +44,14 @@ export class ProductosComponent {
   editarProductoId: string | null = null;
 
 
- todosLosCampos(){
-  Swal.fire({
-    icon: "error",
-    title: "Oops...",
-    text: "se debe ingresar todos los campos",
-    footer: '<a href="/admin/inventario">¿Quieres ir atras?</a>'
-  });
- }
+  todosLosCampos() {
+    Swal.fire({
+      icon: "error",
+      title: "Oops...",
+      text: "se debe ingresar todos los campos",
+      footer: '<a href="/admin/inventario">¿Quieres ir atras?</a>'
+    });
+  }
 
 
 
@@ -66,75 +66,66 @@ export class ProductosComponent {
     })
 
   }
-// 
-// 
-// 
-// 
-// borrar
 
-botonBorrar(id:string){
-  const swalWithBootstrapButtons = Swal.mixin({
-    customClass: {
-      confirmButton: "btn btn-success",
-      cancelButton: "btn btn-danger"
-    },
-    buttonsStyling: false
-  });
-  swalWithBootstrapButtons.fire({
-    title: "¿Estas seguro de eliminar el producto seleccionado?",
-    text: "¡No podras revertirlo!",
-    icon: "warning",
-    showCancelButton: true,
-    confirmButtonText: "Si, eliminar",
-    cancelButtonText: "No, cancelar!",
-    reverseButtons: true
-  }).then((result) => {
-    if (result.isConfirmed) {
+  // 
+  // borrar
 
-      
-      this.borrarProducto(id)
-      swalWithBootstrapButtons.fire({
-        title: "Enhorabuena",
-        text: "El producto ha sido eliminado",
-        icon: "success"
-      });
-    } else if (
-      /* Read more about handling dismissals below */
-      result.dismiss === Swal.DismissReason.cancel
-    ) {
-      swalWithBootstrapButtons.fire({
-        title: "cancelado",
-        text: "Tu producto no se elimino",
-        icon: "error"
-      });
-    }
-  });
-
-}
+  botonBorrar(id: string) {
+    const swalWithBootstrapButtons = Swal.mixin({
+      customClass: {
+        confirmButton: "btn btn-success",
+        cancelButton: "btn btn-danger"
+      },
+      buttonsStyling: false
+    });
+    swalWithBootstrapButtons.fire({
+      title: "¿Estas seguro de eliminar el producto seleccionado?",
+      text: "¡No podras revertirlo!",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonText: "Si, eliminar",
+      cancelButtonText: "No, cancelar!",
+      reverseButtons: true
+    }).then((result) => {
+      if (result.isConfirmed) {
 
 
+        this.borrarProducto(id)
+        swalWithBootstrapButtons.fire({
+          title: "Enhorabuena",
+          text: "El producto ha sido eliminado",
+          icon: "success"
+        });
+      } else if (
+        /* Read more about handling dismissals below */
+        result.dismiss === Swal.DismissReason.cancel
+      ) {
+        swalWithBootstrapButtons.fire({
+          title: "cancelado",
+          text: "Tu producto no se elimino",
+          icon: "error"
+        });
+      }
+    });
 
+  }
 
   borrarProducto(id: string) {
 
-      this.producto.deleteProducts(id).subscribe((res: any) => {
-        try {
-          if (res) {
-            console.log("res", res);
-            console.log("Se elimino correctamente")
-            this.obtenerProductos()
-          }
-        } catch (error) { console.log(error) }
-      })
-    }
-  
-// 
-// 
-// 
-// 
-// 
-// 
-//   Crear 
+    this.producto.deleteProducts(id).subscribe((res: any) => {
+      try {
+        if (res) {
+          console.log("res", res);
+          console.log("Se elimino correctamente")
+          this.obtenerProductos()
+        }
+      } catch (error) { console.log(error) }
+    })
+  }
+
+
+  // 
+  //   Crear 
 
   crearProductos() {
 
@@ -143,7 +134,7 @@ botonBorrar(id:string){
       !this.cantidad || !this.precio) {
       console.log("se debe ingresar todos los campos")
       this.errorCrear()
-      
+
     } else {
 
       const nuevoProducto: Products = {
@@ -169,40 +160,28 @@ botonBorrar(id:string){
     }
   }
 
-notificacionCrear(){
-  
-  Swal.fire({
-    position: "top-end",
-    icon: "success",
-    title: "Producto creado con exito",
-    showConfirmButton: false,
-    timer: 1500
-  });
-}
+  notificacionCrear() {
 
-errorCrear(){
-  Swal.fire({
-    icon: "error",
-    title: "Oops...",
-    text: "Debes ingresar todos los valores",
-    footer: '<a href="/admin">¿quieres volver atras?</a>'
-  });
-}
+    Swal.fire({
+      position: "top-end",
+      icon: "success",
+      title: "Producto creado con exito",
+      showConfirmButton: false,
+      timer: 1500
+    });
+  }
 
-
+  errorCrear() {
+    Swal.fire({
+      icon: "error",
+      title: "Oops...",
+      text: "Debes ingresar todos los valores",
+      footer: '<a href="/admin">¿quieres volver atras?</a>'
+    });
+  }
 
 
-// 
-// 
-// 
-// 
-// 
-// 
-// 
-// 
-// 
-// 
-//editar:
+  //editar:
 
 
 
@@ -221,45 +200,46 @@ errorCrear(){
       !this.cantidad || !this.precio) {
       console.log("se debe ingresar todos los campos")
       this.todosLosCampos()
-      
+
     } else {
 
-    const swalWithBootstrapButtons = Swal.mixin({
-      customClass: {
-        confirmButton: "btn btn-success",
-        cancelButton: "btn btn-danger"
-      },
-      buttonsStyling: false
-    });
-    swalWithBootstrapButtons.fire({
-      title: "¿Estas seguro de editar el producto seleccionado?",
-      text: "¡No podras revertirlo!",
-      icon: "warning",
-      showCancelButton: true,
-      confirmButtonText: "Si, editar",
-      cancelButtonText: "No, cancelar!",
-      reverseButtons: true
-    }).then((result) => {
-      if (result.isConfirmed) {
-        this.editarProductos()
-        
-        swalWithBootstrapButtons.fire({
-          title: "Enhorabuena",
-          text: "El producto ha sido editado",
-          icon: "success"
-        }); this.toggleDiv()
-      } else if (
-        /* Read more about handling dismissals below */
-        result.dismiss === Swal.DismissReason.cancel
-      ) {
-        swalWithBootstrapButtons.fire({
-          title: "cancelado",
-          text: "Tu producto sigue igual",
-          icon: "error"
-        });
-      }
-    });
-  }}
+      const swalWithBootstrapButtons = Swal.mixin({
+        customClass: {
+          confirmButton: "btn btn-success",
+          cancelButton: "btn btn-danger"
+        },
+        buttonsStyling: false
+      });
+      swalWithBootstrapButtons.fire({
+        title: "¿Estas seguro de editar el producto seleccionado?",
+        text: "¡No podras revertirlo!",
+        icon: "warning",
+        showCancelButton: true,
+        confirmButtonText: "Si, editar",
+        cancelButtonText: "No, cancelar!",
+        reverseButtons: true
+      }).then((result) => {
+        if (result.isConfirmed) {
+          this.editarProductos()
+
+          swalWithBootstrapButtons.fire({
+            title: "Enhorabuena",
+            text: "El producto ha sido editado",
+            icon: "success"
+          }); this.toggleDiv()
+        } else if (
+          /* Read more about handling dismissals below */
+          result.dismiss === Swal.DismissReason.cancel
+        ) {
+          swalWithBootstrapButtons.fire({
+            title: "cancelado",
+            text: "Tu producto sigue igual",
+            icon: "error"
+          });
+        }
+      });
+    }
+  }
 
   editarProductos() {
 
@@ -268,7 +248,7 @@ errorCrear(){
       !this.talla || !this.color || !this.categoria ||
       !this.cantidad || !this.precio) {
       alert("se debe ingresar todos los campos")
-      
+
     } else {
       try {
 
@@ -299,12 +279,12 @@ errorCrear(){
     }
 
   }
-// 
-// 
-// 
-// 
-// 
-// 
+  // 
+  // 
+  // 
+  // 
+  // 
+  // 
 
 
   ngOnInit() {
