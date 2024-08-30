@@ -1,7 +1,7 @@
 .usuarios-admin-table-container {
   width: 100%;
   overflow-x: auto;
-  padding-left: 2rem;
+  padding-left: 3.7rem;
 }
 
 .usuarios-admin-table {
@@ -59,4 +59,43 @@
   .usuarios-admin-table th, .usuarios-admin-table td {
     padding: 8px 10px;
   }
+}
+
+.botonAgregar {
+  display: flex;
+  justify-content: right;
+  padding-right: 8%;
+  
+ 
+}
+
+.btn-outline-success{
+  position: relative;
+
+}
+.caja1{
+  display: flex;
+ justify-content: left;
+  padding-left: 17%;  
+  border: black solid;
+}
+
+.container  { 
+  
+ display: flex;
+ justify-content: center;
+  position: absolute;
+  background-color: white;
+  color: black;
+  border: black solid;
+  border-radius: 3%;
+  width: 50%; 
+  
+
+}
+.col-lg-6{
+
+  padding-left: 0;
+  width: 90%;
+
 }

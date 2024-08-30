@@ -5,6 +5,7 @@ import { FormsModule } from '@angular/forms';
 import { LoginService } from '../../../services/login.service';
 import { Products } from '../../../interfaces/products';
 import Swal from 'sweetalert2';
+import { Router } from '@angular/router';
 
 
 
@@ -42,6 +43,11 @@ export class ProductosComponent {
   precio: number = 0;
   editMode: boolean = false;
   editarProductoId: string | null = null;
+
+  constructor(private router: Router ){}
+  goBack  (){
+    this.router.navigate(["/admin"])
+  }
 
 
   todosLosCampos() {
@@ -91,6 +97,8 @@ export class ProductosComponent {
 
 
         this.borrarProducto(id)
+        
+        
         swalWithBootstrapButtons.fire({
           title: "Enhorabuena",
           text: "El producto ha sido eliminado",
@@ -117,7 +125,7 @@ export class ProductosComponent {
         if (res) {
           console.log("res", res);
           console.log("Se elimino correctamente")
-          this.obtenerProductos()
+          
         }
       } catch (error) { console.log(error) }
     })

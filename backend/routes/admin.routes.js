@@ -4,9 +4,9 @@ import auth from "../middlewares/auth.js";
 
 const adminRouter = Router();
 
-adminRouter.get('/', auth("admin"), getAdmin);
-adminRouter.post('/', auth("admin"), postAdmin);
-adminRouter.delete('/:id', auth("admin"), deleteAdminById);
+adminRouter.get('/',  getAdmin);
+adminRouter.post('/',  postAdmin);
+adminRouter.delete('/:id', deleteAdminById);
 
 
 export default adminRouter;

@@ -144,7 +144,7 @@ botonBorrar(id: string){
     ) {
       swalWithBootstrapButtons.fire({
         title: "cancelado",
-        text: "Tu producto no se elimino",
+        text: "Tu usuario no se elimino",
         icon: "error"
       });
     }
