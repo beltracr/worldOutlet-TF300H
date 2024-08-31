@@ -94,7 +94,7 @@
     transform: scaleX(0);
     transition: transform 0.5s ease-in-out;
 }
-  
+
   .nav-list a:hover::before {
     transform: scaleX(1);
     transform-origin: center;
@@ -163,7 +163,7 @@ input {
     color: var(--color-text);
     padding: 10px 150px 10px 150px;
     font-size: 20px;
-} 
+}
 
 .btn-ini-ses:hover {
     background: var(--text-hoover);
@@ -196,4 +196,28 @@ input {
 
 .icon-user{
     color: var(--color-text);
+}
+
+.cart {
+  display: none;
+}
+
+.show{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  z-index: 1;
+  position: absolute;
+  background-color: white;
+  border: 1px solid blue;
+  right: 1px;
+  top: 83px;
+  app-cart{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  app-cart:hover{
+    color: black;
+  }
 }
