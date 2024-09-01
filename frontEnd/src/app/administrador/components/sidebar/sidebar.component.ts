@@ -16,16 +16,6 @@ import { LoginService } from '../../../services/login.service';
   styleUrl: './sidebar.component.css'
 })
 export class SidebarComponent {
-
-
-  loginService= inject(LoginService)
-
-
-
-  cerrarSesion(){
-    this.loginService.logout
-  }
-  
   // isCollapsed = true;
 
   // expandSidebar() {
