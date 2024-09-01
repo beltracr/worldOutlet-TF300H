@@ -123,3 +123,74 @@ h1{
 .select-form{
     color: rgb(169, 169, 169);
 }
+
+
+/* RESPONSIVE PARA IPHONE 12 PRO */
+
+@media screen and (max-width: 600px){
+
+    h1{
+        font-size: 30px;
+        margin: 8% 0%;
+    }
+
+    main{
+        height: 100%;
+        overflow-y: hidden;
+        overflow-x: hidden;
+    }
+
+    section{
+        width: 80%;
+        margin: 4%;
+
+        overflow-x: hidden;
+    }
+
+    .container-crea-cuenta{
+        width: 100%;
+        margin: 0;
+    }
+
+    .caja-form{
+        height: 5vh;
+    }
+
+    .container-datos{
+        margin-left: 7%;
+    }
+
+    .btn-crea-cta2{
+        padding: 4% 16%;
+        margin:  7% 12%;
+    }
+
+    .container-info-residen{
+        margin-left: 5%;
+    }
+}
+
+
+
+/* RESPONSIVE PARA IPAD PRO */
+
+@media screen and (min-width: 601px) and (max-width: 1025px){
+
+    main{
+        height: 100%;
+    }
+
+    .container-crea-cuenta{
+        width: 100%;
+        margin: 0;
+    }
+
+    .caja-form{
+        height: 5vh;
+    }
+
+    .btn-crea-cta2{
+        margin: 4% 11%;
+    }
+}   
+

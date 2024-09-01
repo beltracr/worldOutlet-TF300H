@@ -27,6 +27,7 @@
 
 .sidebar {
   font-family: var(--textos), serif;
+  font-size: 15px;
   width: 60px;
   height: 100vh;
   background-color: black;
@@ -44,29 +45,29 @@ i{
 }
 
 .sidebar.collapsed {
-  width: 60px;
+  width: 10%;
 }
 
 .sidebar:not(.collapsed) {
-  width: 250px;
+  width: 200px;
 }
 
 .logo img {
   width: 100%;
-  padding: 5px;
+  margin: 2% 7%;
+  max-width: 10rem;
 }
 
-nav ul {
-  list-style-type: none;
-  padding: 0;
+nav{
+  border: solid red;
+  width: 100%;
 }
+
 
 nav ul li {
-  padding: 15px;
-  text-align: center;
+  padding: 6%;
   display: flex;
-  align-items: center;
-  justify-content: center;
+  border: solid yellow;
 }
 
 nav ul li a {
@@ -74,6 +75,11 @@ nav ul li a {
   text-decoration: none;
   display: flex;
   align-items: center;
+}
+
+nav ul li a:hover{
+  color: var(--text-hoover);
+  transition: all 0.3s ease;
 }
 
 nav ul li i {
@@ -99,14 +105,24 @@ nav ul li span {
   padding: 15px;
   text-align: center;
   display: flex;
+  flex-direction: column;
   align-items: center;
-  justify-content: center;
 }
 
-.user-active i {
-  font-size: 24px;
-  color: white;
+.user-active a{
+  text-decoration: none;
+  color: var(--color-text);
 }
+
+.user-active i:hover{
+  color: var(--text-hoover);
+  transition: all 0.3s ease;
+}
+
+.icon-admin{
+  flex-direction: row;
+}
+
 
 @media (max-width: 768px) {
   .sidebar {

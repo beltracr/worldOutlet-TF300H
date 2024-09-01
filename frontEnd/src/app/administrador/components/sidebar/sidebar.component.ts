@@ -15,13 +15,13 @@ import {RouterLink, RouterOutlet} from "@angular/router";
   styleUrl: './sidebar.component.css'
 })
 export class SidebarComponent {
-  isCollapsed = true;
+  // isCollapsed = true;
 
-  expandSidebar() {
-    this.isCollapsed = false;
-  }
+  // expandSidebar() {
+  //   this.isCollapsed = false;
+  // }
 
-  collapseSidebar() {
-    this.isCollapsed = true;
-  }
+  // collapseSidebar() {
+  //   this.isCollapsed = true;
+  // }
 }
