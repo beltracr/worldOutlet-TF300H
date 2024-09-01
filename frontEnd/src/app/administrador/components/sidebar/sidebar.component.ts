@@ -23,9 +23,8 @@ export class SidebarComponent {
 
 
   cerrarSesion(){
-    this.loginService.logout
+    this.loginService.logout 
   }
-  
   // isCollapsed = true;
 
   // expandSidebar() {
