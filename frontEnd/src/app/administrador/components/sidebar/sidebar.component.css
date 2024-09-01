@@ -118,8 +118,14 @@ nav ul li span {
 .icon-admin{
  display: flex;
  flex-direction: column;
+ gap: 20px;
 }
 
+.cs{
+  background-color: var(--fondo-2);
+  border: none;
+  text-align: start;
+}
 
 @media (max-width: 768px) {
   .sidebar {

@@ -13,7 +13,11 @@ import { UserloginServiceService } from '../../services/userlogin.service.servic
   templateUrl: './nav.component.html',
   styleUrl: './nav.component.css'
 })
-export class NavComponent {
+export class NavComponent{
+  
+  // activación bottom menu hmaburguesa
+  
+  
 
   loginService = inject(UserloginServiceService);
   @Input() toggleRegister: () => void = () => {};
@@ -53,7 +57,6 @@ export class NavComponent {
         }
       })
     }
-
-
   }
+
 }
