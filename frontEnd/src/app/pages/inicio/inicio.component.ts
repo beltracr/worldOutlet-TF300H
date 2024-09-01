@@ -3,11 +3,12 @@ import { NavComponent } from '../../component/nav/nav.component';
 import { FooterComponent } from '../../component/footer/footer.component';
 import { RegistroComponent } from '../registro/registro.component';
 import { NoEncontradoComponent } from '../no-encontrado/no-encontrado.component';
+import {CartComponent} from "../../component/cart/cart.component";
 
 @Component({
   selector: 'app-inicio',
   standalone: true,
-  imports: [NavComponent, FooterComponent, RegistroComponent, NoEncontradoComponent],
+  imports: [NavComponent, FooterComponent, RegistroComponent, NoEncontradoComponent, CartComponent],
   templateUrl: './inicio.component.html',
   styleUrl: './inicio.component.css'
 })

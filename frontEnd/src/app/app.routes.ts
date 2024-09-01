@@ -3,6 +3,7 @@ import { InicioComponent } from './pages/inicio/inicio.component';
 import { HombreComponent } from './pages/hombre/hombre.component';
 import { MujerComponent } from './pages/mujer/mujer.component';
 import { RegistroComponent } from './pages/registro/registro.component';
+import {CartComponent} from "./component/cart/cart.component";
 import { NoEncontradoComponent } from './pages/no-encontrado/no-encontrado.component';
 import {AdminVistaComponent} from "./pages/admin-vista/admin-vista.component";
 import {UsuariosComponent} from "./administrador/pages/usuarios/usuarios.component";
@@ -17,6 +18,8 @@ export const routes: Routes = [
     {path: 'hombre', component: HombreComponent},
     {path: 'mujer', component: MujerComponent},
     {path: 'registro', component: RegistroComponent},
+    {path: 'carrito', component: CartComponent},
+    {path: 'admin', component: AdminVistaComponent, children:[
     {path: 'admin', component: AdminVistaComponent,canActivate:[authGuard], children:[
         {path: 'controlUsuarios', component: UsuariosComponent},
         {path: 'controlUsuariosAdmin', component: UsuariosAdminComponent},
