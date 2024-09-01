@@ -10,11 +10,11 @@ export const productsRouter = express.Router();
 
 productsRouter.get('/',  getProducts);
 
-productsRouter.post('/',  postProduct);
+productsRouter.post('/', auth("Admin"),  postProduct);
 
-productsRouter.delete('/:id',  deleteProductById);
+productsRouter.delete('/:id', auth("Admin"), deleteProductById);
 
-productsRouter.put('/:id',  putProductById);
+productsRouter.put('/:id', auth("Admin"), putProductById);
 
 
 

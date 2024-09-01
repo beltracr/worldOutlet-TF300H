@@ -11,16 +11,17 @@ import {ProductosComponent} from "./administrador/pages/productos/productos.comp
 import { LoginComponent } from './pages/login/login.component';
 import { authGuard } from './guards/auth.guard';
 
+
 export const routes: Routes = [
     {path: 'inicio', component: InicioComponent},
     {path: 'hombre', component: HombreComponent},
     {path: 'mujer', component: MujerComponent},
     {path: 'registro', component: RegistroComponent},
-    {path: 'admin', component: AdminVistaComponent, children:[
+    {path: 'admin', component: AdminVistaComponent,canActivate:[authGuard], children:[
         {path: 'controlUsuarios', component: UsuariosComponent},
         {path: 'controlUsuariosAdmin', component: UsuariosAdminComponent},
         {path: 'inventario', component: ProductosComponent}
-      ]},
+      ], },
 
      
       {path:"login", component:LoginComponent},
