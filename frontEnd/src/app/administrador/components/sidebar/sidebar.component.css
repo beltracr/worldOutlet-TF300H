@@ -58,16 +58,14 @@ i{
   max-width: 10rem;
 }
 
-nav{
-  border: solid red;
-  width: 100%;
+nav ul{
+  margin: 0;
+  padding: 0 6%;
 }
-
 
 nav ul li {
   padding: 6%;
   display: flex;
-  border: solid yellow;
 }
 
 nav ul li a {
@@ -102,11 +100,9 @@ nav ul li span {
 }
 
 .user-active {
-  padding: 15px;
-  text-align: center;
+  padding: 10%;
   display: flex;
   flex-direction: column;
-  align-items: center;
 }
 
 .user-active a{
@@ -120,7 +116,8 @@ nav ul li span {
 }
 
 .icon-admin{
-  flex-direction: row;
+ display: flex;
+ flex-direction: column;
 }
 
 
