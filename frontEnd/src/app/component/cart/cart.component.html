@@ -1,34 +1,43 @@
-<div class="shopping-cart">
-  <h1>Carrito de Compras</h1>
+<div id="cartSidebar" class="cart-sidebar" [ngClass]="{'open': isOpen}">
+  <div class="cart-header">
+    <span>Carrito de Compras <i class="bi bi-cart4"></i> </span>
+    <button class="close-btn" (click)="closeCart()">×</button>
+  </div>
 
-  <div class="cart-item">
-    <div class="item-details">
-      <h3>Producto 1</h3>
-      <p>$20.00</p>
-    </div>
-    <div class="item-quantity">
-      <input type="number" value="1" min="1">
-    </div>
-    <div class="item-total">
-      <p>$20.00</p>
+  <div class="cart-content">
+    <div class="cart-item">
+      <img src="/assets/page-hombre/sudaderaNike1/sudaderaNike1.jpg" alt="Producto 1">
+      <div class="item-details">
+        <h4>Jogger Denim</h4>
+        <p>Talla: 30</p>
+        <p><del>$159.990</del> $79.995</p>
+      </div>
+      <div class="item-quantity">
+        <button>-</button>
+        <input type="number" value="1" min="1">
+        <button>+</button>
+      </div>
     </div>
   </div>
 
-  <div class="cart-item">
-    <div class="item-details">
-      <h3>Producto 2</h3>
-      <p>$15.00</p>
-    </div>
-    <div class="item-quantity">
-      <input type="number" value="2" min="1">
-    </div>
-    <div class="item-total">
-      <p>$30.00</p>
+  <div class="cart-suggestions">
+    <h5>Te podría interesar</h5>
+    <div class="suggested-item">
+      <img src="/assets/page-hombre/camisetaNike1/camisetaNike1.jpg" alt="Producto Sugerido">
+      <p>Jeans Loose York</p>
+      <p>$199.900</p>
     </div>
   </div>
 
   <div class="cart-total">
-    <h3>Total: $50.00</h3>
-    <button class="checkout-btn">Proceder al Pago</button>
+    <h3>Subtotal: $79.995 COP</h3>
+    <p>Impuesto incluido. Envío calculado al finalizar la compra.</p>
+    <label class="checkbox-btn">
+      <input type="checkbox"> Acepto los términos y condiciones
+    </label>
+    <button class="checkout-btn">Finalizar Compra</button>
+    <button class="pay-on-delivery-btn">Pagar al Recibir</button>
   </div>
+
 </div>
+

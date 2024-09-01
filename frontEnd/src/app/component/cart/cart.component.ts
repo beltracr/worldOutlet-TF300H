@@ -1,26 +1,22 @@
 import { Component } from '@angular/core';
-import {NgIf} from "@angular/common";
+import {NgClass, NgIf} from "@angular/common";
 import {RouterLink, RouterOutlet} from "@angular/router";
 
 @Component({
   selector: 'app-cart',
   standalone: true,
-  imports: [RouterOutlet, RouterLink, NgIf],
+  imports: [RouterOutlet, RouterLink, NgIf, NgClass],
   templateUrl: './cart.component.html',
   styleUrl: './cart.component.css'
 })
 export class CartComponent {
-  isCartVisible = false;
+  isOpen = false;
 
-  openCart() {
-    this.isCartVisible = true;
+  openCart(): void {
+    this.isOpen = true;
   }
 
-  closeCart() {
-    this.isCartVisible = false;
-  }
-
-  checkout() {
-    // Lógica para finalizar la compra
+  closeCart(): void {
+    this.isOpen = false;
   }
 }

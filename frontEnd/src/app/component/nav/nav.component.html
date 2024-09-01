@@ -21,7 +21,8 @@
         </a>
       </li>
       <li>
-        <a href="#"><i class="bi bi-cart3"></i></a>
+        <a (click)="cartSidebar.openCart()" type="button"><i class="bi bi-cart3"></i></a>
+        <app-cart #cartSidebar></app-cart>
       </li>
     </ul>
 
@@ -66,7 +67,7 @@
               <label for="floatingPassword">Contraseña</label>
             </div>
           </div>
-          
+
           <div class="modal-footer bot-ini-cre-cuet">
             <button type="submit" class="btn btn-ini-ses">
               Iniciar sesión
@@ -83,11 +84,11 @@
         </div>
       </div>
     </div>
-  
+
 
     <!-- Button trigger modal -->
 
-  
+
   </nav>
   <!-- <img class="img-banner" src="/assets/img-header.jpg" alt=""> -->
 </div>
