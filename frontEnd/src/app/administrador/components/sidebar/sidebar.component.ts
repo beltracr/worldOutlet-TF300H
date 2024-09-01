@@ -1,6 +1,7 @@
-import { Component } from '@angular/core';
+import { Component,inject } from '@angular/core';
 import {NgClass, NgIf} from "@angular/common";
 import {RouterLink, RouterOutlet} from "@angular/router";
+import { LoginService } from '../../../services/login.service';
 
 @Component({
   selector: 'app-sidebar',
@@ -15,13 +16,22 @@ import {RouterLink, RouterOutlet} from "@angular/router";
   styleUrl: './sidebar.component.css'
 })
 export class SidebarComponent {
-  isCollapsed = true;
 
-  expandSidebar() {
-    this.isCollapsed = false;
-  }
 
-  collapseSidebar() {
-    this.isCollapsed = true;
+  loginService= inject(LoginService)
+
+
+
+  cerrarSesion(){
+    this.loginService.logout 
   }
+  // isCollapsed = true;
+
+  // expandSidebar() {
+  //   this.isCollapsed = false;
+  // }
+
+  // collapseSidebar() {
+  //   this.isCollapsed = true;
+  // }
 }

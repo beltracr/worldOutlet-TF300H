@@ -35,3 +35,35 @@ ul li a {
 .redes {
     font-size: 20px;
 }
+
+
+/* RESPONSIVE PARA IPHONE 12 PRO */
+
+@media screen and (max-width: 600px){
+
+    .aliadosFooter{
+        display: none;
+    }
+
+    footer{
+        overflow-x: hidden;
+        text-align: center;
+    }
+
+    .subtitulo-footer{
+        font-size: 15px;
+    }
+
+    .lineaSoporte{
+        display: none;
+    }
+
+    .redesSociales ul li{
+        text-align: center;
+        margin-right: 2%;
+    }
+
+    .redes{
+        font-size: 12px;
+    }
+}
