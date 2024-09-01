@@ -5,6 +5,7 @@ import { FormsModule } from '@angular/forms';
 import { LoginService } from '../../../services/login.service';
 import { Users } from '../../../interfaces/users';
 import Swal from 'sweetalert2';
+import { HttpHeaders } from '@angular/common/http';
 
 
 @Component({
@@ -94,7 +95,10 @@ notificacionCrear(){
 // 
 // obtener
 obtenerusuarios(){
-  this.usuarios.getUsers().subscribe((res: any) => {
+  const token = this.loginService.getToken();
+  const headers = new HttpHeaders({"Authorization": `Bearer ${token}`})
+
+  this.usuarios.getUsers({headers}).subscribe((res: any) => {
     try {
       if (res) {
         console.log("res", res);
@@ -155,7 +159,10 @@ botonBorrar(id: string){
 
 
 borrarUsuarios(id: string){
-  this.usuarios.deleteById(id).subscribe((res: any) => {
+
+  const token = this.loginService.getToken();
+    const headers = new HttpHeaders({"Authorization": `Bearer ${token}`})
+  this.usuarios.deleteById(id,{headers}).subscribe((res: any) => {
     try {
       if (res) {
         console.log("res", res);

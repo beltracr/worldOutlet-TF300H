@@ -5,6 +5,7 @@ import { FormsModule } from '@angular/forms';
 import { LoginService } from '../../../services/login.service';
 import { Admin } from '../../../interfaces/admin';
 import Swal from 'sweetalert2';
+import { HttpHeaders } from '@angular/common/http';
 
 
 
@@ -23,7 +24,7 @@ import Swal from 'sweetalert2';
 export class UsuariosAdminComponent {
 
   admin = inject(AdminService)
-  loginSevice = inject(LoginService)
+  loginService = inject(LoginService)
 
   todosAdministradores:any[] = [];
   mostrarFormulario: boolean = false;
@@ -60,7 +61,9 @@ export class UsuariosAdminComponent {
         
         
       }
-      this.admin.postAdmin(nuevoAdministrador).subscribe((res: any) => {
+      const token = this.loginService.getToken();
+      const headers = new HttpHeaders({"Authorization": `Bearer ${token}`})
+      this.admin.postAdmin(nuevoAdministrador,{headers}).subscribe((res: any) => {
         try {
           if (res) {
             console.log("res", res);
@@ -91,7 +94,9 @@ notificacionCrear(){
 //obtener
 
 obtenerAdmin(){
-  this.admin.getAdmin().subscribe((res: any) => {
+  const token = this.loginService.getToken();
+  const headers = new HttpHeaders({"Authorization": `Bearer ${token}`})
+  this.admin.getAdmin({headers}).subscribe((res: any) => {
     try {
       if (res) {
         console.log("res", res);
@@ -149,7 +154,9 @@ botonBorrar(id: string){
 
 
 borrarAdmin(id: string){
-  this.admin.deleteAdmin(id).subscribe((res: any) => {
+  const token = this.loginService.getToken();
+  const headers = new HttpHeaders({"Authorization": `Bearer ${token}`})
+  this.admin.deleteAdmin(id,{headers}).subscribe((res: any) => {
     try {
       if (res) {
         console.log("res", res);
