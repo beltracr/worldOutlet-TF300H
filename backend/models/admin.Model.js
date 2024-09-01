@@ -19,7 +19,7 @@ const adminSchema = new schema({
         required: true
     }, 
    
-    CategoriaAdmin: {
+    categoriaAdmin: {
         type: Boolean,
         required: true,
         default: true

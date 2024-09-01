@@ -23,6 +23,8 @@ export const routes: Routes = [
         {path: 'controlUsuariosAdmin', component: UsuariosAdminComponent},
         {path: 'inventario', component: ProductosComponent}
       ]},
+
+     
       {path:"login", component:LoginComponent},
     {path: '', redirectTo: '/inicio', pathMatch: 'full'},
     {path: '**', component: NoEncontradoComponent, title:'404'}

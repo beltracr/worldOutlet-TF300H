@@ -266,9 +266,7 @@ h4 {
     display: flex;
     justify-content: space-around;
     background: rgb(255,255,94);
-background: linear-gradient(90deg, rgba(237,255,94,1) 23%, rgba(142,255,0,1) 77%, rgb(165, 248, 31) 100%);
-/* background: rgb(237,255,94);
-background: linear-gradient(90deg, rgba(237,255,94,1) 23%, rgba(220,178,0,1) 67%, rgba(220,137,0,0.9831582291119573) 100%); */
+    background: linear-gradient(90deg, rgba(237,255,94,1) 23%, rgba(142,255,0,1) 77%, rgb(165, 248, 31) 100%);
     padding: 4% 3%;
     align-items: center;
 
@@ -343,4 +341,242 @@ background: linear-gradient(90deg, rgba(237,255,94,1) 23%, rgba(220,178,0,1) 67%
 .logo-ali{
     margin: 0% 25%;
     margin-top: 5%;
+}
+
+/* RESPONSIVE PARA IPHONE 12 PRO */
+
+@media screen and (max-width: 600px) {
+
+    main{
+        width: 100%;
+        overflow-x: hidden;
+    }
+
+    .promociones-sport-shopping{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+    .nueva-prom{
+        position: relative;
+    }
+
+    .h2promos{
+        font-size: 25px;
+        margin: 5% 17%;
+    }
+    
+    .scrol-producto{
+        /* font-size: 4px;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        position: absolute;
+        margin-left: 100%; */
+        display: none;
+    }
+
+    .Contenedor-nuevasPromociones{
+        margin: 0;
+        padding: 0;
+        width: 100%;
+    }
+
+    .nuevasPromos{
+        width: 70%;
+    }
+
+    h4{
+        font-size: 19px;
+    }
+
+    .descripcion-promo{
+        font-size: 14px;
+    }
+
+    .comprar-promo{
+        align-items: center;
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        line-height: 8px;
+    }
+    
+    .comprar-promo{
+        font-size: 12px;
+    }
+
+    .boton-comprar{
+        font-size: 11px;
+        padding: 3% 2% ;
+        border-radius: 5px;
+    }
+
+    /* section tendencias */
+    
+    .container-tenden-h-m{
+        width: 100%;
+        
+    }
+
+    .tend-new{
+        margin-top: 4%;
+        
+    }
+    
+    .sub-tend{
+        font-size: 25px;
+        
+    }
+
+    .nuevo{
+        width: 60%;
+        position: relative;
+    }
+
+    .boton-verMas{
+        position: absolute;
+        margin-top: 110%;
+        margin-left: 70%;
+        padding: 2%;
+    }
+
+    .his-wo{
+        width: 100%;
+        padding: 5%;
+    }
+
+    .his-wo p{
+        width: 100%;
+    }
+
+    .na-world{
+        margin: 8% 0% 6% 0%;
+        width: 100%;
+        text-align: center;
+    }
+
+    .his-wo img{
+        margin: 5% 0% 3% 25%;
+    }
+
+    .container-aliados{
+        width: 100%;
+    }
+
+    .aliados{
+        width: 100%;
+    }
+
+    .h3Aliados{
+        text-align: center;
+    }
+
+    .logo-ali{
+        width: 100%;
+        margin: 0;
+    }
+
+    .aliados img{
+        width: 70px;
+    }
+
+    .anun-reg{
+        width: 100%;
+    }
+
+    .anun-reg h3{
+        font-size: 14px;
+    }
+
+    .reg-gra{
+        font-size: 12px;
+        font-weight: normal;
+    }
+}
+
+/* ---------------- RESPONSIVE PARA IPAD PRO ----------------------- */
+
+@media screen and (min-width: 601px) and (max-width: 1025px) {
+    
+    .slide{
+        width: 100%;
+    }
+
+    .nueva-prom{
+        width: 100%;
+        align-items: center;
+        text-align: center;
+    }
+
+    .promociones-sport-shopping{
+        width: 100%;
+        padding: 0 1%;
+    }
+
+    .h2promos{
+        margin: 5% 2%;
+    }
+
+    .Contenedor-nuevasPromociones{
+        width: 100%;
+    }
+
+    .nuevasPromos{
+        width: 50%;
+    }
+
+
+/* ----------------- TENDENCIAS ------------------ */
+
+
+    .container-tenden-h-m{
+        width: 100%;
+        padding: 0% 1%;
+    }
+
+    .tend-new{
+        padding-left: 2%;
+        margin-top: 3%;
+    }
+
+    .boton-verMas{
+        margin-left: 28%;
+        margin-top: 22%;
+    }
+
+    .boton-verMas:hover{
+        margin-top: 35%;
+    }
+
+    .nuevo{
+        width: 40%;
+        height: 20vh;
+        object-fit: contain;
+    }
+
+    .his-wo{
+        width: 100%;
+        padding: 5%;
+    }
+
+    .container-aliados{
+        width: 100%;
+    }
+
+    .anun-reg{
+        width: 100%;
+        text-align: center;
+        align-items: center;
+    }
+
+    .anun-reg h3{
+        font-size: 24px;
+
+    } 
+
+    .reg-gra{
+        font-size: 18px;
+    }
 }

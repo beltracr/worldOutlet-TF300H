@@ -1,29 +1,111 @@
-<div class="usuarios-admin-table-container">
-  <table class="usuarios-admin-table">
-    <thead>
-    <tr>
-      <th>Nombre</th>
-      <th>Correo</th>
-      <th>Teléfono</th>
-      <th>Categoria</th>
-      <th>Acciones</th>
-    </tr>
-    </thead>
-    <tbody>
-    <tr *ngFor="let usuarioAdmin of usuariosAdmin">
-      <td>{{ usuarioAdmin.nombre }}</td>
-      <td>{{ usuarioAdmin.correo }}</td>
-      <td>{{ usuarioAdmin.telefono }}</td>
-      <td>{{ usuarioAdmin.categoria }}</td>
-      <td class="actions">
-        <button>
-          <i class="bi bi-pencil-square"></i>
-        </button>
-        <button>
-          <i class="bi bi-trash"></i>
-        </button>
-      </td>
-    </tr>
-    </tbody>
-  </table>
+<div class="caja1">
+  <div class="container">
+    @if(mostrarFormulario){
+
+    <form class="py-5 col-lg-6">
+      <div>
+        <h3>Crear Administrador</h3>
+      </div>
+      <div class="mb-3">
+        <label for="inputName" class="form-label">Nombre</label>
+        <input
+          type="text"
+          class="form-control"
+          name="nombre"
+          [(ngModel)]="nombre"
+        />
+      </div>
+      <div class="mb-3">
+        <label for="inputcorreo" class="form-label">Correo</label>
+        <input
+          type="email"
+          class="form-control"
+          name="imagen"
+          [(ngModel)]="correo"
+        />
+      </div>
+      <div class="mb-3">
+        <label for="inputContrasena" class="form-label">Contraseña</label>
+        <input
+          type="password"
+          class="form-control"
+          name="descripcion"
+          [(ngModel)]="contrasena"
+        />
+      </div>
+      <div class="mb-3">
+        <label for="inputnumerotelefonico" class="form-label"
+          >Numero de telefono</label
+        >
+        <input
+          type="text"
+          class="form-control"
+          name="talla"
+          [(ngModel)]="categoriaAdmin"
+        />
+      </div>
+      
+
+      <button
+        (click)="crearAdmin()"
+        type="button"
+        class="btn btn-primary bg-my-color col-12"
+      >
+        Crear Administrador
+      </button>
+      <button
+        (click)="toggleDiv()"
+        type="button"
+        class="btn btn-danger bg-my-color col-12 mt-3"
+      >
+        Cerrar
+      </button>
+    </form>
+    }
+
+  </div>
 </div>
+
+
+
+
+
+    <div class="usuarios-admin-table-container">
+      <table class="usuarios-admin-table">
+        <thead>
+          <tr>
+            <th>id</th>
+            <th>Nombre</th>
+            <th>Correo</th>
+            <th>Contrasena</th>
+            <th>Categoria Administrador</th>
+            <th>Acciones</th>
+            <th>
+              <div class="botonAgregar">
+                <button type="button" class="btn btn-outline-success" (click)="toggleDiv()">
+                  <i class="bi bi-plus"></i>
+                  Agregar Administrador
+                </button>
+              </div>
+            </th>
+          </tr>
+        </thead>
+        <tbody id="mitabla">
+          @for (admin of todosAdministradores; track $index) {
+        <tr> 
+          <td> {{admin._id}} </td> 
+          <td> {{admin.nombre}} </td>
+          <td> {{admin.correo}} </td>
+          <td> {{admin.contrasena}} </td>
+          <td> {{admin.categoriaAdmin}} </td>
+          <td class="actions">
+            
+            <button (click)="botonBorrar(admin._id)">
+              <i class="bi bi-trash"></i>
+            </button>
+          </td>
+        </tr>}
+      </tbody>
+      </table>
+    </div>
+ 

@@ -54,7 +54,6 @@
 
 .nav {
     width: 100%;
-    position: fixed;
     z-index: 1000;
     background-color: black;
     height: 10vh;
@@ -94,7 +93,7 @@
     transform: scaleX(0);
     transition: transform 0.5s ease-in-out;
 }
-
+  
   .nav-list a:hover::before {
     transform: scaleX(1);
     transform-origin: center;
@@ -163,7 +162,7 @@ input {
     color: var(--color-text);
     padding: 10px 150px 10px 150px;
     font-size: 20px;
-}
+} 
 
 .btn-ini-ses:hover {
     background: var(--text-hoover);
@@ -198,26 +197,70 @@ input {
     color: var(--color-text);
 }
 
-.cart {
-  display: none;
-}
 
-.show{
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  z-index: 1;
-  position: absolute;
-  background-color: white;
-  border: 1px solid blue;
-  right: 1px;
-  top: 83px;
-  app-cart{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-  }
-  app-cart:hover{
-    color: black;
-  }
+/* RESPONSIVE PARA IPHONE 12 PRO */
+
+@media screen and (max-width: 600px){
+
+    main{
+        position: relative;
+    }
+
+    .nav{
+        width: 100%;
+    }
+
+    .img-logo{
+        max-width: 5rem;
+    }
+
+    .nav-list{
+        display: none;
+    }
+
+    .Buscar-container{
+        display: none;
+    }
+
+    .abrir-menu{
+        display: block;
+        background-color: var(--fondo-2);
+        color: gray;
+        border: none;
+        font-size: 38px;
+    }
+
+    .abrir-menu:hover{
+        color: var(--color-text);
+    }
+}   
+
+
+/* RESPONSIVE PARA IPAD PRO */
+
+@media screen and (min-width: 601px) and (max-width: 1025px)  {
+
+    .img-logo{
+        max-width: 8rem;
+    }
+
+    .nav{
+        width: 100%;
+        padding: 0 2%;
+        margin: 0;
+    }
+
+    .nav-list{
+        display: block;
+        display: flex;
+    }
+
+    .nav-list a{
+        font-size: 20px;
+    }
+
+    .Buscar-container{
+        display: none;
+    }
+
 }

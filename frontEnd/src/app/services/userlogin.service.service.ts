@@ -2,22 +2,18 @@ import { Injectable, inject } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
-import { jwtDecode } from 'jwt-decode';
 import { Credentials } from '../interfaces/credentials';
-
-
-
 
 
 @Injectable({
   providedIn: 'root'
 })
-export class LoginService {
+export class UserloginServiceService {
 
   private httpClient = inject(HttpClient);
   private router = inject(Router);
   public toastrService = inject(ToastrService);
-  private API_URL = 'http://localhost:3000/login';
+  private API_URL = 'http://localhost:3000/loginuser';
 
   login(credenciales: Credentials) {
     return this.httpClient.post(this.API_URL, credenciales)
@@ -29,23 +25,12 @@ export class LoginService {
     return localStorage.getItem('token');
   }
 
-  isAdmin() {
-    const token = this.getToken();
-    if (token) {
-      const decoded: any = jwtDecode(token);
-      return decoded.isAdmin || false;
-    } else {
-      console.error('No se encontró token');
-      return false;
-    }
-  }
+  
 
   redirect() {
-    if (this.isAdmin()) {
-      window.location.href = '/admin';
-    } else {
-      console.log( "no es admin")
-    }
+    
+      window.location.href = '/';
+    
   }
 
   isLogged() {
@@ -61,12 +46,4 @@ export class LoginService {
 
 
 
-
 }
-
-
-
-
-
-
-
