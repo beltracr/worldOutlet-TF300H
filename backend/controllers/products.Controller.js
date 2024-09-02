@@ -33,7 +33,11 @@ export const postProduct = async (req, res) => {
     try {
         const newProduct = await productModel.create(req.body);
         
-        return res.status(201).json(newProduct);
+        return res.status(201).json({
+            estado: "201",
+            mensaje:"newProduct",
+            datos:newProduct
+    });
 
     } catch (error) {
         
