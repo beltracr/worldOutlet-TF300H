@@ -2,8 +2,9 @@ import { Component, inject, ViewChild, ElementRef } from '@angular/core';
 import { NavComponent } from '../../component/nav/nav.component';
 import { FooterComponent } from '../../component/footer/footer.component';
 import { CarruselComponent } from "../../component/carrusel/carrusel.component";
-import {RouterLink} from "@angular/router";
+import { RouterLink } from "@angular/router";
 import { ProductsService } from '../../services/products.service';
+
 
 
 
@@ -17,8 +18,28 @@ import { ProductsService } from '../../services/products.service';
 export class HombreComponent {
 
   producto = inject(ProductsService);
-  
+
   todosProductos: any[] = []
+<<<<<<< HEAD
+
+
+
+
+
+  obtenerProductos() {
+
+    this.producto.getProducts().subscribe((res: any) => {
+      try {
+        console.log("res",res);
+        this.todosProductos = res
+      } catch (error) { console.log(error) }})}
+      ngOnInit() {
+        this.obtenerProductos()
+      }
+
+
+    }
+=======
 
   obtenerProductos() {
 this.producto.getProducts().subscribe((res: any) => {
@@ -63,3 +84,4 @@ this.producto.getProducts().subscribe((res: any) => {
 
 
 }
+>>>>>>> 05c6a2c1d45d4de06ab004c4f46f12071200bb8f
