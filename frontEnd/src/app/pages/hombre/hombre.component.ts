@@ -84,4 +84,3 @@ this.producto.getProducts().subscribe((res: any) => {
 
 
 }
->>>>>>> 05c6a2c1d45d4de06ab004c4f46f12071200bb8f
