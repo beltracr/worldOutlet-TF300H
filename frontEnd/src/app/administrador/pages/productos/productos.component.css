@@ -2,6 +2,7 @@
 .inventory-table-container {
   padding: 0;
   margin: 0;
+  padding-left: 10%;
 }
 
 .inventory-table {
@@ -9,7 +10,7 @@
   border-collapse: collapse;
   font-size: 18px;
   text-align: center;
-  border:  solid red;
+ 
 }
 
 .inventory-table th, .inventory-table td {
