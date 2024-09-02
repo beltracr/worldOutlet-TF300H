@@ -1,4 +1,4 @@
-import { Component,inject } from '@angular/core';
+import { Component,inject, ViewChild, ElementRef } from '@angular/core';
 import { NavComponent } from '../../component/nav/nav.component';
 import { FooterComponent } from '../../component/footer/footer.component';
 import { ProductsService } from '../../services/products.service';
@@ -13,20 +13,11 @@ import { ProductsService } from '../../services/products.service';
   styleUrl: './mujer.component.css'
 })
 export class MujerComponent {
-  producto = inject(ProductsService);
-  
-  todosProductos: any[] = []
- 
-  
- 
 
+  producto = inject(ProductsService);
+  todosProductos: any[] = []
 
   obtenerProductos() {
-
-   
-
-
-  
     this.producto.getProducts().subscribe((res: any) => {
       try {
         if (res) {
@@ -35,14 +26,35 @@ export class MujerComponent {
         }
       } catch (error) { console.log(error) }
     })
-  
-
   }
-  
-
 
   ngOnInit() {
     this.obtenerProductos()
   }
 
+
+  // Logica boton scroll activado
+
+
+  // scrol para la section de empoderate 
+  @ViewChild('empoderate', { static: true }) empoderate!: ElementRef;
+
+  runLeft (){
+    this.empoderate.nativeElement.scrollLeft -= 400
+  }
+
+  runRigh (){
+    this.empoderate.nativeElement.scrollLeft += 400
+  }
+
+  // scrol para la section de deportes
+  @ViewChild('deportes', { static: true }) deportes!: ElementRef;
+
+  LeftRn (){
+    this.deportes.nativeElement.scrollLeft -= 400
+  }
+
+  RighRn (){
+    this.deportes.nativeElement.scrollLeft += 400
+  }
 }

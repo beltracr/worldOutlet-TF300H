@@ -21,15 +21,15 @@
             <h2 class="hR">Empodérate</h2>
             <div class="scrol-producto b1" id="btn-prom-new">
               <button>
-                <i class="bi bi-chevron-left" id="btn-prom-left"></i>
+                <i class="bi bi-chevron-left" id="btn-prom-left" (click)="runLeft()"></i>
               </button>
               <button>
-                <i class="bi bi-chevron-right" id="btn-prom-right"></i>
+                <i class="bi bi-chevron-right" id="btn-prom-right" (click)="runRigh()"></i>
               </button>
             </div>
           </div>
           @for (producto of todosProductos; track $index) {
-    <div class="container-runnig">
+    <div class="container-runnig" #empoderate>
         <div class="runnig-go p1">
           <img
           src={{producto.imagen}}
@@ -51,29 +51,28 @@
 
 <section class="sec-time-running ">
   <div class="time-runnig">
-      <h2 class="hR">Por tu deporte favorito</h2>
+      <h2 class="hR">Conoce tus deportes Favoritos</h2>
       <div class="scrol-producto b1" id="btn-prom-new">
         <button>
-          <i class="bi bi-chevron-left" id="btn-prom-left"></i>
+          <i class="bi bi-chevron-left" id="btn-prom-left" (click)="LeftRn()"></i>
         </button>
         <button>
-          <i class="bi bi-chevron-right" id="btn-prom-right"></i>
+          <i class="bi bi-chevron-right" id="btn-prom-right" (click)="RighRn()"></i>
         </button>
       </div>
     </div>
-<article class="ContainerDeportes">
+<article class="ContainerDeportes" #deportes>
 <div class="container-runnig sec">
-  <div class="runnig-go p1">
+  <div class="runnig-go p1"  data-bs-toggle="modal" data-bs-target="#staticBackdrop">
     <img
       src="/assets/page-mujer/deporte favorito/correr.webp"
       alt="calzadoCarretera"
     />
     <h4>Correr</h4>
   </div>
-
 </div>
 <div class="container-runnig sec">
-  <div class="runnig-go p1">
+  <div class="runnig-go p1"  data-bs-toggle="modal" data-bs-target="#staticBackdrop">
     <img
       src="/assets/page-mujer/deporte favorito/basquet.jpeg"
       alt="calzadoCarretera"
@@ -83,7 +82,7 @@
 
 </div>
 <div class="container-runnig sec">
-  <div class="runnig-go p1">
+  <div class="runnig-go p1"  data-bs-toggle="modal" data-bs-target="#staticBackdrop">
     <img
       src="/assets/page-mujer/deporte favorito/futbol.jpeg"
       alt="calzadoCarretera"
@@ -92,7 +91,7 @@
   </div>
 </div>
 <div class="container-runnig sec">
-  <div class="runnig-go p1">
+  <div class="runnig-go p1"  data-bs-toggle="modal" data-bs-target="#staticBackdrop">
     <img
       src="/assets/page-mujer/deporte favorito/gimnasio.jpg"
       alt="calzadoCarretera"
@@ -101,7 +100,7 @@
   </div>
 </div>
 <div class="container-runnig sec">
-  <div class="runnig-go p1">
+  <div class="runnig-go p1"  data-bs-toggle="modal" data-bs-target="#staticBackdrop">
     <img
       src="/assets/page-mujer/deporte favorito/tenis.jpg"
       alt="calzadoCarretera"
@@ -112,6 +111,33 @@
 </article>
 </section>
 
+  <!-- Futbol -->
+  <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="staticBackdropLabel">Futbol Femenino</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <h4>Tsu Chu: Los Primeros Pasos:</h4>
+              <p>Hace miles de años, en China, existía un juego llamado Tsu Chu. En este juego, tanto hombres como mujeres participaban y consistía en dar patadas a un balón e intentar llegar a la red con cualquier parte del cuerpo, excepto las manos.</p>
+              <p>Aunque no era exactamente fútbol como lo conocemos hoy, Tsu Chu sentó las bases para la participación femenina en deportes de balón.</p>
+              <hr>
+              <h4>La Primera Guerra Mundial y la Popularización:</h4>
+              <p>Durante la Primera Guerra Mundial, muchos hombres se enlistaron, lo que llevó a la masificación del fútbol femenino en Inglaterra.</p>
+              <p>A pesar de su éxito y popularidad, la Asociación de Fútbol (FA) no lo reconoció oficialmente hasta después del Mundial de 1966</p>
+              <hr>
+              <h4>La UEFA Women's Champions League:</h4>
+              <p>La Copa de Europa femenina comenzó en 2001 con la participación de 33 equipos. El Frankfurt se llevó el título en la primera edición.</p>
+              <p>Hoy en día, la UEFA Women's Champions League sigue siendo una competición emocionante y prestigiosa.</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
 
     <section>
       <article class="container-aliados">
