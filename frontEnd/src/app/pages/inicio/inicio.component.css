@@ -242,16 +242,16 @@ h4 {
     display: block;
     background-color: var(--color-fondo);
     border: none;
-    font-size: 13PX;
+    font-size: 12PX;
     border-radius: 8px;
     font-weight: bold;
     padding: 5px 25px;
     font-family: var(--T-subtitulos);
     transition: .5s, color .10s;
     position: absolute;
-    margin-left: 18%;
-    margin-top: 15%;
-
+    margin-left: 16%;
+    margin-top: 14%;
+    width: 8%;
 }
 
 .boton-verMas:hover {
@@ -437,9 +437,13 @@ h4 {
 
     .boton-verMas{
         position: absolute;
-        margin-top: 110%;
-        margin-left: 70%;
-        padding: 2%;
+        margin-top: 100%;
+        margin-left: 45%;
+        width: 50%;
+    }
+
+    .boton-verMas:hover{
+        margin-top: 98%;
     }
 
     .his-wo{
@@ -542,12 +546,14 @@ h4 {
     }
 
     .boton-verMas{
-        margin-left: 28%;
-        margin-top: 22%;
+        margin-left: 22%;
+        margin-top: 25%;
+        width: 15%;
     }
 
     .boton-verMas:hover{
-        margin-top: 35%;
+        margin-top: 21%;
+
     }
 
     .nuevo{
