@@ -24,8 +24,8 @@ export class CartComponent {
 
   constructor(
     private cartService: CartService,
-  ) {
-  }
+  ) {}
+
   ngOnInit(){
     this.cartService.products.subscribe(products => {
       console.log(products);

@@ -5,13 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1ba5959f-1e75-4756-b213-8e65ef41f62d" name="Changes" comment="actualizacion modulo administrador">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontEnd/src/app/component/cart/cart.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontEnd/src/app/component/cart/cart.component.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontEnd/src/app/component/cart/cart.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontEnd/src/app/component/cart/cart.component.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontEnd/src/app/component/cart/cart.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontEnd/src/app/component/cart/cart.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontEnd/src/app/component/nav/nav.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontEnd/src/app/component/nav/nav.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontEnd/src/app/interfaces/products.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontEnd/src/app/interfaces/products.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontEnd/src/app/pages/inicio/inicio.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontEnd/src/app/pages/inicio/inicio.component.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -25,6 +19,7 @@
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RESET_MODE" value="HARD" />
   </component>
   <component name="GitHubPullRequestSearchHistory">{
   &quot;lastFilter&quot;: {
@@ -86,7 +81,7 @@
     "npm.ng.executor": "Run",
     "npm.start.executor": "Run",
     "settings.editor.selected.configurable": "preferences.lookFeel",
-    "ts.external.directory.path": "C:\\Users\\Auxi\\Desktop\\DavidBootcamp\\ProyectoFinal\\worldOutlet-TF300H\\frontEnd\\node_modules\\typescript\\lib",
+    "ts.external.directory.path": "C:\\Users\\David Medina\\Desktop\\proyectoFinalModulo2\\worldOutlet-TF300H\\frontEnd\\node_modules\\typescript\\lib",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
