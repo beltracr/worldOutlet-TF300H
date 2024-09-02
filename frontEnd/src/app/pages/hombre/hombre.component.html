@@ -32,23 +32,22 @@
               </button>
             </div>
           </div>
-
+@for (producto of todosProductos; track $index) {
     <div class="container-runnig">
         <div class="runnig-go p1">
           <img
-            src="/assets/page-hombre/timeRunning/calzadoCarretera/668522-800-auto.png"
+            [src]="producto.imagen"
             alt="calzadoCarretera"
           />
-          <h4>Nike Miler Flash</h4>
+          <h4>{{ producto.nombre }}</h4>
           <p class="descripcion-promo">
-            Nike Vaporfly 3 Electric
-          Calzado de correr en carretera, comodos y atractivos.</p>
+            {{ producto.descripcion }}</p>
           <div class="shopRunnig">
-            <p class="precios">$ 999.000</p>
+            <p class="precios">{{ producto.precio }}</p>
             <button class="boton-comprar">COMPRAR</button>
           </div>
         </div>
-    </div>
+    </div>}
 
 <!-- Seccion de deportiva -->
 

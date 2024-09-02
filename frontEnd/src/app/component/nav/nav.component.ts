@@ -5,11 +5,12 @@ import { Input } from '@angular/core';
 import {ReactiveFormsModule, FormControl, FormGroup} from '@angular/forms';
 import { Credentials } from '../../interfaces/credentials';
 import { UserloginServiceService } from '../../services/userlogin.service.service';
+import {CartComponent} from "../cart/cart.component";
 
 @Component({
   selector: 'app-nav',
   standalone: true,
-  imports: [ RouterLink,ModalIniSesionComponent,ReactiveFormsModule],
+  imports: [RouterLink, ModalIniSesionComponent, ReactiveFormsModule, CartComponent],
   templateUrl: './nav.component.html',
   styleUrl: './nav.component.css'
 })
@@ -59,4 +60,9 @@ export class NavComponent{
     }
   }
 
+<<<<<<< HEAD
 }
+=======
+  protected readonly CartComponent = CartComponent;
+}
+>>>>>>> 537e0d80efd4547dfa0bb775476eb7763bbf66b5

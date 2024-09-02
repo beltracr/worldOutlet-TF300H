@@ -10,16 +10,16 @@ export class UsersService {
   private httpClient = inject(HttpClient);
   private URL_USERS = "http://localhost:3000/user";
 
-  getUsers(){
-    return this.httpClient.get(this.URL_USERS)
+  getUsers(token:any){
+    return this.httpClient.get(this.URL_USERS,token)
   }
 
   postUsers(user:Users){
     return this.httpClient.post(this.URL_USERS,user)
   }
 
-  deleteById(id:string){
-    return this.httpClient.delete(`${this.URL_USERS}/${id}`);
+  deleteById(id:string,token:any){
+    return this.httpClient.delete(`${this.URL_USERS}/${id}`,token);
   }
 
   

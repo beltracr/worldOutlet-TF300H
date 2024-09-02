@@ -14,16 +14,16 @@ export class ProductsService {
     return this.httpClient.get(this.URL_PRODUCTS)
   }
 
-  postProducts(products:Products){
-    return this.httpClient.post(this.URL_PRODUCTS,products)
+  postProducts(products:Products,token: any){
+    return this.httpClient.post(this.URL_PRODUCTS,products,token)
   }
 
-  deleteProducts(id:string){
-    return this.httpClient.delete(`${this.URL_PRODUCTS}/${id}`)
+  deleteProducts(id:string, token:any){
+    return this.httpClient.delete(`${this.URL_PRODUCTS}/${id}`,token)
   }
 
-  updateProducts(productsUpdated:Products,id:string){
-    return this.httpClient.put(`${this.URL_PRODUCTS}/${id}`,productsUpdated)
+  updateProducts(productsUpdated:Products,id:string,token: any){
+    return this.httpClient.put(`${this.URL_PRODUCTS}/${id}`,productsUpdated,token)
   }
 
   

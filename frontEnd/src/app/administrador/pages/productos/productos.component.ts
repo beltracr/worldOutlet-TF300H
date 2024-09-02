@@ -6,6 +6,9 @@ import { LoginService } from '../../../services/login.service';
 import { Products } from '../../../interfaces/products';
 import Swal from 'sweetalert2';
 import { Router } from '@angular/router';
+import { HttpHeaders } from '@angular/common/http';
+
+
 
 
 
@@ -25,6 +28,7 @@ export class ProductosComponent {
 
   producto = inject(ProductsService);
   loginService = inject(LoginService);
+  
 
 
 
@@ -62,6 +66,7 @@ export class ProductosComponent {
 
 
   obtenerProductos() {
+  
     this.producto.getProducts().subscribe((res: any) => {
       try {
         if (res) {
@@ -77,6 +82,7 @@ export class ProductosComponent {
   // borrar
 
   botonBorrar(id: string) {
+
     const swalWithBootstrapButtons = Swal.mixin({
       customClass: {
         confirmButton: "btn btn-success",
@@ -120,7 +126,10 @@ export class ProductosComponent {
 
   borrarProducto(id: string) {
 
-    this.producto.deleteProducts(id).subscribe((res: any) => {
+    const token = this.loginService.getToken();
+    const headers = new HttpHeaders({"Authorization": `Bearer ${token}`})
+
+    this.producto.deleteProducts(id,{headers}).subscribe((res: any) => {
       try {
         if (res) {
           console.log("res", res);
@@ -145,6 +154,9 @@ export class ProductosComponent {
 
     } else {
 
+      const token = this.loginService.getToken();
+    const headers = new HttpHeaders({"Authorization": `Bearer ${token}`})
+
       const nuevoProducto: Products = {
         nombre: this.nombre,
         imagen: this.imagen,
@@ -155,7 +167,7 @@ export class ProductosComponent {
         cantidad: this.cantidad,
         precio: this.precio
       }
-      this.producto.postProducts(nuevoProducto).subscribe((res: any) => {
+      this.producto.postProducts(nuevoProducto,{headers}).subscribe((res: any) => {
         try {
           if (res) {
             console.log("res", res)
@@ -271,7 +283,10 @@ export class ProductosComponent {
           precio: this.precio
         }
         if (this.editarProductoId) {
-          this.producto.updateProducts(productoActualizado, this.editarProductoId).subscribe((res: any) => {
+
+          const token = this.loginService.getToken();
+          const headers = new HttpHeaders({"Authorization": `Bearer ${token}`})
+          this.producto.updateProducts(productoActualizado, this.editarProductoId,{headers}).subscribe((res: any) => {
             if (res) {
               console.log("res", res);
               console.log("se elimino correctamente")
