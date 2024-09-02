@@ -1,11 +1,7 @@
 
-.container{
-  border: solid red;
-}
 
-.formulario{
-  border: solid green;
-}
+
+
 
 /* ---------------------------- */
 
@@ -19,7 +15,7 @@
   border-collapse: collapse;
   font-size: 18px;
   text-align: center;
-  border:  solid red;
+ 
 }
 
 .inventory-table th, .inventory-table td {
