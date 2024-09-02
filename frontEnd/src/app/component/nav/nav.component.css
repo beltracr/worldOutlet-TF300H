@@ -70,7 +70,7 @@
     gap: 50px;
     list-style: none;
     align-items: center;
-    margin-top: 1%;
+    margin-left: 15%;
 }
 
 .nav-list a{
@@ -199,6 +199,10 @@ input {
     color: var(--color-text);
 }
 
+.mb-3{
+    border: solid rgb(156, 156, 156) 1px;
+    border-radius: 10px;
+}
 
 /* RESPONSIVE PARA IPHONE 12 PRO */
 
@@ -218,12 +222,10 @@ input {
     }
 
     .nav-list{
-        display: none;
         position: absolute;
         flex-direction: column;
         background-color: #000000;
         margin-left: 48.2%;
-        margin-top: 450px;
         padding: 3% 17%;
     }
 
@@ -258,6 +260,12 @@ input {
     .abrir-menu:hover{
         color: var(--color-text);
     }
+
+    .ba{
+        padding: 3% 9%;
+    }
+
+    
 }   
 
 
@@ -278,6 +286,7 @@ input {
     .nav-list{
         display: block;
         display: flex;
+        margin-left: 38%;
     }
 
     .nav-list a{

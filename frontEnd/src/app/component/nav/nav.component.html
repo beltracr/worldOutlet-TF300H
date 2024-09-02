@@ -1,94 +1,132 @@
-<div class="header">
-  <nav class="nav ">
-    <a routerLink="/inicio"><img class="img-logo" src="/assets/logo/logo-world-outlet.png" alt="Outlet-world" />
-    </a>
-      <button class="abrirMenu"><i class="bi bi-list"></i></button>
+<!-- <div class="header"> -->
+<nav class="navbar navbar-expand-lg nav">
+  <div class="container-fluid">
+    <a routerLink="/inicio"
+      ><img
+        class="img-logo"
+        src="/assets/logo/logo-world-outlet.png"
+        alt="Outlet-world"
+    /></a>
+    <!-- <button class="abrirMenu navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><i class="bi bi-list"></i>
+        <span class="navbar-toggler-icon"></span></button> -->
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <div class="Buscar-container">
+        <input
+          class="input"
+          type="text"
+          id="search-input"
+          placeholder="Buscar..."
+        />
+        <button class="icon-buscar" id="buscar-button">
+          <i class="bi bi-search" aria-hidden="true"></i>
+        </button>
+      </div>
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0 nav-list" #activeMenu>
+        <li class="nav-item"><a routerLink="/inicio" class="nav-link active">Inicio</a></li>
+        <li class="nav-item"><a routerLink="/hombre" class="nav-link active">Hombre</a></li>
+        <li class="nav-item"><a routerLink="/mujer" class="nav-link active">Mujer</a></li>
+        <li class="nav-item">
+          <a
+            type="button"
+            class="btn icon-user"
+            data-bs-toggle="modal"
+            data-bs-target="#exampleModal"
+          >
+            <i class="bi bi-person-fill"> </i>
+          </a>
+        </li>
+        <li>
+          <a (click)="cartSidebar.openCart()" type="button"
+            ><i class="bi bi-cart3"></i
+          ></a>
+          <app-cart #cartSidebar></app-cart>
+        </li>
+      </ul>
 
-    <div class="Buscar-container">
-      <input class="input" type="text" id="search-input" placeholder="Buscar..." />
-      <button class="icon-buscar" id="buscar-button">
-        <i class="bi bi-search" aria-hidden="true"></i>
-      </button>
+      <!-- Button trigger modal -->
     </div>
-    <ul class="nav-list" #activeMenu>
-      <li><a routerLink="/inicio">Inicio</a></li>
-      <li><a routerLink="/hombre">Hombre</a></li>
-      <li><a routerLink="/mujer">Mujer</a></li>
-      <li>
-        <a type="button" class="btn icon-user" data-bs-toggle="modal" data-bs-target="#exampleModal">
-          <i class="bi bi-person-fill">
-          </i>
-        </a>
-      </li>
-      <li>
-        <a (click)="cartSidebar.openCart()" type="button"><i class="bi bi-cart3"></i></a>
-        <app-cart #cartSidebar></app-cart>
-      </li>
-    </ul>
+  </div>
+</nav>
 
-    <!-- Modal inicio de sesion / component-->
-    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-      <div class="modal-dialog">
-        <div class="modal-content z-3 border">
-          <form [formGroup]="credentialForm" (ngSubmit)="handleSubmint()">
-          <div class="modal-header inicio-sesion">
-            <h1 class="modal-title fs-5" id="exampleModalLabel">
-              Inicia sesión
-            </h1>
 
-            <button
-              type="button"
-              class="btn-close"
-              data-bs-dismiss="modal"
-              aria-label="Close"
-            ></button>
+      <!-- Modal inicio de sesion / component-->
+      <div
+        class="modal fade"
+        id="exampleModal"
+        tabindex="-1"
+        aria-labelledby="exampleModalLabel"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog">
+          <div class="modal-content z-3 border">
+            <form [formGroup]="credentialForm" (ngSubmit)="handleSubmint()">
+              <div class="modal-header inicio-sesion">
+                <h1 class="modal-title fs-5" id="exampleModalLabel">
+                  Inicia sesión
+                </h1>
+
+                <button
+                  type="button"
+                  class="btn-close"
+                  data-bs-dismiss="modal"
+                  aria-label="Close"
+                ></button>
+              </div>
+              <div class="modal-body">
+                <div class="form-floating mb-3">
+                  <input
+                    type="email"
+                    class="form-control"
+                    id="floatingInput"
+                    formControlName="correo"
+                    placeholder="name@example.com"
+                    required
+                  />
+                  <label for="floatingInput">Correo electrónico</label>
+                </div>
+                <div class="form-floating mb-3">
+                  <input
+                    type="password"
+                    class="form-control"
+                    id="floatingPassword"
+                    formControlName="contrasena"
+                    placeholder="Password"
+                    required
+                  />
+                  <label for="floatingPassword">Contraseña</label>
+                </div>
+              </div>
+
+              <div class="modal-footer bot-ini-cre-cuet">
+                <button type="submit" class="btn btn-ini-ses ba">
+                  Iniciar sesión
+                </button>
+                <a class="p-regis" href="/login"
+                  >¿ Eres administrador inicia aqui ?</a
+                >
+                <button
+                  type="button"
+                  class="btn btn-crea-cta ba"
+                  data-bs-dismiss="modal"
+                >
+                  <a a routerLink="/registro">Crear Cuenta</a>
+                </button>
+              </div>
+            </form>
           </div>
-          <div class="modal-body">
-            <div class="form-floating mb-3">
-              <input
-                type="email"
-                class="form-control"
-                id="floatingInput"
-                formControlName="correo"
-                placeholder="name@example.com"
-                required
-              />
-              <label for="floatingInput">Correo electrónico</label>
-            </div>
-            <div class="form-floating">
-              <input
-                type="password"
-                class="form-control"
-                id="floatingPassword"
-                formControlName="contrasena"
-                placeholder="Password"
-                required
-              />
-              <label for="floatingPassword">Contraseña</label>
-            </div>
-          </div>
-
-          <div class="modal-footer bot-ini-cre-cuet">
-            <button type="submit" class="btn btn-ini-ses">
-              Iniciar sesión
-            </button>
-            <a class="p-regis" href="/login">¿ Eres administrador inicia aqui ?</a>
-            <button
-              type="button"
-              class="btn btn-crea-cta"
-              data-bs-dismiss="modal"
-            >
-              <a a routerLink="/registro">Crear Cuenta</a>
-            </button>
-          </div> </form>
         </div>
       </div>
-    </div>
 
-
-    <!-- Button trigger modal -->
-
-
-  </nav>
-  <!-- <img class="img-banner" src="/assets/img-header.jpg" alt=""> -->
-</div>
+<!-- <img class="img-banner" src="/assets/img-header.jpg" alt=""> -->
+<!-- </div> -->

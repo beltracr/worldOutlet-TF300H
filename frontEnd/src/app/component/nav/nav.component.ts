@@ -60,9 +60,4 @@ export class NavComponent{
     }
   }
 
-<<<<<<< HEAD
 }
-=======
-  protected readonly CartComponent = CartComponent;
-}
->>>>>>> 537e0d80efd4547dfa0bb775476eb7763bbf66b5
