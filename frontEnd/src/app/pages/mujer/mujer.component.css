@@ -326,6 +326,16 @@ h1 {
   height: 12rem;
 }
 
+
+.ContainerDeportes{
+  overflow-x: auto;
+  scroll-behavior: smooth;
+}
+
+::-webkit-scrollbar {
+  display: none;
+  }
+
 /* -------------- RESPONSIVE PARA IPHONE 12 PRO ------------------- */
 
 @media screen and (max-width: 600px) {
@@ -423,4 +433,34 @@ h1 {
      }
 }
 
-/* avance responsive */
+/* --------- Responsive IPAD PRO ---------- */
+
+@media screen and (min-width: 601px) and (max-width: 1025px){
+
+  main{
+    overflow-x: hidden ;
+  }
+
+  .ref-mujer{
+    height: 100%;
+  }
+
+  .ref-mujer img{
+    height: 50vh;
+  }
+
+  h1{
+    font-size: 40px;
+    margin: 3% 9% 0% 0%;
+  }
+
+  .des-nac{
+    align-items: center;
+    margin: 3% 5%;
+    font-size: 18px;
+    width: 80%;
+  }
+
+}
+
+

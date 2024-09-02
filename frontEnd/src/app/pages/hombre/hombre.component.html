@@ -25,15 +25,15 @@
             <h2 class="hR">Hora de correr</h2>
             <div class="scrol-producto b1" id="btn-prom-new">
               <button>
-                <i class="bi bi-chevron-left" id="btn-prom-left"></i>
+                <i class="bi bi-chevron-left" id="btn-prom-left" (click)="runLeft()"></i>
               </button>
               <button>
-                <i class="bi bi-chevron-right" id="btn-prom-right"></i>
+                <i class="bi bi-chevron-right" id="btn-prom-right" (click)="runRigh()"></i>
               </button>
             </div>
           </div>
 @for (producto of todosProductos; track $index) {
-    <div class="container-runnig">
+    <div class="container-runnig" #correr>
         <div class="runnig-go p1">
           <img
             [src]="producto.imagen"
@@ -87,29 +87,28 @@
 
 <section class="sec-time-running ">
   <div class="time-runnig">
-      <h2 class="hR">Por tu deporte favorito</h2>
+      <h2 class="hR">conoce tu deporte favorito</h2>
       <div class="scrol-producto b1" id="btn-prom-new">
         <button>
-          <i class="bi bi-chevron-left" id="btn-prom-left"></i>
+          <i class="bi bi-chevron-left" id="btn-prom-left" (click)="LeftRn()"></i>
         </button>
         <button>
-          <i class="bi bi-chevron-right" id="btn-prom-right"></i>
+          <i class="bi bi-chevron-right" id="btn-prom-right" (click)="RighRn()"></i>
         </button>
       </div>
     </div>
-<article class="ContainerDeportes">
+<article class="ContainerDeportes" #deportes>
 <div class="container-runnig sec">
-  <div class="runnig-go p1">
+  <div class="runnig-go p1" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
     <img
       src="/assets/page-hombre/deporteFavorito/correr.jpeg"
       alt="calzadoCarretera"
     />
     <h4>Correr</h4>
   </div>
-
 </div>
 <div class="container-runnig sec">
-  <div class="runnig-go p1">
+  <div class="runnig-go p1"  data-bs-toggle="modal" data-bs-target="#staticBackdrop">
     <img
       src="/assets/page-hombre/deporteFavorito/basquet.png"
       alt="calzadoCarretera"
@@ -119,7 +118,7 @@
 
 </div>
 <div class="container-runnig sec">
-  <div class="runnig-go p1">
+  <div class="runnig-go p1" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
     <img
       src="/assets/page-hombre/deporteFavorito/futbol.jpeg"
       alt="calzadoCarretera"
@@ -128,7 +127,7 @@
   </div>
 </div>
 <div class="container-runnig sec">
-  <div class="runnig-go p1">
+  <div class="runnig-go p1" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
     <img
       src="/assets/page-hombre/deporteFavorito/gimnasio.jpg"
       alt="calzadoCarretera"
@@ -137,7 +136,7 @@
   </div>
 </div>
 <div class="container-runnig sec">
-  <div class="runnig-go p1">
+  <div class="runnig-go p1" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
     <img
       src="/assets/page-hombre/deporteFavorito/tenis.jpeg"
       alt="calzadoCarretera"
@@ -148,6 +147,34 @@
 </article>
 </section>
 
+<!-- -----------MODALES DE INFO ---------------- -->
+
+  <!-- Correr -->
+  <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="staticBackdropLabel">Correr</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <h4>Orígenes Prehistóricos:</h4>
+              <p>Hace aproximadamente 2,6 millones de años, nuestros antepasados cazadores-recolectores en África dependían de su resistencia y velocidad para perseguir a sus presas. La caza requería agotar a los animales a pie hasta atraparlos. Así, la evolución de nuestras piernas y pies se adaptó para correr largas distancias.</p>
+              <hr>
+              <h4>Antigua Grecia y los Juegos Olímpicos:</h4>
+              <p>Alrededor del año 776 a.C., en la antigua Grecia, se formalizó la carrera a pie como deporte. Los primeros Juegos Olímpicos griegos incluían competiciones de atletismo, y correr era una parte importante de los festivales religiosos.</p>
+              <p>Los atletas competían en actividades como el pentatlón, que incluía carreras de campo, lanzamiento de disco y jabalina, salto de longitud y lucha libre. Estos juegos sentaron las bases para lo que hoy conocemos como atletismo.</p>
+              <hr>
+              <h4>Explosión del Running Moderno:</h4>
+              <p>A finales del siglo XIX y principios del XX, el running moderno comenzó a tomar forma. Las competiciones se estandarizaron, y surgieron las primeras maratones y carreras populares.</p>
+              <p>Arthur Lydiard, un corredor y entrenador de atletismo de Nueva Zelanda, fue un pionero en promover el running por salud y establecer las bases del entrenamiento de larga distancia.</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
 
     <section>
       <article class="container-aliados">
