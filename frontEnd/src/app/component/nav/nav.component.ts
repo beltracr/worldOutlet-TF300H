@@ -14,23 +14,23 @@ import {CartComponent} from "../cart/cart.component";
   templateUrl: './nav.component.html',
   styleUrl: './nav.component.css'
 })
-export class NavComponent{
-  
+export class NavComponent {
+
   // activación bottom menu hmaburguesa
-  
-  
+
 
   loginService = inject(UserloginServiceService);
-  @Input() toggleRegister: () => void = () => {};
+  @Input() toggleRegister: () => void = () => {
+  };
   credentialForm = new FormGroup({
     correo: new FormControl(''),
     contrasena: new FormControl('')
   });
 
-  getCredentials(){
+  getCredentials() {
     const correo = this.credentialForm.value.correo;
     const contrasena = this.credentialForm.value.contrasena;
-    if(typeof correo === 'string' && typeof contrasena === 'string'){
+    if (typeof correo === 'string' && typeof contrasena === 'string') {
       const validarCredenciales: Credentials = {
         correo,
         contrasena
@@ -39,30 +39,25 @@ export class NavComponent{
     }
     return null;
   }
-  handleSubmint(){
+
+  handleSubmint() {
     const credenciales = this.getCredentials();
     console.log(credenciales);
-    if(credenciales){
+    if (credenciales) {
       this.loginService.login(credenciales).subscribe({
         next: (res: any) => {
           console.log(res)
-          if(res){
+          if (res) {
             localStorage.setItem('token', res.tokenGenerado)
             this.loginService.redirect();
           }
 
         },
-        error: (err)=>{
+        error: (err) => {
           alert(err.error.mensaje);
           this.credentialForm.reset();
         }
       })
     }
   }
-
-<<<<<<< HEAD
 }
-=======
-  protected readonly CartComponent = CartComponent;
-}
->>>>>>> 537e0d80efd4547dfa0bb775476eb7763bbf66b5

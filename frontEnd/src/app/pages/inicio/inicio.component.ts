@@ -4,6 +4,10 @@ import { FooterComponent } from '../../component/footer/footer.component';
 import { RegistroComponent } from '../registro/registro.component';
 import { NoEncontradoComponent } from '../no-encontrado/no-encontrado.component';
 import {CartComponent} from "../../component/cart/cart.component";
+import {Products} from "../../interfaces/products";
+import {LoginService} from "../../services/login.service";
+import {ProductsService} from "../../services/products.service";
+import {CartService} from "../../services/cart.service";
 
 @Component({
   selector: 'app-inicio',
@@ -43,4 +47,16 @@ export class InicioComponent {
   runRighM (){
     this.containerMen.nativeElement.scrollLeft += 400
   }
+
+  constructor(
+    private productService:ProductsService,
+    private cartService:CartService
+  ) {
+  }
+
+  onClick(product: Products){
+    this.cartService.addToCart(product);
+  }
+
+  protected readonly ProductsService = ProductsService;
 }
