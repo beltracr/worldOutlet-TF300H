@@ -19,12 +19,12 @@ export const routes: Routes = [
     {path: 'mujer', component: MujerComponent},
     {path: 'registro', component: RegistroComponent},
     {path: 'carrito', component: CartComponent},
+    
     {path: 'admin', component: AdminVistaComponent, children:[
-    {path: 'admin', component: AdminVistaComponent,canActivate:[authGuard], children:[
         {path: 'controlUsuarios', component: UsuariosComponent},
         {path: 'controlUsuariosAdmin', component: UsuariosAdminComponent},
         {path: 'inventario', component: ProductosComponent}
-      ], },
+      ], canActivate:[authGuard],},
 
      
       {path:"login", component:LoginComponent},

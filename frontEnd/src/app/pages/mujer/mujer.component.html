@@ -28,22 +28,22 @@
               </button>
             </div>
           </div>
-
+          @for (producto of todosProductos; track $index) {
     <div class="container-runnig">
         <div class="runnig-go p1">
           <img
-            src="/assets/page-mujer/Nike SportswearFem/NikeSportWearFem.jpg"
-            alt="calzadoCarretera"
-          />
-          <h4>Nike Alate de alta sujeción</h4>
+          src={{producto.imagen}}
+          alt="calzadoCarretera"
+        />
+          <h4>{{ producto.nombre }}</h4>
           <p class="descripcion-promo">
-            Bra deportivo convertible con almohadillas para mujer</p>
+            {{ producto.descripcion }}</p>
           <div class="shopRunnig">
-            <p class="precios">$ 200.000</p>
+            <p class="precios">{{ producto.precio }}</p>
             <button class="boton-comprar">COMPRAR</button>
           </div>
         </div>
-    </div>
+    </div>}
 
 <!-- Seccion de deportiva -->
 
