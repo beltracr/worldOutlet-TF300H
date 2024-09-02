@@ -20,11 +20,6 @@ export class HombreComponent {
   producto = inject(ProductsService);
 
   todosProductos: any[] = []
-<<<<<<< HEAD
-
-
-
-
 
   obtenerProductos() {
 
@@ -33,25 +28,7 @@ export class HombreComponent {
         console.log("res",res);
         this.todosProductos = res
       } catch (error) { console.log(error) }})}
-      ngOnInit() {
-        this.obtenerProductos()
-      }
-
-
-    }
-=======
-
-  obtenerProductos() {
-this.producto.getProducts().subscribe((res: any) => {
-      try {
-        if (res) {
-          console.log("res", res);
-          this.todosProductos = res
-        }
-      } catch (error) { console.log(error) }
-    })
-  }
-
+ 
   ngOnInit() {
     this.obtenerProductos()
   }
@@ -81,6 +58,5 @@ this.producto.getProducts().subscribe((res: any) => {
   RighRn (){
     this.deportes.nativeElement.scrollLeft += 400
   }
-
 
 }
